@@ -100,7 +100,7 @@ class _AppFab extends StatelessWidget {
       child: Ink(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kPrimaryButtonHeight / 2),
-            gradient: AppColors.primaryButtonGradient),
+            gradient: AppColors.blueGradient),
         child: const SizedBox.square(
           dimension: kPrimaryButtonHeight,
           child: Center(

@@ -26,4 +26,6 @@ class AppIcons {
       IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData home_outlined =
       IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData notification_outlined =
+      IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

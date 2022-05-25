@@ -22,12 +22,12 @@ class GoalPage extends StatelessWidget {
         decoration: BoxDecoration(
             boxShadow: const [
               BoxShadow(
-                  color: Color(0x4DC58BF2),
+                  color: AppColors.purpleShadow,
                   offset: Offset(0, 10),
                   blurRadius: 10)
             ],
             borderRadius: BorderRadius.circular(22),
-            gradient: AppColors.primaryButtonGradient),
+            gradient: AppColors.blueGradient),
         child: Column(children: [
           Expanded(
               child: Image.asset(content.assetPath,

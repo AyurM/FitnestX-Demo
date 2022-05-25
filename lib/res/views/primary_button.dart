@@ -24,7 +24,7 @@ class PrimaryButton extends StatelessWidget {
           child: Ink(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(kPrimaryButtonHeight / 2),
-                gradient: AppColors.primaryButtonGradient),
+                gradient: AppColors.blueGradient),
             child: SizedBox(
               height: kPrimaryButtonHeight,
               child: Center(

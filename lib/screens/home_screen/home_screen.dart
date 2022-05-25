@@ -1,5 +1,6 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/app_navigation_bar.dart';
+import 'package:fitnest_x/screens/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,9 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
-          Center(
-            child: Text('Tab 1'),
-          ),
+          HomeTab(),
           Center(
             child: Text('Tab 2'),
           ),

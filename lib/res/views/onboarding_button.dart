@@ -5,6 +5,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 const _kFullCircleAnimDuration = Duration(milliseconds: 600);
+const _kIconSize = 24.0;
 
 class OnboardingButton extends StatefulWidget {
   static const totalSize = 60.0;
@@ -157,13 +158,13 @@ class _OnboardingRoundButton extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius:
                 BorderRadius.circular(OnboardingButton.buttonSize / 2),
-            gradient: AppColors.primaryButtonGradient),
+            gradient: AppColors.blueGradient),
         child: const SizedBox.square(
           dimension: OnboardingButton.buttonSize,
           child: Center(
               child: Icon(
             Icons.chevron_right_sharp,
-            size: 24,
+            size: _kIconSize,
             color: Colors.white,
           )),
         ),

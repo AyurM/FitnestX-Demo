@@ -9,7 +9,7 @@ TextTheme appTextTheme = TextTheme(
         fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.black),
     headline3: GoogleFonts.poppins(
         fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.black),
-    headline4: GoogleFonts.workSans(
+    headline4: GoogleFonts.poppins(
         fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.black),
     bodyText1: GoogleFonts.poppins(
         fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black),
