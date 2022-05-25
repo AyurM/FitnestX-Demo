@@ -1,6 +1,7 @@
 import 'package:fitnest_x/data/model/goal_page_content.dart';
 import 'package:fitnest_x/res/views/goal_page.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/screens/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 const _kSidePageScale = 0.75;
@@ -79,8 +80,11 @@ class _GoalScreenState extends State<GoalScreen> {
           const SizedBox(height: 50),
           PrimaryButton(
             text: _confirmText,
-            onPressed: () =>
-                debugPrint('Selected goal: ${content[_pageIndex.round()].id}'),
+            onPressed: () {
+              debugPrint('Selected goal: ${content[_pageIndex.round()].id}');
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
+            },
           ),
           const SizedBox(height: 40),
         ]),

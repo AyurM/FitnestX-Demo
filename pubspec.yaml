@@ -30,3 +30,7 @@ flutter:
 
   assets:
     - assets/images/
+  fonts:
+    - family: AppIcons
+      fonts:
+        - asset: assets/fonts/AppIcons.ttf
