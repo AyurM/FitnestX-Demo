@@ -1,6 +1,5 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
-import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const _kButtonSize = 40.0;
@@ -20,29 +19,25 @@ class HomeTabHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Padding(
-      padding: kHorizontalPadding,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                _welcomeText,
-                style: textTheme.subtitle1?.copyWith(
-                    fontWeight: FontWeight.w400, color: AppColors.gray2),
-              ),
-              const SizedBox(height: 3),
-              Text(username, style: textTheme.headline4)
-            ],
-          ),
-          _NotificationButton(
-            onPressed: () {},
-            hasNotifications: hasNotifications,
-          )
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              _welcomeText,
+              style: textTheme.subtitle1?.copyWith(color: AppColors.gray2),
+            ),
+            const SizedBox(height: 3),
+            Text(username, style: textTheme.headline4)
+          ],
+        ),
+        _NotificationButton(
+          onPressed: () {},
+          hasNotifications: hasNotifications,
+        )
+      ],
     );
   }
 }

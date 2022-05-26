@@ -1,4 +1,5 @@
 import 'package:fitnest_x/data/model/goal_page_content.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/goal_page.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
 import 'package:fitnest_x/screens/home_screen/home_screen.dart';
@@ -67,7 +68,9 @@ class _GoalScreenState extends State<GoalScreen> {
           const SizedBox(height: 40),
           Text(_pageTitleText, style: textTheme.headline4),
           const SizedBox(height: 5),
-          Text(_pageSubtitleText, style: textTheme.subtitle1),
+          Text(_pageSubtitleText,
+              style:
+                  textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w500)),
           const SizedBox(height: 30),
           Expanded(
               child: PageView(controller: _pageController, children: [
@@ -78,13 +81,14 @@ class _GoalScreenState extends State<GoalScreen> {
               )
           ])),
           const SizedBox(height: 50),
-          PrimaryButton(
+          PrimaryButton.blue(
             text: _confirmText,
             onPressed: () {
               debugPrint('Selected goal: ${content[_pageIndex.round()].id}');
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
+            margin: kHorizontalPadding,
           ),
           const SizedBox(height: 40),
         ]),

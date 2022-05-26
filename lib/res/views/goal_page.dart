@@ -1,5 +1,6 @@
 import 'package:fitnest_x/data/model/goal_page_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class GoalPage extends StatelessWidget {
@@ -26,7 +27,7 @@ class GoalPage extends StatelessWidget {
                   offset: Offset(0, 10),
                   blurRadius: 10)
             ],
-            borderRadius: BorderRadius.circular(22),
+            borderRadius: BorderRadius.circular(kBorderRadiusLarge),
             gradient: AppColors.blueGradient),
         child: Column(children: [
           Expanded(
@@ -48,8 +49,7 @@ class GoalPage extends StatelessWidget {
           Text(
             content.subtitle,
             textAlign: TextAlign.center,
-            style: textTheme.subtitle1
-                ?.copyWith(fontWeight: FontWeight.w400, color: AppColors.white),
+            style: textTheme.subtitle1?.copyWith(color: AppColors.white),
           )
         ]),
       );

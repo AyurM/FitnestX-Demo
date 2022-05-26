@@ -18,4 +18,4 @@ TextTheme appTextTheme = TextTheme(
     button: GoogleFonts.poppins(
         fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.white),
     subtitle1: GoogleFonts.poppins(
-        fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.gray1));
+        fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.gray1));
