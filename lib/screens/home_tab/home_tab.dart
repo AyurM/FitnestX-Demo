@@ -1,4 +1,5 @@
 import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/res/views/home_tab/activity_block.dart';
 import 'package:fitnest_x/res/views/home_tab/bmi_card.dart';
 import 'package:fitnest_x/res/views/home_tab/home_tab_header.dart';
 import 'package:fitnest_x/res/views/home_tab/today_target_card.dart';
@@ -25,7 +26,9 @@ class HomeTab extends StatelessWidget {
             const SizedBox(height: 30),
             BmiCard(value: _bmiValue, onViewMorePressed: () {}),
             const SizedBox(height: 30),
-            TodayTargetCard(onPressed: () {})
+            TodayTargetCard(onPressed: () {}),
+            const SizedBox(height: 30),
+            const ActivityBlock()
           ],
         ),
       ),

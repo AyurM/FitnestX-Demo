@@ -3,7 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
-import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/res/views/secondary_button.dart';
 import 'package:flutter/material.dart';
 
 const _kCardHeight = 146.0;
@@ -39,6 +39,7 @@ class BmiCard extends StatelessWidget {
         Padding(
           padding: _kPadding,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,26 +47,26 @@ class BmiCard extends StatelessWidget {
                 children: [
                   Text(
                     _titleText,
+                    maxLines: 1,
                     style: textTheme.bodyText2?.copyWith(
                         fontWeight: FontWeight.bold, color: AppColors.white),
                   ),
                   Text(
                     _subtitleText,
+                    maxLines: 1,
                     style:
                         textTheme.subtitle1?.copyWith(color: AppColors.white),
                   ),
                   const SizedBox(height: 10),
-                  PrimaryButton.purple(
+                  SecondaryButton.purple(
                     text: _buttonText,
                     onPressed: onViewMorePressed,
                     height: _kButtonHeight,
-                    elevation: 0,
                     textStyle: textTheme.button
                         ?.copyWith(fontSize: 10, fontWeight: FontWeight.w600),
                   )
                 ],
               ),
-              const Spacer(),
               SizedBox.square(
                 dimension: _kCardHeight - _kPadding.top * 2,
                 child: _BmiPie(value: value),

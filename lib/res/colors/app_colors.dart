@@ -5,6 +5,7 @@ class AppColors {
 
   static const blue = Color(0xFF92A3FD);
   static const blue2 = Color(0xFF9DCEFF);
+  static const blue3 = Color(0xFF93A7FE);
   static const purple = Color(0xFFC58BF2);
   static const purple2 = Color(0xFFEEA4CE);
   static const black = Color(0xFF1D1617);

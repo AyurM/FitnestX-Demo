@@ -1,6 +1,6 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
-import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/res/views/secondary_button.dart';
 import 'package:flutter/material.dart';
 
 const _kButtonHeight = 30.0;
@@ -30,11 +30,10 @@ class TodayTargetCard extends StatelessWidget {
         Text(_titleText,
             style: textTheme.bodyText2?.copyWith(
                 fontWeight: FontWeight.w600, color: AppColors.black)),
-        PrimaryButton.blue(
+        SecondaryButton.blue(
           text: _buttonText,
           onPressed: onPressed,
           height: _kButtonHeight,
-          elevation: 0,
           textStyle: textTheme.subtitle1?.copyWith(color: AppColors.white),
         )
       ]),

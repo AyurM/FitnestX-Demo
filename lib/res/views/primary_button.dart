@@ -57,6 +57,7 @@ class PrimaryButton extends StatelessWidget {
               height: height ?? kPrimaryButtonHeight,
               child: Center(
                   child: Text(text,
+                      maxLines: 1,
                       style: textStyle ?? Theme.of(context).textTheme.button)),
             ),
           )),

@@ -1,6 +1,6 @@
 import 'package:fitnest_x/data/model/onboarding_page_content.dart';
-import 'package:fitnest_x/res/views/onboarding_button.dart';
-import 'package:fitnest_x/res/views/onboarding_page.dart';
+import 'package:fitnest_x/res/views/onboarding/onboarding_button.dart';
+import 'package:fitnest_x/res/views/onboarding/onboarding_page.dart';
 import 'package:fitnest_x/screens/goal_screen/goal_screen.dart';
 import 'package:flutter/material.dart';
 
