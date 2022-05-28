@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const kAppName = 'Fitnest X';
 const kHorizontalPadding = EdgeInsets.symmetric(horizontal: 20);
 const kPrimaryButtonHeight = 60.0;
 const kBottomNavBarHeight = 80.0;

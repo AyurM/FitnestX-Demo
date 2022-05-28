@@ -1,4 +1,6 @@
 import 'package:fitnest_x/di/di.dart';
+import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/theme/text_theme.dart';
 import 'package:fitnest_x/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Fitnest X',
-      theme: ThemeData.light().copyWith(textTheme: appTextTheme),
+      title: kAppName,
+      theme: ThemeData.light().copyWith(
+          textTheme: appTextTheme, scaffoldBackgroundColor: AppColors.white),
       home: const WelcomeScreen(),
     );
   }

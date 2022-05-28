@@ -2,6 +2,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/app_navigation_bar.dart';
 import 'package:fitnest_x/screens/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,21 +31,25 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: AppColors.white,
+      statusBarIconBrightness: Brightness.dark,
+    ));
+
     return Scaffold(
-      backgroundColor: AppColors.white,
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
         children: const [
           HomeTab(),
           Center(
-            child: Text('Tab 2'),
+            child: Text('Activity Tab'),
           ),
           Center(
-            child: Text('Tab 3'),
+            child: Text('Camera Tab'),
           ),
           Center(
-            child: Text('Tab 4'),
+            child: Text('Profile Tab'),
           )
         ],
       ),

@@ -28,7 +28,8 @@ class HomeTab extends StatelessWidget {
             const SizedBox(height: 30),
             TodayTargetCard(onPressed: () {}),
             const SizedBox(height: 30),
-            const ActivityBlock()
+            const ActivityBlock(),
+            const SizedBox(height: 30),
           ],
         ),
       ),

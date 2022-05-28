@@ -39,8 +39,9 @@ class AppNavigationBar extends StatelessWidget {
           inactiveIcon: AppIcons.profile_outlined),
     ];
 
-    return SizedBox(
+    return Container(
       height: kBottomNavBarHeight + _kFabTopOffset,
+      color: Colors.transparent,
       child: Stack(
         alignment: Alignment.bottomCenter,
         clipBehavior: Clip.none,

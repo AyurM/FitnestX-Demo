@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/res/views/card_title.dart';
 import 'package:fitnest_x/res/views/home_tab/heart_rate_graph.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +48,10 @@ class _HeartRateCardState extends State<HeartRateCard> {
           ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: LayoutBuilder(builder: (context, constraints) {
         return GestureDetector(
-          onPanUpdate: (details) => _onPanUpdate(details, constraints.maxWidth),
+          onTapDown: (details) =>
+              _onTouchGesture(details.localPosition.dx, constraints.maxWidth),
+          onPanUpdate: (details) =>
+              _onTouchGesture(details.localPosition.dx, constraints.maxWidth),
           child: Stack(clipBehavior: Clip.none, children: [
             Positioned(
               top: 20,
@@ -76,11 +80,11 @@ class _HeartRateCardState extends State<HeartRateCard> {
     );
   }
 
-  void _onPanUpdate(DragUpdateDetails details, double maxWidth) {
+  void _onTouchGesture(double gesturePositionX, double maxWidth) {
     if (heartRateValues.isEmpty) {
       return;
     }
-    final currentIndex = _calcSelectedIndex(details.localPosition.dx, maxWidth);
+    final currentIndex = _calcSelectedIndex(gesturePositionX, maxWidth);
     if (currentIndex != selectedIndex) {
       setState(() => selectedIndex = currentIndex);
     }
@@ -106,9 +110,7 @@ class _HeartRateInfo extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(_titleText,
-            style: textTheme.subtitle1?.copyWith(
-                fontWeight: FontWeight.w600, color: AppColors.black)),
+        const CardTitle(text: _titleText),
         const SizedBox(height: 3),
         if (value != null)
           Text('$value $_bpmText',
