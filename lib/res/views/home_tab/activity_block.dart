@@ -1,7 +1,8 @@
-import 'package:fitnest_x/res/views/app_card.dart';
+import 'package:fitnest_x/data/model/water_intake_update.dart';
 import 'package:fitnest_x/res/views/home_tab/calories_card.dart';
 import 'package:fitnest_x/res/views/home_tab/heart_rate_card.dart';
 import 'package:fitnest_x/res/views/home_tab/sleep_card.dart';
+import 'package:fitnest_x/res/views/home_tab/water_intake.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ const _kSpacing = 15.0;
 const _kSleepDuration = Duration(hours: 8, minutes: 20);
 const _kTargetCalories = 990;
 const _kConsumedCalories = 760;
+const _kMaxTotalWaterIntakeMl = 3000;
+const _kMockIntakesLength = 5;
 
 class ActivityBlock extends StatelessWidget {
   const ActivityBlock({Key? key}) : super(key: key);
@@ -28,7 +31,11 @@ class ActivityBlock extends StatelessWidget {
             height: constraints.maxWidth,
             child: Row(
               children: [
-                const Expanded(child: AppCard()),
+                Expanded(
+                    child: WaterIntakeCard(
+                        maxIntakeMl: _kMaxTotalWaterIntakeMl,
+                        intakeUpdates: WaterIntakeUpdate.generateMockIntakes(
+                            _kMockIntakesLength))),
                 const SizedBox(width: _kSpacing),
                 Expanded(
                     child: Column(

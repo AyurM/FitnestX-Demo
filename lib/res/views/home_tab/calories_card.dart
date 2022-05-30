@@ -10,6 +10,7 @@ const _titleText = 'Calories';
 const _kCalText = 'kCal';
 const _kCaloriesIndicatorWidth = 8.0;
 const _kCaloriesIndicatorSpacing = 3.0;
+const _kPadding = EdgeInsets.fromLTRB(20, 20, 20, 10);
 
 class CaloriesCard extends StatelessWidget {
   final int consumedCalories;
@@ -22,20 +23,19 @@ class CaloriesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppCard(
+        padding: _kPadding,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      const CardTitle(text: _titleText),
-      const SizedBox(height: 5),
-      Text('$consumedCalories $_kCalText',
-          style: Theme.of(context)
-              .textTheme
-              .bodyText2
-              ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blue2)),
-      const SizedBox(height: 8),
-      Expanded(
-          child: _CaloriesGraph(
-              consumedCalories: consumedCalories,
-              targetCalories: targetCalories))
-    ]));
+          const CardTitle(text: _titleText),
+          const SizedBox(height: 5),
+          Text('$consumedCalories $_kCalText',
+              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                  fontWeight: FontWeight.w600, color: AppColors.blue2)),
+          const SizedBox(height: 8),
+          Expanded(
+              child: _CaloriesGraph(
+                  consumedCalories: consumedCalories,
+                  targetCalories: targetCalories))
+        ]));
   }
 }
 
@@ -61,7 +61,7 @@ class _CaloriesGraph extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .subtitle1
-                ?.copyWith(color: AppColors.white, fontSize: 10),
+                ?.copyWith(color: AppColors.white, fontSize: 9),
           )
         ],
       );

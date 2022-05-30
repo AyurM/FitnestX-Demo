@@ -17,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         assetPath: 'assets/images/onboarding1.png',
         title: 'Track Your Goal',
         subtitle:
-            "Don't worry if you have trouble determining your goals, We can help you determine your goals and track your goals"),
+            "Don't worry if you have trouble determining your goals, we can help you determine your goals and track your goals"),
     const OnboardingPageContent(
         assetPath: 'assets/images/onboarding2.png',
         title: 'Get Burn',
@@ -27,7 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         assetPath: 'assets/images/onboarding3.png',
         title: 'Eat Well',
         subtitle:
-            "Let's start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun"),
+            "Let's start a healthy lifestyle with us, we can determine your diet every day. Healthy eating is fun"),
     const OnboardingPageContent(
         assetPath: 'assets/images/onboarding4.png',
         title: 'Improve Sleep Quality',
