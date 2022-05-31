@@ -1,11 +1,12 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
+import 'package:fitnest_x/screens/notification_screen/notification_screen.dart';
 import 'package:flutter/material.dart';
 
 const _kButtonSize = 40.0;
 const _kBorderRadius = 8.0;
 const _kNotificationDotSize = 6.0;
-const _welcomeText = 'Welcome Back,';
+const _welcomeText = 'Welcome back,';
 
 class HomeTabHeader extends StatelessWidget {
   final String username;
@@ -34,7 +35,10 @@ class HomeTabHeader extends StatelessWidget {
           ],
         ),
         _NotificationButton(
-          onPressed: () {},
+          onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const NotificationScreen())),
           hasNotifications: hasNotifications,
         )
       ],
@@ -64,21 +68,21 @@ class _NotificationButton extends StatelessWidget {
               child: Stack(
             children: [
               const Icon(AppIcons.notification_outlined),
-              if (hasNotifications)
-                Positioned(
-                  right: 4,
-                  child: Container(
-                    width: _kNotificationDotSize,
-                    height: _kNotificationDotSize,
-                    decoration: BoxDecoration(
-                        color: AppColors.red,
-                        borderRadius:
-                            BorderRadius.circular(_kNotificationDotSize / 2),
-                        border: Border.all(color: AppColors.borderColor)),
-                  ),
-                )
+              if (hasNotifications) _buildIndicator()
             ],
           )),
+        ),
+      );
+
+  Widget _buildIndicator() => Positioned(
+        right: 4,
+        child: Container(
+          width: _kNotificationDotSize,
+          height: _kNotificationDotSize,
+          decoration: BoxDecoration(
+              color: AppColors.red,
+              borderRadius: BorderRadius.circular(_kNotificationDotSize / 2),
+              border: Border.all(color: AppColors.borderColor)),
         ),
       );
 }

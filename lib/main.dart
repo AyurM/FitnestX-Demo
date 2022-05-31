@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: kAppName,
       theme: ThemeData.light().copyWith(
-          textTheme: appTextTheme, scaffoldBackgroundColor: AppColors.white),
+        textTheme: appTextTheme,
+        scaffoldBackgroundColor: AppColors.white,
+      ),
       home: const WelcomeScreen(),
     );
   }

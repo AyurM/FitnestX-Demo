@@ -1,16 +1,14 @@
-import 'package:fitnest_x/data/model/water_intake_update.dart';
 import 'package:fitnest_x/res/views/home_tab/calories_card.dart';
 import 'package:fitnest_x/res/views/home_tab/heart_rate_card.dart';
 import 'package:fitnest_x/res/views/home_tab/sleep_card.dart';
 import 'package:fitnest_x/res/views/home_tab/water_intake.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
+import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Activity Status';
 const _kSpacing = 15.0;
 const _kSleepDuration = Duration(hours: 8, minutes: 20);
-const _kTargetCalories = 990;
-const _kConsumedCalories = 760;
 const _kMaxTotalWaterIntakeMl = 3000;
 const _kMockIntakesLength = 5;
 
@@ -34,18 +32,20 @@ class ActivityBlock extends StatelessWidget {
                 Expanded(
                     child: WaterIntakeCard(
                         maxIntakeMl: _kMaxTotalWaterIntakeMl,
-                        intakeUpdates: WaterIntakeUpdate.generateMockIntakes(
-                            _kMockIntakesLength))),
+                        intakeUpdates:
+                            DataMockUtils.getMockIntakes(_kMockIntakesLength))),
                 const SizedBox(width: _kSpacing),
                 Expanded(
                     child: Column(
-                  children: const [
-                    Expanded(child: SleepCard(duration: _kSleepDuration)),
-                    SizedBox(height: _kSpacing),
+                  children: [
+                    const Expanded(child: SleepCard(duration: _kSleepDuration)),
+                    const SizedBox(height: _kSpacing),
                     Expanded(
                         child: CaloriesCard(
-                            consumedCalories: _kConsumedCalories,
-                            targetCalories: _kTargetCalories)),
+                            consumedCalories:
+                                DataMockUtils.getMockConsumedCalories(),
+                            targetCalories:
+                                DataMockUtils.getMockTotalCalories())),
                   ],
                 ))
               ],
