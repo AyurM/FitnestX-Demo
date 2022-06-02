@@ -11,23 +11,27 @@ class FitnestAppBar extends AppBar {
   final IconData? leadingIcon;
   final void Function()? onMorePressed;
   final BuildContext context;
+  final Color? bgColor;
 
   FitnestAppBar(
       {Key? key,
       required this.text,
       required this.context,
       this.leadingIcon,
+      this.bgColor,
       this.onMorePressed})
       : super(
             key: key,
-            leading: _AppBarButton(
+            leading: AppBarButton(
               iconData: leadingIcon ?? Icons.chevron_left_outlined,
               onPressed: () => Navigator.of(context).pop(),
+              hasHorizontalPadding: true,
             ),
             actions: [
-              _AppBarButton(
+              AppBarButton(
                 iconData: AppIcons.more,
                 onPressed: onMorePressed ?? () {},
+                hasHorizontalPadding: true,
               )
             ],
             title: Text(text));
@@ -36,7 +40,7 @@ class FitnestAppBar extends AppBar {
   bool? get centerTitle => true;
 
   @override
-  Color? get backgroundColor => AppColors.white;
+  Color? get backgroundColor => bgColor ?? AppColors.white;
 
   @override
   double? get elevation => 0;
@@ -50,16 +54,21 @@ class FitnestAppBar extends AppBar {
       Theme.of(context).textTheme.headline4?.copyWith(fontSize: 16);
 }
 
-class _AppBarButton extends StatelessWidget {
+class AppBarButton extends StatelessWidget {
   final IconData iconData;
   final void Function()? onPressed;
-  const _AppBarButton({Key? key, required this.iconData, this.onPressed})
+  final bool hasHorizontalPadding;
+  const AppBarButton(
+      {Key? key,
+      required this.iconData,
+      this.onPressed,
+      this.hasHorizontalPadding = false})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) => Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: kHorizontalPadding.left,
+            horizontal: hasHorizontalPadding ? kHorizontalPadding.left : 0,
             vertical: (kToolbarHeight - _kAppBarButtonSize) / 2),
         child: Ink(
           width: _kAppBarButtonSize,

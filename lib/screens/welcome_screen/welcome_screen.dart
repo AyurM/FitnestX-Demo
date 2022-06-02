@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
 import 'package:fitnest_x/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 const _subtitleText = 'Everybody Can Train';
 const _getStartedText = 'Get Started';
@@ -13,6 +14,11 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
+
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ));
 
     return Scaffold(
       body: SizedBox.expand(

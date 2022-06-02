@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/views/home_tab/activity_block.dart';
 import 'package:fitnest_x/res/views/home_tab/bmi_card.dart';
 import 'package:fitnest_x/res/views/home_tab/home_tab_header.dart';
 import 'package:fitnest_x/res/views/home_tab/today_target_card.dart';
+import 'package:fitnest_x/screens/workout_tracker/workout_screen.dart';
 import 'package:flutter/material.dart';
 
 const _usernameText = 'Stefani Wong';
@@ -26,7 +27,11 @@ class HomeTab extends StatelessWidget {
             const SizedBox(height: 30),
             BmiCard(value: _bmiValue, onViewMorePressed: () {}),
             const SizedBox(height: 30),
-            TodayTargetCard(onPressed: () {}),
+            TodayTargetCard(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WorkoutScreen()))),
             const SizedBox(height: 30),
             const ActivityBlock(),
             const SizedBox(height: 30),

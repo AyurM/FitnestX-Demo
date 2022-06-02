@@ -1,6 +1,6 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
-import 'package:fitnest_x/res/views/app_scaffold.dart';
+import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/notification/notification_list_item.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final notifications = DataMockUtils.getMockNotifications();
 
-    return AppScaffold(
+    return SimpleAppScaffold(
         title: _titleText,
         body: ListView.separated(
             padding: kHorizontalPadding,

@@ -1,12 +1,12 @@
 import 'package:fitnest_x/res/views/fitnest_app_bar.dart';
 import 'package:flutter/material.dart';
 
-class AppScaffold extends StatelessWidget {
+class SimpleAppScaffold extends StatelessWidget {
   final String title;
   final Widget body;
   final void Function()? onMorePressed;
 
-  const AppScaffold(
+  const SimpleAppScaffold(
       {Key? key, required this.title, required this.body, this.onMorePressed})
       : super(key: key);
 

@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/views/onboarding/onboarding_button.dart';
 import 'package:fitnest_x/res/views/onboarding/onboarding_page.dart';
 import 'package:fitnest_x/screens/goal_screen/goal_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -54,6 +55,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ));
+
     return Scaffold(
       body: SizedBox.expand(
         child: Stack(children: [
