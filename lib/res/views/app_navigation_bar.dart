@@ -6,20 +6,14 @@ import 'package:fitnest_x/res/theme/constants.dart';
 
 const _kNavIconSize = 28.0;
 const _kNavButtonSize = 48.0;
-const _kFabIconSize = 20.0;
 const _kSelectedIconDotSize = 4.0;
-const _kFabTopOffset = 15.0;
 
 class AppNavigationBar extends StatelessWidget {
   final void Function(int) onSelect;
-  final void Function() onFabPressed;
   final int currentIndex;
 
   const AppNavigationBar(
-      {Key? key,
-      required this.currentIndex,
-      required this.onSelect,
-      required this.onFabPressed})
+      {Key? key, required this.currentIndex, required this.onSelect})
       : super(key: key);
 
   @override
@@ -39,32 +33,17 @@ class AppNavigationBar extends StatelessWidget {
           inactiveIcon: AppIcons.profile_outlined),
     ];
 
-    return SizedBox(
-      height: kBottomNavBarHeight + _kFabTopOffset,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        clipBehavior: Clip.none,
-        children: [
-          Container(
-            padding: kHorizontalPadding,
-            width: double.infinity,
-            height: kBottomNavBarHeight,
-            decoration: const BoxDecoration(color: AppColors.white, boxShadow: [
-              BoxShadow(
-                  color: AppColors.cardShadow,
-                  offset: Offset(0, -10),
-                  blurRadius: 40)
-            ]),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: _buildNavButtons(navIcons)),
-          ),
-          Positioned(
-            top: 0,
-            child: _AppFab(onPressed: onFabPressed),
-          )
-        ],
-      ),
+    return Container(
+      padding: kHorizontalPadding,
+      width: double.infinity,
+      height: kBottomNavBarHeight,
+      decoration: const BoxDecoration(color: AppColors.white, boxShadow: [
+        BoxShadow(
+            color: AppColors.cardShadow, offset: Offset(0, -10), blurRadius: 40)
+      ]),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: _buildNavButtons(navIcons)),
     );
   }
 
@@ -81,36 +60,6 @@ class AppNavigationBar extends StatelessWidget {
     }
     return result;
   }
-}
-
-class _AppFab extends StatelessWidget {
-  final void Function() onPressed;
-
-  const _AppFab({Key? key, required this.onPressed}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          minimumSize: const Size.square(kPrimaryButtonHeight),
-          padding: EdgeInsets.zero,
-          shadowColor: AppColors.blueShadow,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(kPrimaryButtonHeight / 2))),
-      onPressed: onPressed,
-      child: Ink(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kPrimaryButtonHeight / 2),
-            gradient: AppColors.blueGradient),
-        child: const SizedBox.square(
-          dimension: kPrimaryButtonHeight,
-          child: Center(
-              child: Icon(
-            AppIcons.search_outlined,
-            size: _kFabIconSize,
-            color: Colors.white,
-          )),
-        ),
-      ));
 }
 
 class _NavData {
