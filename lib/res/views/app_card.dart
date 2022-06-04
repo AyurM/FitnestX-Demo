@@ -7,8 +7,10 @@ const _kDefaultPadding = EdgeInsets.all(20);
 class AppCard extends StatelessWidget {
   final Widget? child;
   final EdgeInsets? padding;
+  final double? borderRadius;
 
-  const AppCard({Key? key, this.child, this.padding}) : super(key: key);
+  const AppCard({Key? key, this.child, this.padding, this.borderRadius})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) => Container(
@@ -16,7 +18,8 @@ class AppCard extends StatelessWidget {
         padding: padding ?? _kDefaultPadding,
         decoration: BoxDecoration(
             color: AppColors.white,
-            borderRadius: BorderRadius.circular(kBorderRadiusLarge),
+            borderRadius:
+                BorderRadius.circular(borderRadius ?? kBorderRadiusLarge),
             boxShadow: const [
               BoxShadow(
                   color: AppColors.cardShadow,

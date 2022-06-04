@@ -1,10 +1,9 @@
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/views/app_simple_image.dart';
 import 'package:flutter/material.dart';
 
 const _kImageHeight = 40.0;
-const _kImageBgOpacity = 0.2;
-const _kAssetImageScale = 0.7;
 const _kPadding = EdgeInsets.symmetric(vertical: 16);
 
 class NotificationListItem extends StatelessWidget {
@@ -26,7 +25,8 @@ class NotificationListItem extends StatelessWidget {
         fillColor: AppColors.white,
         child: Row(
           children: [
-            _NotificationImage(assetPath: data.assetPath, color: color),
+            AppSimpleImage(
+                assetPath: data.assetPath, color: color, size: _kImageHeight),
             const SizedBox(width: 10),
             Expanded(
                 child: Column(
@@ -51,31 +51,4 @@ class NotificationListItem extends StatelessWidget {
           ],
         ));
   }
-}
-
-class _NotificationImage extends StatelessWidget {
-  final String assetPath;
-  final Color color;
-
-  const _NotificationImage(
-      {Key? key, required this.assetPath, required this.color})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            width: _kImageHeight,
-            height: _kImageHeight,
-            decoration: BoxDecoration(
-                color: color.withOpacity(_kImageBgOpacity),
-                shape: BoxShape.circle),
-          ),
-          Image.asset(assetPath,
-              width: _kImageHeight * _kAssetImageScale,
-              height: _kImageHeight * _kAssetImageScale,
-              fit: BoxFit.contain)
-        ],
-      );
 }

@@ -5,20 +5,28 @@ import 'package:flutter/material.dart';
 
 const _kButtonHeight = 30.0;
 const _kBgOpacity = 0.2;
-const _titleText = 'Today Target';
-const _buttonText = 'Check';
 const _kCardPadding = EdgeInsets.symmetric(horizontal: 20, vertical: 15);
 
-class TodayTargetCard extends StatelessWidget {
+class DailyActionCard extends StatelessWidget {
+  final String title;
+  final String buttonText;
   final void Function()? onPressed;
+  final EdgeInsets? margin;
 
-  const TodayTargetCard({Key? key, this.onPressed}) : super(key: key);
+  const DailyActionCard(
+      {Key? key,
+      required this.title,
+      this.buttonText = 'Check',
+      this.onPressed,
+      this.margin})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return Container(
+      margin: margin ?? EdgeInsets.zero,
       padding: _kCardPadding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kBorderRadiusMedium),
@@ -27,11 +35,11 @@ class TodayTargetCard extends StatelessWidget {
             AppColors.blue.withOpacity(_kBgOpacity)
           ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Text(_titleText,
+        Text(title,
             style: textTheme.bodyText2?.copyWith(
                 fontWeight: FontWeight.w600, color: AppColors.black)),
         SecondaryButton.blue(
-          text: _buttonText,
+          text: buttonText,
           onPressed: onPressed,
           height: _kButtonHeight,
           textStyle: textTheme.subtitle1?.copyWith(color: AppColors.white),

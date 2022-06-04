@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/notification_content.dart';
+import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 
@@ -76,6 +77,27 @@ class DataMockUtils {
           message: 'Oops, You have missed your Lowerbody Workout',
           date: '3 April',
           assetPath: 'assets/images/notification_1.png',
+          color: AppColors.purple2),
+    ];
+  }
+
+  static List<UpcomingWorkoutContent> getMockUpcomingWorkouts() {
+    final now = DateTime.now();
+
+    return [
+      UpcomingWorkoutContent(
+          id: 1,
+          title: 'Fullbody Workout',
+          date: DateTime(now.year, now.month, now.day, 15),
+          assetPath: 'assets/images/notification_6.png',
+          sendNotification: true,
+          color: AppColors.blue2),
+      UpcomingWorkoutContent(
+          id: 2,
+          title: 'Upperbody Workout',
+          date: now.subtract(const Duration(days: 3)),
+          assetPath: 'assets/images/notification_5.png',
+          sendNotification: false,
           color: AppColors.purple2),
     ];
   }

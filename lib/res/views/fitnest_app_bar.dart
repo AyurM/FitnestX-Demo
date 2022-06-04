@@ -12,6 +12,7 @@ class FitnestAppBar extends AppBar {
   final void Function()? onMorePressed;
   final BuildContext context;
   final Color? bgColor;
+  final Color? textColor;
 
   FitnestAppBar(
       {Key? key,
@@ -19,6 +20,7 @@ class FitnestAppBar extends AppBar {
       required this.context,
       this.leadingIcon,
       this.bgColor,
+      this.textColor,
       this.onMorePressed})
       : super(
             key: key,
@@ -50,8 +52,10 @@ class FitnestAppBar extends AppBar {
       _kAppBarButtonSize + kHorizontalPadding.left + kHorizontalPadding.right;
 
   @override
-  TextStyle? get titleTextStyle =>
-      Theme.of(context).textTheme.headline4?.copyWith(fontSize: 16);
+  TextStyle? get titleTextStyle => Theme.of(context)
+      .textTheme
+      .headline4
+      ?.copyWith(fontSize: 16, color: textColor);
 }
 
 class AppBarButton extends StatelessWidget {
