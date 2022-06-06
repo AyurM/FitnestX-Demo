@@ -14,7 +14,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final titleWidget = Text(text,
-        style: textTheme.bodyText1?.copyWith(fontWeight: FontWeight.w600));
+        style: textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold));
 
     if (actionText == null) {
       return titleWidget;

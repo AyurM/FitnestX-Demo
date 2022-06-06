@@ -7,12 +7,14 @@ class AppSimpleImage extends StatelessWidget {
   final String assetPath;
   final Color color;
   final double size;
+  final double? bgOpacity;
 
   const AppSimpleImage(
       {Key? key,
       required this.assetPath,
       required this.size,
-      required this.color})
+      required this.color,
+      this.bgOpacity})
       : super(key: key);
 
   @override
@@ -24,7 +26,7 @@ class AppSimpleImage extends StatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-              color: color.withOpacity(_kImageBgOpacity),
+              color: color.withOpacity(bgOpacity ?? _kImageBgOpacity),
               shape: BoxShape.circle),
         ),
         Image.asset(assetPath,

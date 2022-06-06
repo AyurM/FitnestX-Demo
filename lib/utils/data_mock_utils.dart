@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
+import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 
 const _kMinWaterIntakePerUpdate = 10;
@@ -99,6 +100,29 @@ class DataMockUtils {
           assetPath: 'assets/images/notification_5.png',
           sendNotification: false,
           color: AppColors.purple2),
+    ];
+  }
+
+  static List<WorkoutTypeContent> getMockWorkoutTypes() {
+    return const [
+      WorkoutTypeContent(
+        title: 'Fullbody Workout',
+        exercises: 11,
+        duration: Duration(minutes: 32),
+        imagePath: 'assets/images/fullbody_workout_type.png',
+      ),
+      WorkoutTypeContent(
+        title: 'Lowerbody Workout',
+        exercises: 12,
+        duration: Duration(minutes: 40),
+        imagePath: 'assets/images/lowerbody_workout_type.png',
+      ),
+      WorkoutTypeContent(
+        title: 'AB Workout',
+        exercises: 14,
+        duration: Duration(minutes: 20),
+        imagePath: 'assets/images/ab_workout_type.png',
+      ),
     ];
   }
 }

@@ -6,9 +6,21 @@ class SecondaryButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
   final Gradient? gradient;
+  final Color? color;
   final double? height;
   final TextStyle? textStyle;
   final EdgeInsets? margin;
+
+  const SecondaryButton.withColor(
+      {Key? key,
+      required this.text,
+      this.onPressed,
+      this.height,
+      this.textStyle,
+      this.color = AppColors.white,
+      this.margin})
+      : gradient = null,
+        super(key: key);
 
   const SecondaryButton.purple(
       {Key? key,
@@ -18,6 +30,7 @@ class SecondaryButton extends StatelessWidget {
       this.textStyle,
       this.margin})
       : gradient = AppColors.purpleGradient,
+        color = null,
         super(key: key);
 
   const SecondaryButton.blue(
@@ -28,6 +41,7 @@ class SecondaryButton extends StatelessWidget {
       this.textStyle,
       this.margin})
       : gradient = AppColors.blueGradient,
+        color = null,
         super(key: key);
 
   @override
@@ -62,9 +76,7 @@ class SecondaryButton extends StatelessWidget {
   Widget _buildDecoration(double height) => Positioned.fill(
         child: Container(
           height: height,
-          decoration: BoxDecoration(
-            gradient: gradient,
-          ),
+          decoration: BoxDecoration(gradient: gradient, color: color),
         ),
       );
 }

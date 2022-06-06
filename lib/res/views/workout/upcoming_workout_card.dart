@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 const _kImageSize = 50.0;
 const _kSpacing = 10.0;
+const _kImageBgOpacity = 0.3;
 const _kCardPadding = EdgeInsets.all(15);
 
 class UpcomingWorkoutCard extends StatelessWidget {
@@ -28,7 +29,10 @@ class UpcomingWorkoutCard extends StatelessWidget {
       padding: _kCardPadding,
       child: Row(children: [
         AppSimpleImage(
-            assetPath: data.assetPath, size: _kImageSize, color: color),
+            assetPath: data.assetPath,
+            size: _kImageSize,
+            color: color,
+            bgOpacity: _kImageBgOpacity),
         const SizedBox(width: _kSpacing),
         Expanded(
             child: Column(

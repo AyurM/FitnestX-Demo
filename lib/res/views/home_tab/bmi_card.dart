@@ -31,7 +31,13 @@ class BmiCard extends StatelessWidget {
       height: _kCardHeight,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kBorderRadiusLarge),
-          gradient: AppColors.blueGradient),
+          gradient: AppColors.blueGradient,
+          boxShadow: [
+            BoxShadow(
+                color: AppColors.blueShadow.withOpacity(0.3),
+                offset: const Offset(0, 10),
+                blurRadius: 22)
+          ]),
       child: Stack(children: [
         const _BmiDotsBackground(
           dotColor: AppColors.white,

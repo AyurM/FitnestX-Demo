@@ -1,7 +1,7 @@
-import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/daily_action_card.dart';
 import 'package:fitnest_x/res/views/fitnest_sliver_app_bar.dart';
 import 'package:fitnest_x/res/views/workout/upcoming_workout_block.dart';
+import 'package:fitnest_x/res/views/workout/workout_types_block.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Workout Tracker';
@@ -57,29 +57,9 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
         )),
         SliverToBoxAdapter(
             child: Container(
-                height: 200,
-                margin: const EdgeInsets.all(20),
-                color: AppColors.blue2)),
-        SliverToBoxAdapter(
-            child: Container(
-                height: 100,
-                margin: const EdgeInsets.all(20),
-                color: AppColors.purple2)),
-        SliverToBoxAdapter(
-            child: Container(
-                height: 300,
-                margin: const EdgeInsets.all(20),
-                color: AppColors.blue)),
-        SliverToBoxAdapter(
-            child: Container(
-                height: 150,
-                margin: const EdgeInsets.all(20),
-                color: AppColors.purple)),
-        SliverToBoxAdapter(
-            child: Container(
-                height: 250,
-                margin: const EdgeInsets.all(20),
-                color: AppColors.blue3))
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: const WorkoutTypesBlock(),
+        )),
       ]),
     );
   }
