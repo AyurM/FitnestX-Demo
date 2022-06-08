@@ -52,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => const OnboardingScreen())),
-                margin: kHorizontalPadding,
+                margin: kHorizontalPadding20,
               ))
         ]),
       ),

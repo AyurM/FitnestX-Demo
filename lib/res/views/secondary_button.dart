@@ -10,6 +10,7 @@ class SecondaryButton extends StatelessWidget {
   final double? height;
   final TextStyle? textStyle;
   final EdgeInsets? margin;
+  final EdgeInsets? padding;
 
   const SecondaryButton.withColor(
       {Key? key,
@@ -18,6 +19,7 @@ class SecondaryButton extends StatelessWidget {
       this.height,
       this.textStyle,
       this.color = AppColors.white,
+      this.padding,
       this.margin})
       : gradient = null,
         super(key: key);
@@ -28,6 +30,7 @@ class SecondaryButton extends StatelessWidget {
       this.onPressed,
       this.height,
       this.textStyle,
+      this.padding,
       this.margin})
       : gradient = AppColors.purpleGradient,
         color = null,
@@ -39,6 +42,7 @@ class SecondaryButton extends StatelessWidget {
       this.onPressed,
       this.height,
       this.textStyle,
+      this.padding,
       this.margin})
       : gradient = AppColors.blueGradient,
         color = null,
@@ -58,7 +62,7 @@ class SecondaryButton extends StatelessWidget {
             _buildDecoration(buttonHeight),
             TextButton(
               style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: padding ?? kHorizontalPadding20,
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 minimumSize: Size(0, buttonHeight),
                 primary: buttonTextStyle?.color ?? AppColors.white,

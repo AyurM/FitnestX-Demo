@@ -34,12 +34,14 @@ class AppNavigationBar extends StatelessWidget {
     ];
 
     return Container(
-      padding: kHorizontalPadding,
+      padding: kHorizontalPadding20,
       width: double.infinity,
       height: kBottomNavBarHeight,
       decoration: const BoxDecoration(color: AppColors.white, boxShadow: [
         BoxShadow(
-            color: AppColors.cardShadow, offset: Offset(0, -10), blurRadius: 40)
+            color: AppColors.cardShadowColor,
+            offset: Offset(0, -10),
+            blurRadius: 40)
       ]),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

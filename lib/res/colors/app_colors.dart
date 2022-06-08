@@ -18,7 +18,7 @@ class AppColors {
   static const borderColor = Color(0xFFF7F8F8);
   static const blueShadow = Color(0xFF95ADFE);
   static const purpleShadow = Color(0x4DC58BF2);
-  static const cardShadow = Color(0x121D1617);
+  static const cardShadowColor = Color(0x121D1617);
 
   static const blueGradient = LinearGradient(
       colors: [blue2, blue],
@@ -29,4 +29,7 @@ class AppColors {
       colors: [purple2, purple],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight);
+
+  static const cardShadow =
+      BoxShadow(color: cardShadowColor, offset: Offset(0, 10), blurRadius: 40);
 }

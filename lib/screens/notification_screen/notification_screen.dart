@@ -17,7 +17,7 @@ class NotificationScreen extends StatelessWidget {
     return SimpleAppScaffold(
         title: _titleText,
         body: ListView.separated(
-            padding: kHorizontalPadding,
+            padding: kHorizontalPadding20,
             itemBuilder: (_, index) =>
                 NotificationListItem(data: notifications[index]),
             separatorBuilder: (_, __) => const Divider(

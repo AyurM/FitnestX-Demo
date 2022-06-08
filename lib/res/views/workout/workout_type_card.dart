@@ -1,9 +1,9 @@
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/secondary_button.dart';
 import 'package:flutter/material.dart';
 
-const _kCardPadding = EdgeInsets.all(20);
 const _kBgOpacity = 0.2;
 const _kImageEllipseSize = 92.0;
 const _kImageEllipseOpacity = 0.5;
@@ -29,7 +29,7 @@ class WorkoutTypeCard extends StatelessWidget {
       child: Row(children: [
         Expanded(
           child: Padding(
-            padding: _kCardPadding,
+            padding: kAllPadding20,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

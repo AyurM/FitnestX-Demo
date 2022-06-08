@@ -10,6 +10,7 @@ class FitnestAppBar extends AppBar {
   final String text;
   final IconData? leadingIcon;
   final void Function()? onMorePressed;
+  final void Function()? onBackPressed;
   final BuildContext context;
   final Color? bgColor;
   final Color? textColor;
@@ -21,12 +22,13 @@ class FitnestAppBar extends AppBar {
       this.leadingIcon,
       this.bgColor,
       this.textColor,
+      this.onBackPressed,
       this.onMorePressed})
       : super(
             key: key,
             leading: AppBarButton(
               iconData: leadingIcon ?? Icons.chevron_left_outlined,
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: onBackPressed ?? () => Navigator.of(context).pop(),
               hasHorizontalPadding: true,
             ),
             actions: [
@@ -49,7 +51,9 @@ class FitnestAppBar extends AppBar {
 
   @override
   double? get leadingWidth =>
-      _kAppBarButtonSize + kHorizontalPadding.left + kHorizontalPadding.right;
+      _kAppBarButtonSize +
+      kHorizontalPadding20.left +
+      kHorizontalPadding20.right;
 
   @override
   TextStyle? get titleTextStyle => Theme.of(context)
@@ -72,7 +76,7 @@ class AppBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: hasHorizontalPadding ? kHorizontalPadding.left : 0,
+            horizontal: hasHorizontalPadding ? kHorizontalPadding20.left : 0,
             vertical: (kToolbarHeight - _kAppBarButtonSize) / 2),
         child: Ink(
           width: _kAppBarButtonSize,

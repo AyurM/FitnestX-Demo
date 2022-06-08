@@ -7,7 +7,6 @@ import 'package:fitnest_x/res/views/secondary_button.dart';
 import 'package:flutter/material.dart';
 
 const _kCardHeight = 146.0;
-const _kPadding = EdgeInsets.all(20);
 const _kLargeDotRadius = 25.0;
 const _kSmallDotRadius = 4.0;
 const _kBmiCircleRadiusFactor = 0.83;
@@ -43,7 +42,7 @@ class BmiCard extends StatelessWidget {
           dotColor: AppColors.white,
         ),
         Padding(
-          padding: _kPadding,
+          padding: kAllPadding20,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -74,7 +73,7 @@ class BmiCard extends StatelessWidget {
                 ],
               ),
               SizedBox.square(
-                dimension: _kCardHeight - _kPadding.top * 2,
+                dimension: _kCardHeight - kAllPadding20.top * 2,
                 child: _BmiPie(value: value),
               )
             ],
@@ -171,12 +170,7 @@ class _BmiPie extends StatelessWidget {
         decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(radius / 2),
-            boxShadow: const [
-              BoxShadow(
-                  color: AppColors.cardShadow,
-                  offset: Offset(0, 10),
-                  blurRadius: 40)
-            ]),
+            boxShadow: const [AppColors.cardShadow]),
       );
 
   Widget _buildBmiLabel(double maxWidth, BuildContext context) {

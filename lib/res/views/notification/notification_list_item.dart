@@ -22,6 +22,7 @@ class NotificationListItem extends StatelessWidget {
         onPressed: onPressed ?? () {},
         padding: _kPadding,
         elevation: 0,
+        highlightElevation: 0,
         fillColor: AppColors.white,
         child: Row(
           children: [

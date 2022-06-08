@@ -2,6 +2,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/app_navigation_bar.dart';
 import 'package:fitnest_x/screens/home_tab/home_tab.dart';
+import 'package:fitnest_x/screens/profile_tab/profile_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,17 +42,15 @@ class _HomeScreenState extends State<HomeScreen>
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children: const [
-          HomeTab(),
-          Center(
+        children: [
+          const HomeTab(),
+          const Center(
             child: Text('Activity Tab'),
           ),
-          Center(
+          const Center(
             child: Text('Camera Tab'),
           ),
-          Center(
-            child: Text('Profile Tab'),
-          )
+          ProfileTab(onBackPressed: () => _onTabSelect(0))
         ],
       ),
       bottomNavigationBar: AppNavigationBar(

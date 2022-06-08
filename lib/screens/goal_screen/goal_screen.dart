@@ -88,7 +88,7 @@ class _GoalScreenState extends State<GoalScreen> {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
-            margin: kHorizontalPadding,
+            margin: kHorizontalPadding20,
           ),
           const SizedBox(height: 40),
         ]),

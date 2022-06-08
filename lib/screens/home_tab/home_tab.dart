@@ -17,7 +17,7 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: kHorizontalPadding,
+        padding: kHorizontalPadding20,
         child: Column(
           children: [
             const SizedBox(height: 20),

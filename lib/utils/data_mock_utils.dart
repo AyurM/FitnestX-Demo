@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
+import 'package:fitnest_x/data/model/profile.dart';
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/app_icons.dart';
 
 const _kMinWaterIntakePerUpdate = 10;
 const _kMaxWaterIntakePerUpdate = 70;
@@ -123,6 +126,48 @@ class DataMockUtils {
         duration: Duration(minutes: 20),
         imagePath: 'assets/images/ab_workout_type.png',
       ),
+    ];
+  }
+
+  static Profile getMockUserProfile() => const Profile(
+      id: 1,
+      firstName: 'Stefani',
+      lastName: 'Wong',
+      imagePath: 'assets/images/user.png',
+      program: 'Lose a Fat',
+      height: 180,
+      weight: 65,
+      age: 22);
+
+  static List<MenuItemData> getMockAccountMenuItems() {
+    return const [
+      MenuItemData.simple(
+          title: 'Personal Data', iconData: AppIcons.profile_outlined),
+      MenuItemData.simple(
+          title: 'Achievement', iconData: AppIcons.document_outlined),
+      MenuItemData.simple(
+          title: 'Activity History', iconData: AppIcons.graph_outlined),
+      MenuItemData.simple(
+          title: 'Workout Progress', iconData: AppIcons.chart_outlined),
+    ];
+  }
+
+  static List<MenuItemData> getMockOtherMenuItems() {
+    return const [
+      MenuItemData.simple(
+          title: 'Contact Us', iconData: AppIcons.message_outlined),
+      MenuItemData.simple(
+          title: 'Privacy Policy', iconData: AppIcons.shield_done_outlined),
+      MenuItemData.simple(
+          title: 'Settings', iconData: AppIcons.settings_outlined),
+    ];
+  }
+
+  static List<MenuItemData> getMockNotificationMenuItems() {
+    return const [
+      MenuItemData.toggle(
+          title: 'Pop-up Notifications',
+          iconData: AppIcons.notification_outlined),
     ];
   }
 }
