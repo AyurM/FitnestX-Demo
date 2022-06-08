@@ -44,7 +44,7 @@ class ProfileTab extends StatelessWidget {
                 _ProfileHeader(profile: profile),
                 const SizedBox(height: _kSpacing),
                 _buildUserStats(profile),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 _ProfileSectionCard(
                     title: _accountText, menuItems: accountMenuItems),
                 const SizedBox(height: _kSpacing),

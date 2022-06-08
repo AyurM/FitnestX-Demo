@@ -1,20 +1,22 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
-const _kDefaultPadding = 5.0;
+const _kDefaultPadding = EdgeInsets.all(5.0);
 
 class AppSwitchButton extends StatefulWidget {
   final bool initialValue;
   final void Function(bool)? onChanged;
   final double width;
   final double height;
+  final EdgeInsets? padding;
 
   const AppSwitchButton(
       {Key? key,
       this.initialValue = false,
       this.onChanged,
       this.width = 45,
-      this.height = 25})
+      this.height = 25,
+      this.padding})
       : super(key: key);
 
   @override
@@ -23,6 +25,8 @@ class AppSwitchButton extends StatefulWidget {
 
 class _AppSwitchButtonState extends State<AppSwitchButton> {
   late bool value;
+
+  EdgeInsets get _padding => widget.padding ?? _kDefaultPadding;
 
   @override
   void initState() {
@@ -40,7 +44,7 @@ class _AppSwitchButtonState extends State<AppSwitchButton> {
       child: Container(
         width: widget.width,
         height: widget.height,
-        padding: const EdgeInsets.all(_kDefaultPadding),
+        padding: _padding,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(widget.height / 2),
             color: value ? null : AppColors.gray3,
@@ -51,7 +55,7 @@ class _AppSwitchButtonState extends State<AppSwitchButton> {
   }
 
   Widget _buildSwitch() {
-    final double switchSize = widget.height - _kDefaultPadding * 2;
+    final double switchSize = widget.height - _padding.top * 2;
 
     return AnimatedAlign(
       duration: const Duration(milliseconds: 250),

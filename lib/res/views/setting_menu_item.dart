@@ -4,7 +4,9 @@ import 'package:fitnest_x/res/views/app_switch_button.dart';
 import 'package:flutter/material.dart';
 
 const _kPadding = EdgeInsets.symmetric(vertical: 6);
-const _kIconSize = 22.0;
+const _kSwitchPadding = EdgeInsets.all(3);
+const _kSwitchHeight = 18.0;
+const _kIconSize = 20.0;
 const _kSpacing = 10.0;
 
 class SettingsMenuItem extends StatelessWidget {
@@ -28,7 +30,12 @@ class SettingsMenuToggleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => _SettingsMenuItemWrapper(
       data: data,
-      trailing: AppSwitchButton(initialValue: true, onChanged: onChanged));
+      trailing: AppSwitchButton(
+          initialValue: true,
+          onChanged: onChanged,
+          width: _kSwitchHeight * 2,
+          height: _kSwitchHeight,
+          padding: _kSwitchPadding));
 }
 
 class _SettingsMenuItemWrapper extends StatelessWidget {
@@ -41,8 +48,10 @@ class _SettingsMenuItemWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onPressed =
+        data.type == MenuItemType.simple ? (data.onPressed ?? () {}) : null;
     return RawMaterialButton(
-        onPressed: data.onPressed ?? () {},
+        onPressed: onPressed,
         padding: _kPadding,
         elevation: 0,
         highlightElevation: 0,
