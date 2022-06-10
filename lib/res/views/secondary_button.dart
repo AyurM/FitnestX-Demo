@@ -2,6 +2,8 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
+const _kIconButtonSize = 28.0;
+
 class SecondaryButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
@@ -59,7 +61,7 @@ class SecondaryButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(buttonHeight / 2),
         child: Stack(
           children: [
-            _buildDecoration(buttonHeight),
+            _SecondaryButtonDecoration(gradient: gradient, color: color),
             TextButton(
               style: TextButton.styleFrom(
                 padding: padding ?? kHorizontalPadding20,
@@ -76,11 +78,49 @@ class SecondaryButton extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _buildDecoration(double height) => Positioned.fill(
-        child: Container(
-          height: height,
-          decoration: BoxDecoration(gradient: gradient, color: color),
-        ),
-      );
+class SecondaryIconButton extends StatelessWidget {
+  final Icon icon;
+  final void Function()? onPressed;
+  final double? height;
+  final EdgeInsets? padding;
+
+  const SecondaryIconButton(
+      {Key? key, required this.icon, this.onPressed, this.height, this.padding})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Stack(
+        children: [
+          const _SecondaryButtonDecoration(gradient: AppColors.blueGradient),
+          TextButton(
+            style: TextButton.styleFrom(
+              padding: padding ?? const EdgeInsets.all(5),
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              minimumSize: Size.square(height ?? _kIconButtonSize),
+            ),
+            onPressed: onPressed,
+            child: icon,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SecondaryButtonDecoration extends StatelessWidget {
+  final Gradient? gradient;
+  final Color? color;
+
+  const _SecondaryButtonDecoration({Key? key, this.gradient, this.color})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Positioned.fill(
+      child: DecoratedBox(
+          decoration: BoxDecoration(gradient: gradient, color: color)));
 }

@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/views/daily_action_card.dart';
 import 'package:fitnest_x/res/views/home_tab/activity_block.dart';
 import 'package:fitnest_x/res/views/home_tab/bmi_card.dart';
 import 'package:fitnest_x/res/views/home_tab/home_tab_header.dart';
+import 'package:fitnest_x/screens/activity_tracker/activity_tracker_screen.dart';
 import 'package:fitnest_x/screens/workout_tracker/workout_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,14 +27,19 @@ class HomeTab extends StatelessWidget {
               hasNotifications: true,
             ),
             const SizedBox(height: 30),
-            BmiCard(value: _bmiValue, onViewMorePressed: () {}),
+            BmiCard(
+                value: _bmiValue,
+                onViewMorePressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WorkoutScreen()))),
             const SizedBox(height: 30),
             DailyActionCard(
                 title: _todayTargetText,
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const WorkoutScreen()))),
+                        builder: (context) => const ActivityTrackerScreen()))),
             const SizedBox(height: 30),
             const ActivityBlock(),
             const SizedBox(height: 30),
