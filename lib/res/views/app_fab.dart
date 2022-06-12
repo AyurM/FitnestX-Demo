@@ -4,7 +4,6 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const _kFabIconSize = 20.0;
-const _kFabTopOffset = 10.0;
 
 class AppFab extends StatelessWidget {
   final void Function() onPressed;
@@ -13,7 +12,7 @@ class AppFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Transform.translate(
-        offset: const Offset(0, (kPrimaryButtonHeight / 2 - _kFabTopOffset)),
+        offset: const Offset(0, (kPrimaryButtonHeight / 2 - kFabTopOffset)),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size.square(kPrimaryButtonHeight),

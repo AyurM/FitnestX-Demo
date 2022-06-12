@@ -42,4 +42,10 @@ class AppIcons {
       IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData settings_outlined =
       IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chart_filled =
+      IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData discount_filled =
+      IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData game_filled =
+      IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
