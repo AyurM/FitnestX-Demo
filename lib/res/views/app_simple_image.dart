@@ -7,6 +7,8 @@ class AppSimpleImage extends StatelessWidget {
   final String assetPath;
   final Color color;
   final double size;
+  final double? assetScale;
+  final AlignmentGeometry? assetAlignment;
   final double? bgOpacity;
 
   const AppSimpleImage(
@@ -14,26 +16,26 @@ class AppSimpleImage extends StatelessWidget {
       required this.assetPath,
       required this.size,
       required this.color,
+      this.assetScale,
+      this.assetAlignment,
       this.bgOpacity})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-              color: color.withOpacity(bgOpacity ?? _kImageBgOpacity),
-              shape: BoxShape.circle),
-        ),
-        Image.asset(assetPath,
-            width: size * _kAssetImageScale,
-            height: size * _kAssetImageScale,
-            fit: BoxFit.contain)
-      ],
+    return Container(
+      width: size,
+      height: size,
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+          color: color.withOpacity(bgOpacity ?? _kImageBgOpacity),
+          shape: BoxShape.circle),
+      child: Align(
+          alignment: assetAlignment ?? Alignment.center,
+          child: Image.asset(assetPath,
+              width: size * (assetScale ?? _kAssetImageScale),
+              height: size * (assetScale ?? _kAssetImageScale),
+              fit: BoxFit.contain)),
     );
   }
 }

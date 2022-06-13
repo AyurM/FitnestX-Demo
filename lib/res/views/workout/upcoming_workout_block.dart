@@ -17,9 +17,10 @@ class UpcomingWorkoutBlock extends StatelessWidget {
 
     return Column(
       children: [
-        SectionTitle(
+        SectionTitle.textButton(
           text: _titleText,
           actionText: _actionText,
+          context: context,
           onPressed: () {},
         ),
         const SizedBox(height: _kSpacing),

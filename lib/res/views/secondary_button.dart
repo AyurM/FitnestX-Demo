@@ -61,7 +61,7 @@ class SecondaryButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(buttonHeight / 2),
         child: Stack(
           children: [
-            _SecondaryButtonDecoration(gradient: gradient, color: color),
+            SecondaryButtonDecoration(gradient: gradient, color: color),
             TextButton(
               style: TextButton.styleFrom(
                 padding: padding ?? kHorizontalPadding20,
@@ -96,7 +96,7 @@ class SecondaryIconButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Stack(
         children: [
-          const _SecondaryButtonDecoration(gradient: AppColors.blueGradient),
+          const SecondaryButtonDecoration(gradient: AppColors.blueGradient),
           TextButton(
             style: TextButton.styleFrom(
               padding: padding ?? const EdgeInsets.all(5),
@@ -112,11 +112,11 @@ class SecondaryIconButton extends StatelessWidget {
   }
 }
 
-class _SecondaryButtonDecoration extends StatelessWidget {
+class SecondaryButtonDecoration extends StatelessWidget {
   final Gradient? gradient;
   final Color? color;
 
-  const _SecondaryButtonDecoration({Key? key, this.gradient, this.color})
+  const SecondaryButtonDecoration({Key? key, this.gradient, this.color})
       : super(key: key);
 
   @override

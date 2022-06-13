@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 const _titleText = 'Today Target';
 const _kBgOpacity = 0.2;
-const _kImageSize = 32.0;
+const _kImageSize = 30.0;
 const _kIconSize = 18.0;
 const _kSpacing = 15.0;
 const _kItemCardPadding = EdgeInsets.all(10);
@@ -75,15 +75,20 @@ class _TodayTargetItem extends StatelessWidget {
       child: Row(children: [
         Image.asset(data.imagePath,
             width: _kImageSize, height: _kImageSize, fit: BoxFit.contain),
-        const SizedBox(width: 8),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('${data.value}${data.unit ?? ''}',
-                style: textTheme.bodyText2?.copyWith(
-                    fontWeight: FontWeight.w500, color: AppColors.blue)),
-            Text(data.name, style: textTheme.subtitle1)
-          ],
+        const SizedBox(width: 7),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('${data.value}${data.unit ?? ''}',
+                  style: textTheme.bodyText2?.copyWith(
+                      fontWeight: FontWeight.w500, color: AppColors.blue)),
+              Text(data.name,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: textTheme.subtitle1)
+            ],
+          ),
         )
       ]),
     );

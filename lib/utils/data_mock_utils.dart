@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:fitnest_x/data/model/activity_progress_data.dart';
+import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/profile.dart';
@@ -16,6 +18,9 @@ const _kMockStartHour = 6;
 const _kTargetCalories = 990;
 const _kMinConsumedCalories = 30;
 const _kMaxConsumedCalories = 80;
+const _kMinActivityValue = 300;
+const _kMaxActivityValue = 900;
+const _kTargetActivityValue = 1000;
 
 class DataMockUtils {
   DataMockUtils._();
@@ -183,6 +188,34 @@ class DataMockUtils {
           name: 'Foot Steps',
           value: 2400,
           imagePath: 'assets/images/today_target_2.png'),
+    ];
+  }
+
+  static List<ActivityProgressData> getMockActivityProgressData() {
+    final labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    return labels
+        .map((day) => ActivityProgressData(
+            label: day,
+            targetValue: _kTargetActivityValue,
+            currentValue:
+                _random.nextInt(_kMaxActivityValue - _kMinActivityValue) +
+                    _kMinActivityValue))
+        .toList();
+  }
+
+  static List<LatestActivityContent> getMockLatestActivityContent() {
+    return const [
+      LatestActivityContent(
+          title: 'Drinking 300ml Water',
+          subtitle: 'About 3 minutes ago',
+          assetPath: 'assets/images/user.png',
+          color: AppColors.blue2),
+      LatestActivityContent(
+          title: 'Eat Snack (Fitbar)',
+          subtitle: 'About 10 minutes ago',
+          assetPath: 'assets/images/snack.png',
+          color: AppColors.purple2),
     ];
   }
 }

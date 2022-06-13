@@ -21,7 +21,7 @@ class ActivityBlock extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SectionTitle(text: _titleText),
+          const SectionTitle.noAction(text: _titleText),
           const SizedBox(height: _kSpacing),
           const HeartRateCard(),
           const SizedBox(height: _kSpacing),
