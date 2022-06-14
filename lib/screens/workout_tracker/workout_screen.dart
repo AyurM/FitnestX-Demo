@@ -50,15 +50,15 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
               title: _scheduleText,
               onPressed: () {}),
         ),
-        SliverToBoxAdapter(
-            child: Container(
-          padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-          child: const UpcomingWorkoutBlock(),
+        const SliverToBoxAdapter(
+            child: Padding(
+          padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+          child: UpcomingWorkoutBlock(),
         )),
-        SliverToBoxAdapter(
-            child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: const WorkoutTypesBlock(),
+        const SliverToBoxAdapter(
+            child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: WorkoutTypesBlock(),
         )),
       ]),
     );

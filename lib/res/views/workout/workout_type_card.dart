@@ -13,8 +13,10 @@ const _viewMoreText = 'View more';
 
 class WorkoutTypeCard extends StatelessWidget {
   final WorkoutTypeContent data;
+  final void Function()? onViewMorePressed;
 
-  const WorkoutTypeCard({Key? key, required this.data}) : super(key: key);
+  const WorkoutTypeCard({Key? key, required this.data, this.onViewMorePressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class WorkoutTypeCard extends StatelessWidget {
                 const SizedBox(height: 15),
                 SecondaryButton.withColor(
                   text: _viewMoreText,
-                  onPressed: () {},
+                  onPressed: onViewMorePressed ?? () {},
                   height: _kButtonHeight,
                   textStyle: textTheme.subtitle1?.copyWith(
                       fontSize: 10,

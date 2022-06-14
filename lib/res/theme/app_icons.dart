@@ -48,4 +48,10 @@ class AppIcons {
       IconData(0xe812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData game_filled =
       IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData heart_filled =
+      IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData calendar_outlined =
+      IconData(0xe815, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData swap_outlined =
+      IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

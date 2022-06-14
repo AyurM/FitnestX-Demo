@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 const _latestActivityText = 'Latest Activity';
 const _seeMoreText = 'See more';
-const _kSpacing = 15.0;
+const _kSpacing = 10.0;
 
 class LatestActivityBlock extends StatelessWidget {
   const LatestActivityBlock({Key? key}) : super(key: key);

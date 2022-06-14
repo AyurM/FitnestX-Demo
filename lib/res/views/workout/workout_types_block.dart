@@ -1,6 +1,7 @@
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/res/views/workout/workout_type_card.dart';
+import 'package:fitnest_x/screens/workout_type_screen/workout_type_screen.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -19,16 +20,23 @@ class WorkoutTypesBlock extends StatelessWidget {
       children: [
         const SectionTitle.noAction(text: _titleText),
         const SizedBox(height: _kSpacing),
-        ..._buildContent(content)
+        ..._buildContent(context, content)
       ],
     );
   }
 
-  List<Widget> _buildContent(List<WorkoutTypeContent> content) {
+  List<Widget> _buildContent(
+      BuildContext context, List<WorkoutTypeContent> content) {
     final result = <Widget>[];
 
     for (int i = 0; i < content.length; i++) {
-      result.add(WorkoutTypeCard(data: content[i]));
+      result.add(WorkoutTypeCard(
+          data: content[i],
+          onViewMorePressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      WorkoutTypeScreen(content: content[i])))));
       if (i != content.length - 1) {
         result.add(const SizedBox(height: _kSpacing));
       }

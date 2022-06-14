@@ -8,6 +8,7 @@ import 'package:fitnest_x/data/model/profile.dart';
 import 'package:fitnest_x/data/model/today_target_item_content.dart';
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
+import 'package:fitnest_x/data/model/workout_item_info.dart';
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
@@ -117,18 +118,21 @@ class DataMockUtils {
       WorkoutTypeContent(
         title: 'Fullbody Workout',
         exercises: 11,
+        caloriesBurn: 320,
         duration: Duration(minutes: 32),
         imagePath: 'assets/images/fullbody_workout_type.png',
       ),
       WorkoutTypeContent(
         title: 'Lowerbody Workout',
         exercises: 12,
+        caloriesBurn: 400,
         duration: Duration(minutes: 40),
         imagePath: 'assets/images/lowerbody_workout_type.png',
       ),
       WorkoutTypeContent(
         title: 'AB Workout',
         exercises: 14,
+        caloriesBurn: 300,
         duration: Duration(minutes: 20),
         imagePath: 'assets/images/ab_workout_type.png',
       ),
@@ -216,6 +220,27 @@ class DataMockUtils {
           subtitle: 'About 10 minutes ago',
           assetPath: 'assets/images/snack.png',
           color: AppColors.purple2),
+    ];
+  }
+
+  static List<WorkoutItemInfo> getMockWorkoutItemInfo() {
+    return const [
+      WorkoutItemInfo(
+        name: 'Barbell',
+        assetPath: 'assets/images/item_barbel.png',
+      ),
+      WorkoutItemInfo(
+        name: 'Skipping Rope',
+        assetPath: 'assets/images/item_skipping_rope.png',
+      ),
+      WorkoutItemInfo(
+        name: 'Bottle 1 Liter',
+        assetPath: 'assets/images/item_water_bottle.png',
+      ),
+      WorkoutItemInfo(
+        name: 'Yoga Mat',
+        assetPath: 'assets/images/item_mat.png',
+      ),
     ];
   }
 }
