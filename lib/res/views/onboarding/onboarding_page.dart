@@ -24,7 +24,7 @@ class OnboardingPage extends StatelessWidget {
           padding: kHorizontalPadding20,
           child: Text(content.title, style: textTheme.headline2),
         ),
-        const SizedBox(height: 15),
+        AppWhiteSpace.value15.vertical,
         Padding(
           padding: kHorizontalPadding20,
           child: Text(content.subtitle, style: textTheme.bodyText2),

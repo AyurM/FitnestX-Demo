@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui' as ui;
 
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
@@ -40,20 +41,20 @@ class WaterIntakeCard extends StatelessWidget {
               width: _kWaterIntakeGraphWidth,
               child: _WaterIntakeGraph(
                   intakePercent: (totalIntake / maxIntakeMl).clamp(0.0, 1.0))),
-          const SizedBox(width: 10),
+          AppWhiteSpace.value10.horizontal,
           Expanded(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CardTitle(text: _titleText),
-              const SizedBox(height: 5),
+              AppWhiteSpace.value5.vertical,
               Text('${(totalIntake / 1000).toStringAsFixed(1)} $_kLitersText',
                   style: textTheme.bodyText2?.copyWith(
                       fontWeight: FontWeight.w600, color: AppColors.blue2)),
-              const SizedBox(height: 10),
+              AppWhiteSpace.value10.vertical,
               Text(_subtitleText,
                   style: textTheme.subtitle1?.copyWith(fontSize: 10)),
-              const SizedBox(height: 5),
+              AppWhiteSpace.value5.vertical,
               Expanded(
                   child: _WaterIntakeUpdateList(intakeUpdates: intakeUpdates))
             ],
@@ -142,7 +143,7 @@ class _WaterIntakeUpdateItem extends StatelessWidget {
           SizedBox(
               width: _kWaterUpdateDecorationWidth,
               child: _WaterIntakeUpdateItemDecoration(hasNext: hasNext)),
-          const SizedBox(width: 8),
+          AppWhiteSpace.value8.horizontal,
           Expanded(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

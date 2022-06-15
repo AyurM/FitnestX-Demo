@@ -1,3 +1,4 @@
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_item_card.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
@@ -20,7 +21,7 @@ class WorkoutItemBlock extends StatelessWidget {
             text: _youllNeedText,
             subtitle: '${content.length} Items',
             context: context),
-        const SizedBox(height: _kSpacing),
+        AppWhiteSpace.value15.vertical,
         SizedBox(
           height: MediaQuery.of(context).size.width *
                   WorkoutItemCard.relativeItemWidth +
@@ -29,7 +30,7 @@ class WorkoutItemBlock extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: content.length,
               separatorBuilder: (context, _) =>
-                  const SizedBox(width: _kSpacing),
+                  AppWhiteSpace.value15.horizontal,
               itemBuilder: (context, i) =>
                   WorkoutItemCard(itemInfo: content[i])),
         )

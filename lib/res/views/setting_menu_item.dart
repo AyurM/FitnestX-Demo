@@ -1,5 +1,6 @@
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_switch_button.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,6 @@ const _kPadding = EdgeInsets.symmetric(vertical: 6);
 const _kSwitchPadding = EdgeInsets.all(3);
 const _kSwitchHeight = 18.0;
 const _kIconSize = 20.0;
-const _kSpacing = 10.0;
 
 class SettingsMenuItem extends StatelessWidget {
   final MenuItemData data;
@@ -70,13 +70,13 @@ class _SettingsMenuItemWrapper extends StatelessWidget {
                       size: _kIconSize,
                       color: AppColors.white,
                     ))),
-            const SizedBox(width: _kSpacing),
+            AppWhiteSpace.value10.horizontal,
             Expanded(
                 child: Text(data.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.subtitle1)),
-            const SizedBox(width: _kSpacing),
+            AppWhiteSpace.value10.horizontal,
             trailing
           ],
         ));

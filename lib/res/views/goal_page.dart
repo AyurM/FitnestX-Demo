@@ -27,7 +27,7 @@ class GoalPage extends StatelessWidget {
                   offset: Offset(0, 10),
                   blurRadius: 10)
             ],
-            borderRadius: BorderRadius.circular(kBorderRadiusLarge),
+            borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
             gradient: AppColors.blueGradient),
         child: Column(children: [
           Expanded(
@@ -39,13 +39,13 @@ class GoalPage extends StatelessWidget {
             style: textTheme.bodyText2
                 ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.white),
           ),
-          const SizedBox(height: 3),
+          AppWhiteSpace.value3.vertical,
           Container(
             width: 50,
             height: 1,
             color: AppColors.white,
           ),
-          const SizedBox(height: 20),
+          AppWhiteSpace.value20.vertical,
           Text(
             content.subtitle,
             textAlign: TextAlign.center,

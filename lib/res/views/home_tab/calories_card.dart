@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_card.dart';
 import 'package:fitnest_x/res/views/card_title.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,11 @@ class CaloriesCard extends StatelessWidget {
         padding: _kPadding,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const CardTitle(text: _titleText),
-          const SizedBox(height: 5),
+          AppWhiteSpace.value5.vertical,
           Text('$consumedCalories $_kCalText',
               style: Theme.of(context).textTheme.bodyText2?.copyWith(
                   fontWeight: FontWeight.w600, color: AppColors.blue2)),
-          const SizedBox(height: 8),
+          AppWhiteSpace.value8.vertical,
           Expanded(
               child: _CaloriesGraph(
                   consumedCalories: consumedCalories,

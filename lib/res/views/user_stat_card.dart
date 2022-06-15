@@ -21,14 +21,14 @@ class UserStatCard extends StatelessWidget {
       padding: _kCardPadding,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(kBorderRadiusMedium),
+          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
           boxShadow: const [AppColors.cardShadow]),
       child: Column(
         children: [
           Text('$value${unit ?? ''}',
               style: textTheme.bodyText2?.copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.blue)),
-          const SizedBox(height: 5),
+          AppWhiteSpace.value5.vertical,
           Text(name, style: textTheme.subtitle1),
         ],
       ),

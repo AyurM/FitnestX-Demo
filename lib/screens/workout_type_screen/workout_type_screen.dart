@@ -3,19 +3,19 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/fitnest_sliver_app_bar.dart';
-import 'package:fitnest_x/res/views/workout/workout_types_block.dart';
+import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/res/views/workout_type_screen/exercise_block.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_item_block.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_type_button.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_type_header.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-const _exercisesText = 'Exercises';
 const _scheduleWorkoutText = 'Schedule Workout';
+const _startWorkoutText = 'Start Workout';
 const _difficultyText = 'Difficulty';
 const _kRelativeSliverAppBarHeight = 0.425;
 const _kButtonBgOpacity = 0.2;
-const _kBgImageAssetPath = 'assets/images/fullbody_workout.png';
 
 class WorkoutTypeScreen extends StatefulWidget {
   final WorkoutTypeContent content;
@@ -48,8 +48,9 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
         FitnestSliverAppBar(
           parentScrollController: scrollController,
           title: '',
-          bgImageAssetPath: _kBgImageAssetPath,
-          imageOffset: const Offset(0, 0.2),
+          bgImageAssetPath: widget.content.backgroundImageData.path,
+          imageOffset: widget.content.backgroundImageData.offset,
+          imageMargin: widget.content.backgroundImageData.margin,
           expandedHeight:
               MediaQuery.of(context).size.height * _kRelativeSliverAppBarHeight,
           onMorePressed: () {},
@@ -71,11 +72,18 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
           padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
           child: WorkoutItemBlock(),
         )),
-        SliverToBoxAdapter(
-            child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: const WorkoutTypesBlock(),
+        const SliverToBoxAdapter(
+            child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: ExerciseBlock(),
         )),
+        SliverToBoxAdapter(
+          child: PrimaryButton.blue(
+            text: _startWorkoutText,
+            onPressed: () {},
+            margin: const EdgeInsets.fromLTRB(20, 0, 20, 30),
+          ),
+        )
       ]),
     );
   }

@@ -9,7 +9,6 @@ const _titleText = 'Today Target';
 const _kBgOpacity = 0.2;
 const _kImageSize = 30.0;
 const _kIconSize = 18.0;
-const _kSpacing = 15.0;
 const _kItemCardPadding = EdgeInsets.all(10);
 
 class TodayTargetCard extends StatelessWidget {
@@ -24,11 +23,11 @@ class TodayTargetCard extends StatelessWidget {
       decoration: _buildCardDecoration(),
       child: Column(children: [
         _buildCardHeader(context),
-        const SizedBox(height: _kSpacing),
+        AppWhiteSpace.value15.vertical,
         Row(
           children: [
             Expanded(child: _TodayTargetItem(data: targetItems[0])),
-            const SizedBox(width: _kSpacing),
+            AppWhiteSpace.value15.horizontal,
             Expanded(child: _TodayTargetItem(data: targetItems[1]))
           ],
         )
@@ -37,7 +36,7 @@ class TodayTargetCard extends StatelessWidget {
   }
 
   BoxDecoration _buildCardDecoration() => BoxDecoration(
-      borderRadius: BorderRadius.circular(kBorderRadiusLarge),
+      borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
       gradient: LinearGradient(colors: [
         AppColors.blue2.withOpacity(_kBgOpacity),
         AppColors.blue.withOpacity(_kBgOpacity)
@@ -71,11 +70,11 @@ class _TodayTargetItem extends StatelessWidget {
       padding: _kItemCardPadding,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(kBorderRadiusSmall)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
       child: Row(children: [
         Image.asset(data.imagePath,
             width: _kImageSize, height: _kImageSize, fit: BoxFit.contain),
-        const SizedBox(width: 7),
+        AppWhiteSpace.value8.horizontal,
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

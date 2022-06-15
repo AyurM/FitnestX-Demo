@@ -23,7 +23,7 @@ class SearchPopupMenu extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.white,
           boxShadow: const [AppColors.cardShadow],
-          borderRadius: BorderRadius.circular(kBorderRadiusSmall)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
       child: Center(
         child:
             Column(mainAxisSize: MainAxisSize.min, children: _buildMenuItems()),
@@ -70,7 +70,7 @@ class _SearchPopupMenuItemView extends StatelessWidget {
                       size: _kIconSize,
                       color: AppColors.white,
                     ))),
-            const SizedBox(width: 5),
+            AppWhiteSpace.value5.horizontal,
             Text(item.title,
                 style: Theme.of(context)
                     .textTheme

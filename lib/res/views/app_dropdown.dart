@@ -1,4 +1,5 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/secondary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class AppDropdown extends StatelessWidget {
                         .textTheme
                         .subtitle1
                         ?.copyWith(fontSize: 10, color: AppColors.white)),
-                const SizedBox(width: 5),
+                AppWhiteSpace.value5.horizontal,
                 const Icon(
                   Icons.keyboard_arrow_down_sharp,
                   color: AppColors.white,

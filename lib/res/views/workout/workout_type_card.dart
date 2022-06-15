@@ -38,11 +38,11 @@ class WorkoutTypeCard extends StatelessWidget {
                 Text(data.title,
                     style: textTheme.bodyText2?.copyWith(
                         fontWeight: FontWeight.bold, color: AppColors.black)),
-                const SizedBox(height: 5),
+                AppWhiteSpace.value5.vertical,
                 Text(
                     '${data.exercises} Exercises | ${data.duration.inMinutes}mins',
                     style: textTheme.subtitle1),
-                const SizedBox(height: 15),
+                AppWhiteSpace.value15.vertical,
                 SecondaryButton.withColor(
                   text: _viewMoreText,
                   onPressed: onViewMorePressed ?? () {},
@@ -57,7 +57,7 @@ class WorkoutTypeCard extends StatelessWidget {
           ),
         ),
         _WorkoutTypeImage(assetPath: data.imagePath),
-        const SizedBox(width: 20)
+        AppWhiteSpace.value20.horizontal
       ]),
     );
   }

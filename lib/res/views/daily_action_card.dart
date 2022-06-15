@@ -29,7 +29,7 @@ class DailyActionCard extends StatelessWidget {
       margin: margin ?? EdgeInsets.zero,
       padding: _kCardPadding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kBorderRadiusMedium),
+          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
           gradient: LinearGradient(colors: [
             AppColors.blue2.withOpacity(_kBgOpacity),
             AppColors.blue.withOpacity(_kBgOpacity)

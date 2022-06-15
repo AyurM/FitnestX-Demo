@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 const _kIconSize = 22.0;
 const _kButtonHeight = 50.0;
-const _kSpacing = 10.0;
 const _kPadding = EdgeInsets.all(15);
 
 class WorkoutTypeButton extends StatelessWidget {
@@ -30,7 +29,7 @@ class WorkoutTypeButton extends StatelessWidget {
     return Container(
       height: _kButtonHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kBorderRadiusMedium),
+          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
           gradient: gradient),
       child: RawMaterialButton(
           padding: _kPadding,
@@ -38,17 +37,18 @@ class WorkoutTypeButton extends StatelessWidget {
           elevation: 0,
           highlightElevation: 0,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(kBorderRadiusMedium)),
+              borderRadius:
+                  BorderRadius.circular(AppBorderRadius.medium.value)),
           child: Row(
             children: [
               Icon(iconData, size: _kIconSize, color: AppColors.gray1),
-              const SizedBox(width: _kSpacing),
+              AppWhiteSpace.value10.horizontal,
               Text(title, style: textTheme.subtitle1),
               const Spacer(),
               if (subtitle != null) ...[
                 Text(subtitle!,
                     style: textTheme.subtitle1?.copyWith(fontSize: 10)),
-                const SizedBox(width: _kSpacing),
+                AppWhiteSpace.value10.horizontal,
               ],
               const Icon(Icons.chevron_right_sharp,
                   size: _kIconSize, color: AppColors.gray1),

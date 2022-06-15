@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
+import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
@@ -12,6 +13,8 @@ import 'package:fitnest_x/data/model/workout_item_info.dart';
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:flutter/material.dart';
 
 const _kMinWaterIntakePerUpdate = 10;
 const _kMaxWaterIntakePerUpdate = 70;
@@ -121,6 +124,8 @@ class DataMockUtils {
         caloriesBurn: 320,
         duration: Duration(minutes: 32),
         imagePath: 'assets/images/fullbody_workout_type.png',
+        backgroundImageData: WorkoutTypeBgImageData(
+            path: 'assets/images/fullbody_workout.png', offset: Offset(0, 0.2)),
       ),
       WorkoutTypeContent(
         title: 'Lowerbody Workout',
@@ -128,6 +133,10 @@ class DataMockUtils {
         caloriesBurn: 400,
         duration: Duration(minutes: 40),
         imagePath: 'assets/images/lowerbody_workout_type.png',
+        backgroundImageData: WorkoutTypeBgImageData(
+            path: 'assets/images/lowerbody_workout.png',
+            margin: kHorizontalPadding20,
+            offset: Offset(0, 0.2)),
       ),
       WorkoutTypeContent(
         title: 'AB Workout',
@@ -135,6 +144,10 @@ class DataMockUtils {
         caloriesBurn: 300,
         duration: Duration(minutes: 20),
         imagePath: 'assets/images/ab_workout_type.png',
+        backgroundImageData: WorkoutTypeBgImageData(
+            path: 'assets/images/ab_workout.png',
+            offset: Offset(0, 0.05),
+            margin: EdgeInsets.symmetric(horizontal: 30)),
       ),
     ];
   }
@@ -241,6 +254,65 @@ class DataMockUtils {
         name: 'Yoga Mat',
         assetPath: 'assets/images/item_mat.png',
       ),
+    ];
+  }
+
+  static List<List<ExerciseData>> getMockExerciseData() {
+    return const [
+      [
+        ExerciseData(
+            id: 1,
+            title: 'Warm Up',
+            subtitle: '05:00',
+            assetPath: 'assets/images/exercise_warm_up.png'),
+        ExerciseData(
+            id: 2,
+            title: 'Jumping Jack',
+            subtitle: '12x',
+            assetPath: 'assets/images/exercise_jumping_jack.png'),
+        ExerciseData(
+            id: 3,
+            title: 'Skipping',
+            subtitle: '15x',
+            assetPath: 'assets/images/exercise_skipping.png'),
+        ExerciseData(
+            id: 4,
+            title: 'Squats',
+            subtitle: '20x',
+            assetPath: 'assets/images/exercise_squats.png'),
+        ExerciseData(
+            id: 5,
+            title: 'Arm Raises',
+            subtitle: '00:53',
+            assetPath: 'assets/images/exercise_arm_raises.png'),
+        ExerciseData(
+            id: 6,
+            title: 'Rest and Drink',
+            subtitle: '02:00',
+            assetPath: 'assets/images/exercise_rest.png'),
+      ],
+      [
+        ExerciseData(
+            id: 7,
+            title: 'Incline Push-Ups',
+            subtitle: '12x',
+            assetPath: 'assets/images/exercise_incline.png'),
+        ExerciseData(
+            id: 8,
+            title: 'Push-Ups',
+            subtitle: '15x',
+            assetPath: 'assets/images/exercise_push_up.png'),
+        ExerciseData(
+            id: 3,
+            title: 'Skipping',
+            subtitle: '15x',
+            assetPath: 'assets/images/exercise_skipping.png'),
+        ExerciseData(
+            id: 9,
+            title: 'Cobra Stretch',
+            subtitle: '01:00',
+            assetPath: 'assets/images/exercise_cobra_stretch.png'),
+      ]
     ];
   }
 }

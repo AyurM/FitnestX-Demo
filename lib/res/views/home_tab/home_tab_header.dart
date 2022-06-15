@@ -1,5 +1,6 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/screens/notification_screen/notification_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class HomeTabHeader extends StatelessWidget {
               _welcomeText,
               style: textTheme.subtitle1?.copyWith(color: AppColors.gray2),
             ),
-            const SizedBox(height: 3),
+            AppWhiteSpace.value3.vertical,
             Text(username, style: textTheme.headline4)
           ],
         ),

@@ -29,7 +29,7 @@ class BmiCard extends StatelessWidget {
     return Container(
       height: _kCardHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kBorderRadiusLarge),
+          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
           gradient: AppColors.blueGradient,
           boxShadow: [
             BoxShadow(
@@ -62,7 +62,7 @@ class BmiCard extends StatelessWidget {
                     style:
                         textTheme.subtitle1?.copyWith(color: AppColors.white),
                   ),
-                  const SizedBox(height: 10),
+                  AppWhiteSpace.value10.vertical,
                   SecondaryButton.purple(
                     text: _buttonText,
                     onPressed: onViewMorePressed,

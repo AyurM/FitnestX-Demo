@@ -1,4 +1,5 @@
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/res/views/workout/upcoming_workout_card.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
@@ -6,7 +7,6 @@ import 'package:flutter/material.dart';
 
 const _titleText = 'Upcoming Workout';
 const _actionText = 'See more';
-const _kSpacing = 15.0;
 
 class UpcomingWorkoutBlock extends StatelessWidget {
   const UpcomingWorkoutBlock({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class UpcomingWorkoutBlock extends StatelessWidget {
           context: context,
           onPressed: () {},
         ),
-        const SizedBox(height: _kSpacing),
+        AppWhiteSpace.value15.vertical,
         ..._buildContent(content)
       ],
     );
@@ -38,7 +38,7 @@ class UpcomingWorkoutBlock extends StatelessWidget {
         onToggleNotification: _onToggleNotification,
       ));
       if (i != content.length - 1) {
-        result.add(const SizedBox(height: _kSpacing));
+        result.add(AppWhiteSpace.value15.vertical);
       }
     }
     return result;

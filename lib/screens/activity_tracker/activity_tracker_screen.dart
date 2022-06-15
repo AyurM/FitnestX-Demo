@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 const _titleText = 'Activity Tracker';
 const _activityProgressText = 'Activity Progress';
 const _weeklyText = 'Weekly';
-const _kSpacing = 30.0;
 
 class ActivityTrackerScreen extends StatelessWidget {
   const ActivityTrackerScreen({Key? key}) : super(key: key);
@@ -22,18 +21,18 @@ class ActivityTrackerScreen extends StatelessWidget {
           padding: kHorizontalPadding20,
           child: Column(
             children: [
-              const SizedBox(height: _kSpacing),
+              AppWhiteSpace.value30.vertical,
               const TodayTargetCard(),
-              const SizedBox(height: _kSpacing),
+              AppWhiteSpace.value30.vertical,
               SectionTitle.dropdown(
                   text: _activityProgressText,
                   dropdownText: _weeklyText,
                   onPressed: () {}),
-              const SizedBox(height: 15),
+              AppWhiteSpace.value15.vertical,
               const ActivityProgressCard(),
-              const SizedBox(height: _kSpacing),
+              AppWhiteSpace.value30.vertical,
               const LatestActivityBlock(),
-              const SizedBox(height: _kSpacing),
+              AppWhiteSpace.value30.vertical,
             ],
           )),
     );

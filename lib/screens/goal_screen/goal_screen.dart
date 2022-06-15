@@ -65,13 +65,13 @@ class _GoalScreenState extends State<GoalScreen> {
     return Scaffold(
       body: SafeArea(
         child: Column(children: [
-          const SizedBox(height: 40),
+          AppWhiteSpace.value40.vertical,
           Text(_pageTitleText, style: textTheme.headline4),
-          const SizedBox(height: 5),
+          AppWhiteSpace.value5.vertical,
           Text(_pageSubtitleText,
               style:
                   textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w500)),
-          const SizedBox(height: 30),
+          AppWhiteSpace.value30.vertical,
           Expanded(
               child: PageView(controller: _pageController, children: [
             for (int i = 0; i < content.length; i++)
@@ -80,7 +80,7 @@ class _GoalScreenState extends State<GoalScreen> {
                 scale: _pageIndexToScale(i),
               )
           ])),
-          const SizedBox(height: 50),
+          AppWhiteSpace.value50.vertical,
           PrimaryButton.blue(
             text: _confirmText,
             onPressed: () {
@@ -90,7 +90,7 @@ class _GoalScreenState extends State<GoalScreen> {
             },
             margin: kHorizontalPadding20,
           ),
-          const SizedBox(height: 40),
+          AppWhiteSpace.value40.vertical,
         ]),
       ),
     );

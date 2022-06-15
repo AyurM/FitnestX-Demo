@@ -14,7 +14,6 @@ const _editText = 'Edit';
 const _accountText = 'Account';
 const _otherText = 'Other';
 const _notificationsText = 'Notifications';
-const _kSpacing = 15.0;
 const _kImageSize = 55.0;
 const _kImageScale = 0.9;
 const _kImageBgOpacity = 0.3;
@@ -40,21 +39,21 @@ class ProfileTab extends StatelessWidget {
             padding: kHorizontalPadding20,
             child: Column(
               children: [
-                const SizedBox(height: 35),
+                AppWhiteSpace.value35.vertical,
                 _ProfileHeader(profile: profile),
-                const SizedBox(height: _kSpacing),
+                AppWhiteSpace.value15.vertical,
                 _buildUserStats(profile),
-                const SizedBox(height: 30),
+                AppWhiteSpace.value30.vertical,
                 _ProfileSectionCard(
                     title: _accountText, menuItems: accountMenuItems),
-                const SizedBox(height: _kSpacing),
+                AppWhiteSpace.value15.vertical,
                 _ProfileSectionCard(
                     title: _notificationsText,
                     menuItems: notificationMenuItems),
-                const SizedBox(height: _kSpacing),
+                AppWhiteSpace.value15.vertical,
                 _ProfileSectionCard(
                     title: _otherText, menuItems: otherMenuItems),
-                const SizedBox(height: _kSpacing * 2),
+                AppWhiteSpace.value30.vertical,
               ],
             )));
   }
@@ -68,7 +67,7 @@ class ProfileTab extends StatelessWidget {
               unit: 'cm',
             ),
           ),
-          const SizedBox(width: _kSpacing),
+          AppWhiteSpace.value15.horizontal,
           Expanded(
             child: UserStatCard(
               name: 'Weight',
@@ -76,7 +75,7 @@ class ProfileTab extends StatelessWidget {
               unit: 'kg',
             ),
           ),
-          const SizedBox(width: _kSpacing),
+          AppWhiteSpace.value15.horizontal,
           Expanded(
             child: UserStatCard(
               name: 'Age',
@@ -101,14 +100,14 @@ class _ProfileHeader extends StatelessWidget {
         _UserAvatar(
           imagePath: profile.imagePath,
         ),
-        const SizedBox(width: _kSpacing),
+        AppWhiteSpace.value15.horizontal,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('${profile.firstName} ${profile.lastName}',
                 style: textTheme.bodyText2?.copyWith(
                     fontWeight: FontWeight.bold, color: AppColors.black)),
-            const SizedBox(width: 5),
+            AppWhiteSpace.value5.horizontal,
             Text('${profile.program} Program', style: textTheme.subtitle1),
           ],
         ),
@@ -167,7 +166,7 @@ class _ProfileSectionCard extends StatelessWidget {
       padding: kAllPadding20,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(kBorderRadiusMedium),
+          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
           boxShadow: const [AppColors.cardShadow]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(title,
@@ -175,7 +174,7 @@ class _ProfileSectionCard extends StatelessWidget {
                 .textTheme
                 .bodyText1
                 ?.copyWith(fontWeight: FontWeight.bold)),
-        const SizedBox(height: _kSpacing),
+        AppWhiteSpace.value15.vertical,
         ...menuItems.map((item) => item.type == MenuItemType.simple
             ? SettingsMenuItem(data: item)
             : SettingsMenuToggleItem(data: item))

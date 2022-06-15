@@ -6,7 +6,6 @@ import 'package:fitnest_x/res/views/app_simple_image.dart';
 import 'package:flutter/material.dart';
 
 const _kImageSize = 50.0;
-const _kSpacing = 8.0;
 const _kImageAssetScale = 0.9;
 const _kImageBgOpacity = 0.3;
 const _kCardPadding = EdgeInsets.all(15);
@@ -22,7 +21,7 @@ class LatestActivityCard extends StatelessWidget {
     final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
 
     return AppCard(
-      borderRadius: kBorderRadiusMedium,
+      borderRadius: AppBorderRadius.medium.value,
       padding: EdgeInsets.zero,
       child: RawMaterialButton(
         onPressed: () {},
@@ -31,7 +30,7 @@ class LatestActivityCard extends StatelessWidget {
         highlightElevation: 0,
         fillColor: AppColors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(kBorderRadiusMedium)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
         child: Row(children: [
           AppSimpleImage(
               assetPath: data.assetPath,
@@ -40,7 +39,7 @@ class LatestActivityCard extends StatelessWidget {
               assetAlignment: Alignment.bottomCenter,
               color: color,
               bgOpacity: _kImageBgOpacity),
-          const SizedBox(width: _kSpacing),
+          AppWhiteSpace.value8.horizontal,
           Expanded(
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +49,7 @@ class LatestActivityCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: textStyle?.copyWith(
                       fontWeight: FontWeight.bold, color: AppColors.black)),
-              const SizedBox(height: 5),
+              AppWhiteSpace.value5.vertical,
               Text(
                 data.subtitle,
                 maxLines: 1,
@@ -60,7 +59,7 @@ class LatestActivityCard extends StatelessWidget {
               )
             ],
           )),
-          const SizedBox(width: _kSpacing),
+          AppWhiteSpace.value8.horizontal,
           Container(
             height: _kImageSize,
             alignment: Alignment.topCenter,

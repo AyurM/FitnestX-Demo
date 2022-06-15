@@ -4,7 +4,6 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const _kImageScale = 0.6;
-const _kSpacing = 10.0;
 
 class WorkoutItemCard extends StatelessWidget {
   static const relativeItemWidth = 0.35;
@@ -25,7 +24,7 @@ class WorkoutItemCard extends StatelessWidget {
           height: size,
           decoration: BoxDecoration(
               color: AppColors.borderColor,
-              borderRadius: BorderRadius.circular(kBorderRadiusSmall)),
+              borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
           child: Center(
             child: Image.asset(
               itemInfo.assetPath,
@@ -35,7 +34,7 @@ class WorkoutItemCard extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: _kSpacing),
+        AppWhiteSpace.value10.vertical,
         Text(itemInfo.name,
             style: Theme.of(context)
                 .textTheme

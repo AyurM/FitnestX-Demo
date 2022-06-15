@@ -1,6 +1,7 @@
 import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const _kButtonSize = 32.0;
@@ -24,14 +25,14 @@ class WorkoutTypeHeader extends StatelessWidget {
             Text(content.title,
                 style:
                     textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold)),
-            const SizedBox(height: 5),
+            AppWhiteSpace.value5.vertical,
             Text(
                 '${content.exercises} Exercises | ${content.duration.inMinutes}mins | ${content.caloriesBurn} Calories Burn',
                 textAlign: TextAlign.start,
                 style: textTheme.subtitle1),
           ],
         )),
-        const SizedBox(width: 15),
+        AppWhiteSpace.value15.horizontal,
         _LikeButton(onPressed: () {}),
       ],
     );

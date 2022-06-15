@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_card.dart';
 import 'package:fitnest_x/res/views/card_title.dart';
 import 'package:flutter/material.dart';
@@ -19,9 +20,9 @@ class SleepCard extends StatelessWidget {
   Widget build(BuildContext context) => AppCard(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const CardTitle(text: _titleText),
-          const SizedBox(height: 5),
+          AppWhiteSpace.value5.vertical,
           _buildDurationText(context),
-          const SizedBox(height: 5),
+          AppWhiteSpace.value5.vertical,
           const Expanded(child: _SleepGraph())
         ]),
       );

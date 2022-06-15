@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 const _usernameText = 'Stefani Wong';
 const _todayTargetText = 'Today Target';
 const _bmiValue = 20.1;
-const _kSpacing = 30.0;
 
 class HomeTab extends StatelessWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -21,23 +20,23 @@ class HomeTab extends StatelessWidget {
         padding: kHorizontalPadding20,
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            AppWhiteSpace.value20.vertical,
             const HomeTabHeader(
               username: _usernameText,
               hasNotifications: true,
             ),
-            const SizedBox(height: _kSpacing),
+            AppWhiteSpace.value30.vertical,
             BmiCard(value: _bmiValue, onViewMorePressed: () {}),
-            const SizedBox(height: _kSpacing),
+            AppWhiteSpace.value30.vertical,
             DailyActionCard(
                 title: _todayTargetText,
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const ActivityTrackerScreen()))),
-            const SizedBox(height: _kSpacing),
+            AppWhiteSpace.value30.vertical,
             const ActivityBlock(),
-            const SizedBox(height: _kSpacing),
+            AppWhiteSpace.value30.vertical,
           ],
         ),
       ),

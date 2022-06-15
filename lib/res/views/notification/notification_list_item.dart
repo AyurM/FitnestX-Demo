@@ -1,5 +1,6 @@
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_simple_image.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class NotificationListItem extends StatelessWidget {
           children: [
             AppSimpleImage(
                 assetPath: data.assetPath, color: color, size: _kImageHeight),
-            const SizedBox(width: 10),
+            AppWhiteSpace.value10.horizontal,
             Expanded(
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,9 +47,9 @@ class NotificationListItem extends StatelessWidget {
                 )
               ],
             )),
-            const SizedBox(width: 10),
+            AppWhiteSpace.value10.horizontal,
             const Icon(Icons.more_vert_outlined, color: AppColors.gray2),
-            const SizedBox(width: 8),
+            AppWhiteSpace.value8.horizontal,
           ],
         ));
   }

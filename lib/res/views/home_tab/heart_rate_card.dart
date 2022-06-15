@@ -41,7 +41,7 @@ class _HeartRateCardState extends State<HeartRateCard> {
     return Container(
       height: _kHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kBorderRadiusLarge),
+          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
           gradient: LinearGradient(colors: [
             AppColors.blue2.withOpacity(_kBgOpacity),
             AppColors.blue.withOpacity(_kBgOpacity)
@@ -111,7 +111,7 @@ class _HeartRateInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CardTitle(text: _titleText),
-        const SizedBox(height: 3),
+        AppWhiteSpace.value3.vertical,
         if (value != null)
           Text('$value $_bpmText',
               style: textTheme.bodyText2?.copyWith(

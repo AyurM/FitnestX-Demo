@@ -7,7 +7,6 @@ import 'package:fitnest_x/res/views/app_switch_button.dart';
 import 'package:flutter/material.dart';
 
 const _kImageSize = 50.0;
-const _kSpacing = 10.0;
 const _kImageBgOpacity = 0.3;
 const _kCardPadding = EdgeInsets.all(15);
 
@@ -25,7 +24,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
     final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
 
     return AppCard(
-      borderRadius: kBorderRadiusMedium,
+      borderRadius: AppBorderRadius.medium.value,
       padding: _kCardPadding,
       child: Row(children: [
         AppSimpleImage(
@@ -33,7 +32,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
             size: _kImageSize,
             color: color,
             bgOpacity: _kImageBgOpacity),
-        const SizedBox(width: _kSpacing),
+        AppWhiteSpace.value10.horizontal,
         Expanded(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +42,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: textStyle?.copyWith(
                     fontWeight: FontWeight.bold, color: AppColors.black)),
-            const SizedBox(height: 5),
+            AppWhiteSpace.value5.vertical,
             Text(
               data.dateText,
               maxLines: 1,
@@ -52,7 +51,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
             )
           ],
         )),
-        const SizedBox(width: _kSpacing),
+        AppWhiteSpace.value10.horizontal,
         AppSwitchButton(
           initialValue: data.sendNotification,
           onChanged: (value) => onToggleNotification?.call(value, data.id),
