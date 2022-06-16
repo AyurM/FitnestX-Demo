@@ -56,4 +56,6 @@ class AppIcons {
       IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_right_circle_outlined =
       IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData play_filled =
+      IconData(0xe818, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

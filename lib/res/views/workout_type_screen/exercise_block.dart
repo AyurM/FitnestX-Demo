@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/exercise_card.dart';
+import 'package:fitnest_x/screens/exercise_details_screen/exercise_details_screen.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -63,16 +64,22 @@ class _ExerciseList extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle1?.copyWith(
                 color: AppColors.black, fontWeight: FontWeight.bold)),
         AppWhiteSpace.value15.vertical,
-        ..._buildItems()
+        ..._buildItems(context)
       ],
     );
   }
 
-  List<Widget> _buildItems() {
+  List<Widget> _buildItems(BuildContext context) {
     final result = <Widget>[];
 
     for (int i = 0; i < items.length; i++) {
-      result.add(ExerciseCard(data: items[i], onPressed: () {}));
+      result.add(ExerciseCard(
+          data: items[i],
+          onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ExerciseDetailsScreen(exercise: items[i])))));
       if (i != items.length - 1) {
         result.add(AppWhiteSpace.value15.vertical);
       }

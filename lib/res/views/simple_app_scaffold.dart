@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SimpleAppScaffold extends StatelessWidget {
   final String title;
   final Widget body;
+  final IconData? leadingIcon;
   final void Function()? onBackPressed;
   final void Function()? onMorePressed;
 
@@ -11,6 +12,7 @@ class SimpleAppScaffold extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.body,
+      this.leadingIcon,
       this.onBackPressed,
       this.onMorePressed})
       : super(key: key);
@@ -21,6 +23,7 @@ class SimpleAppScaffold extends StatelessWidget {
       appBar: FitnestAppBar(
           text: title,
           context: context,
+          leadingIcon: leadingIcon,
           onBackPressed: onBackPressed,
           onMorePressed: onMorePressed),
       body: body,

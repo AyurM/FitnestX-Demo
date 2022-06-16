@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
 import 'package:fitnest_x/data/model/exercise_data.dart';
+import 'package:fitnest_x/data/model/exercise_step.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
@@ -262,31 +263,43 @@ class DataMockUtils {
       [
         ExerciseData(
             id: 1,
+            caloriesBurn: 200,
+            difficulty: ExerciseDifficulty.easy,
             title: 'Warm Up',
             subtitle: '05:00',
             assetPath: 'assets/images/exercise_warm_up.png'),
         ExerciseData(
             id: 2,
+            caloriesBurn: 390,
+            difficulty: ExerciseDifficulty.easy,
             title: 'Jumping Jack',
             subtitle: '12x',
             assetPath: 'assets/images/exercise_jumping_jack.png'),
         ExerciseData(
             id: 3,
+            caloriesBurn: 300,
+            difficulty: ExerciseDifficulty.medium,
             title: 'Skipping',
             subtitle: '15x',
             assetPath: 'assets/images/exercise_skipping.png'),
         ExerciseData(
             id: 4,
+            caloriesBurn: 400,
+            difficulty: ExerciseDifficulty.medium,
             title: 'Squats',
             subtitle: '20x',
             assetPath: 'assets/images/exercise_squats.png'),
         ExerciseData(
             id: 5,
+            caloriesBurn: 300,
+            difficulty: ExerciseDifficulty.easy,
             title: 'Arm Raises',
             subtitle: '00:53',
             assetPath: 'assets/images/exercise_arm_raises.png'),
         ExerciseData(
             id: 6,
+            caloriesBurn: 0,
+            difficulty: ExerciseDifficulty.easy,
             title: 'Rest and Drink',
             subtitle: '02:00',
             assetPath: 'assets/images/exercise_rest.png'),
@@ -294,25 +307,54 @@ class DataMockUtils {
       [
         ExerciseData(
             id: 7,
+            caloriesBurn: 300,
+            difficulty: ExerciseDifficulty.medium,
             title: 'Incline Push-Ups',
             subtitle: '12x',
             assetPath: 'assets/images/exercise_incline.png'),
         ExerciseData(
             id: 8,
+            caloriesBurn: 420,
+            difficulty: ExerciseDifficulty.hard,
             title: 'Push-Ups',
             subtitle: '15x',
             assetPath: 'assets/images/exercise_push_up.png'),
         ExerciseData(
             id: 3,
+            caloriesBurn: 300,
+            difficulty: ExerciseDifficulty.medium,
             title: 'Skipping',
             subtitle: '15x',
             assetPath: 'assets/images/exercise_skipping.png'),
         ExerciseData(
             id: 9,
+            caloriesBurn: 100,
+            difficulty: ExerciseDifficulty.easy,
             title: 'Cobra Stretch',
             subtitle: '01:00',
             assetPath: 'assets/images/exercise_cobra_stretch.png'),
       ]
+    ];
+  }
+
+  static List<ExerciseStep> getMockExerciseSteps() {
+    return const [
+      ExerciseStep(
+          title: 'Spread Your Arms',
+          description:
+              'To make the gestures feel more relaxed, stretch your arms as you start this movement. No bending of hands.'),
+      ExerciseStep(
+          title: 'Rest at The Toe',
+          description:
+              'The basis of this movement is jumping. Now, what needs to be considered is that you have to use the tips of your feet'),
+      ExerciseStep(
+          title: 'Adjust Foot Movement',
+          description:
+              'Jumping Jack is not just an ordinary jump. But, you also have to pay close attention to leg movements.'),
+      ExerciseStep(
+          title: 'Clapping Both Hands',
+          description:
+              'This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack'),
     ];
   }
 }
