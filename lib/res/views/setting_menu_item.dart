@@ -5,8 +5,8 @@ import 'package:fitnest_x/res/views/app_switch_button.dart';
 import 'package:flutter/material.dart';
 
 const _kPadding = EdgeInsets.symmetric(vertical: 6);
-const _kSwitchPadding = EdgeInsets.all(3);
-const _kSwitchHeight = 18.0;
+const _kSwitchPadding = EdgeInsets.all(5);
+const _kSwitchHeight = 24.0;
 const _kIconSize = 20.0;
 
 class SettingsMenuItem extends StatelessWidget {

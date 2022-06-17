@@ -4,6 +4,7 @@ import 'package:fitnest_x/data/model/activity_progress_data.dart';
 import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/exercise_step.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
+import 'package:fitnest_x/data/model/latest_workout_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/profile.dart';
@@ -26,6 +27,7 @@ const _kMaxConsumedCalories = 80;
 const _kMinActivityValue = 300;
 const _kMaxActivityValue = 900;
 const _kTargetActivityValue = 1000;
+const _kMinLatestWorkoutProgress = 0.2;
 
 class DataMockUtils {
   DataMockUtils._();
@@ -355,6 +357,32 @@ class DataMockUtils {
           title: 'Clapping Both Hands',
           description:
               'This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack'),
+    ];
+  }
+
+  static List<LatestWorkoutContent> getMockLatestWorkoutContent() {
+    return [
+      LatestWorkoutContent(
+          title: 'Fullbody Workout',
+          caloriesBurn: 180,
+          duration: const Duration(minutes: 20),
+          assetPath: 'assets/images/fullbody_workout_type.png',
+          color: AppColors.blue2,
+          completed: max(_random.nextDouble(), _kMinLatestWorkoutProgress)),
+      LatestWorkoutContent(
+          title: 'Lowerbody Workout',
+          caloriesBurn: 200,
+          duration: const Duration(minutes: 30),
+          assetPath: 'assets/images/lowerbody_workout_type.png',
+          color: AppColors.purple2,
+          completed: max(_random.nextDouble(), _kMinLatestWorkoutProgress)),
+      LatestWorkoutContent(
+          title: 'AB Workout',
+          caloriesBurn: 220,
+          duration: const Duration(minutes: 25),
+          assetPath: 'assets/images/ab_workout_type.png',
+          color: AppColors.blue2,
+          completed: max(_random.nextDouble(), _kMinLatestWorkoutProgress))
     ];
   }
 }

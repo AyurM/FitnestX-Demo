@@ -30,6 +30,11 @@ class AppColors {
       begin: Alignment.topLeft,
       end: Alignment.bottomRight);
 
+  static const progressGradient = LinearGradient(
+      colors: [purple, blue],
+      begin: Alignment.centerLeft,
+      end: Alignment.centerRight);
+
   static const cardShadow =
       BoxShadow(color: cardShadowColor, offset: Offset(0, 10), blurRadius: 40);
 }

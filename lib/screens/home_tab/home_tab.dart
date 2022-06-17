@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/views/daily_action_card.dart';
 import 'package:fitnest_x/res/views/home_tab/activity_block.dart';
 import 'package:fitnest_x/res/views/home_tab/bmi_card.dart';
 import 'package:fitnest_x/res/views/home_tab/home_tab_header.dart';
+import 'package:fitnest_x/res/views/home_tab/latest_workout_block.dart';
 import 'package:fitnest_x/screens/activity_tracker/activity_tracker_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,8 @@ class HomeTab extends StatelessWidget {
                         builder: (context) => const ActivityTrackerScreen()))),
             AppWhiteSpace.value30.vertical,
             const ActivityBlock(),
+            AppWhiteSpace.value30.vertical,
+            const LatestWorkoutBlock(),
             AppWhiteSpace.value30.vertical,
           ],
         ),
