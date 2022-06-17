@@ -6,6 +6,7 @@ import 'package:fitnest_x/res/views/exercise_details_screen/exercise_details_hea
 import 'package:fitnest_x/res/views/exercise_details_screen/exercise_steps_block.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/exercise_details_screen/exercise_description.dart';
+import 'package:fitnest_x/res/views/workout_type_screen/exercise_repetition_block.dart';
 import 'package:flutter/material.dart';
 
 const _kVideoAspectRatio = 16 / 9;
@@ -35,6 +36,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
               const ExerciseDescription(),
               AppWhiteSpace.value30.vertical,
               const ExerciseStepsBlock(),
+              const ExerciseRepetitionsBlock(),
               AppWhiteSpace.value30.vertical,
             ],
           ),
