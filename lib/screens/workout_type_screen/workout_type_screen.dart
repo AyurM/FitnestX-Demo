@@ -8,6 +8,7 @@ import 'package:fitnest_x/res/views/workout_type_screen/exercise_block.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_item_block.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_type_button.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_type_header.dart';
+import 'package:fitnest_x/screens/workout_schedule/workout_schedule_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -101,7 +102,10 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
           AppColors.blue2.withOpacity(_kButtonBgOpacity),
           AppColors.blue.withOpacity(_kButtonBgOpacity)
         ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const WorkoutScheduleScreen())),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:fitnest_x/res/views/daily_action_card.dart';
 import 'package:fitnest_x/res/views/fitnest_sliver_app_bar.dart';
 import 'package:fitnest_x/res/views/workout/upcoming_workout_block.dart';
 import 'package:fitnest_x/res/views/workout/workout_types_block.dart';
+import 'package:fitnest_x/screens/workout_schedule/workout_schedule_screen.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Workout Tracker';
@@ -48,7 +49,10 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
           child: DailyActionCard(
               margin: const EdgeInsets.fromLTRB(20, 2, 20, 0),
               title: _scheduleText,
-              onPressed: () {}),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WorkoutScheduleScreen()))),
         ),
         const SliverToBoxAdapter(
             child: Padding(
