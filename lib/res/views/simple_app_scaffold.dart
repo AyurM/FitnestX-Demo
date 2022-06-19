@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class SimpleAppScaffold extends StatelessWidget {
   final String title;
   final Widget body;
+  final Widget? floatingActionButton;
   final IconData? leadingIcon;
   final void Function()? onBackPressed;
   final void Function()? onMorePressed;
@@ -13,6 +14,7 @@ class SimpleAppScaffold extends StatelessWidget {
       required this.title,
       required this.body,
       this.leadingIcon,
+      this.floatingActionButton,
       this.onBackPressed,
       this.onMorePressed})
       : super(key: key);
@@ -27,6 +29,7 @@ class SimpleAppScaffold extends StatelessWidget {
           onBackPressed: onBackPressed,
           onMorePressed: onMorePressed),
       body: body,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

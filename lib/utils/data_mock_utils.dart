@@ -8,6 +8,7 @@ import 'package:fitnest_x/data/model/latest_workout_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/profile.dart';
+import 'package:fitnest_x/data/model/schedule_item_content.dart';
 import 'package:fitnest_x/data/model/today_target_item_content.dart';
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
@@ -383,6 +384,21 @@ class DataMockUtils {
           assetPath: 'assets/images/ab_workout_type.png',
           color: AppColors.blue2,
           completed: max(_random.nextDouble(), _kMinLatestWorkoutProgress))
+    ];
+  }
+
+  static List<ScheduleItemContent> getMockScheduleItems() {
+    final now = DateTime.now();
+    return [
+      ScheduleItemContent(
+          title: 'Ab Workout',
+          date: DateTime(now.year, now.month, now.day, 7, 30)),
+      ScheduleItemContent(
+          title: 'Upperbody Workout',
+          date: DateTime(now.year, now.month, now.day, 9)),
+      ScheduleItemContent(
+          title: 'Lowerbody Workout',
+          date: DateTime(now.year, now.month, now.day, 15)),
     ];
   }
 }

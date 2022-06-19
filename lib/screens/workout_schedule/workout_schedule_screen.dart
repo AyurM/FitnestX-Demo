@@ -1,6 +1,7 @@
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_date_picker.dart';
+import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_list.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Workout Schedule';
@@ -22,7 +23,12 @@ class WorkoutScheduleScreen extends StatelessWidget {
               screenWidth: MediaQuery.of(context).size.width,
             ),
             AppWhiteSpace.value30.vertical,
+            WorkoutScheduleList(date: DateTime.now()),
+            AppWhiteSpace.value30.vertical,
           ],
-        )));
+        )),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ));
   }
 }
