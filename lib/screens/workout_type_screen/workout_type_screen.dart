@@ -82,7 +82,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
           child: PrimaryButton.blue(
             text: _startWorkoutText,
             onPressed: () {},
-            margin: const EdgeInsets.fromLTRB(20, 0, 20, 30),
+            margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
           ),
         )
       ]),
