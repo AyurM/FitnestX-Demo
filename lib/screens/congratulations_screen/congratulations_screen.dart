@@ -20,6 +20,8 @@ class CongratulationsScreen extends StatelessWidget {
       statusBarColor: AppColors.white,
       statusBarIconBrightness: Brightness.dark,
     ));
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       body: Padding(
         padding: kHorizontalPadding20,
@@ -31,16 +33,13 @@ class CongratulationsScreen extends StatelessWidget {
           ),
           AppWhiteSpace.value35.vertical,
           Text(_titleText,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline4),
+              textAlign: TextAlign.center, style: textTheme.headline4),
           AppWhiteSpace.value15.vertical,
           Text(_quoteText,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle1),
+              textAlign: TextAlign.center, style: textTheme.subtitle1),
           AppWhiteSpace.value5.vertical,
           Text(_authorText,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle1),
+              textAlign: TextAlign.center, style: textTheme.subtitle1),
           const Spacer(),
           PrimaryButton.blue(
               text: _backText,
