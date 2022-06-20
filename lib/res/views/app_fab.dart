@@ -8,16 +8,33 @@ const _kFabIconSize = 20.0;
 class AppFab extends StatelessWidget {
   final void Function() onPressed;
 
-  const AppFab({Key? key, required this.onPressed}) : super(key: key);
+  final Offset offset;
+  final Gradient gradient;
+  final Color shadowColor;
+  final IconData icon;
+
+  const AppFab.search({Key? key, required this.onPressed})
+      : offset = const Offset(0, (kPrimaryButtonHeight / 2 - kFabTopOffset)),
+        gradient = AppColors.blueGradient,
+        shadowColor = AppColors.blueShadow,
+        icon = AppIcons.search_outlined,
+        super(key: key);
+
+  const AppFab.add({Key? key, required this.onPressed})
+      : offset = const Offset(-10, -10),
+        gradient = AppColors.purpleGradient,
+        shadowColor = AppColors.purpleShadow,
+        icon = Icons.add,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) => Transform.translate(
-        offset: const Offset(0, (kPrimaryButtonHeight / 2 - kFabTopOffset)),
+        offset: offset,
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size.square(kPrimaryButtonHeight),
                 padding: EdgeInsets.zero,
-                shadowColor: AppColors.blueShadow,
+                shadowColor: shadowColor,
                 shape: RoundedRectangleBorder(
                     borderRadius:
                         BorderRadius.circular(kPrimaryButtonHeight / 2))),
@@ -25,13 +42,13 @@ class AppFab extends StatelessWidget {
             child: Ink(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(kPrimaryButtonHeight / 2),
-                gradient: AppColors.blueGradient,
+                gradient: gradient,
               ),
-              child: const SizedBox.square(
+              child: SizedBox.square(
                 dimension: kPrimaryButtonHeight,
                 child: Center(
                     child: Icon(
-                  AppIcons.search_outlined,
+                  icon,
                   size: _kFabIconSize,
                   color: Colors.white,
                 )),

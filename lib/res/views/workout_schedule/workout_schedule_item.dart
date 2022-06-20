@@ -1,5 +1,6 @@
 import 'package:fitnest_x/data/model/schedule_item_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_item_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -23,18 +24,29 @@ class WorkoutScheduleItem extends StatelessWidget {
         _timeFormat.format(data.date).toLowerCase().replaceFirst(':00', '');
     final text = '${data.title}, $formattedTime';
 
-    return SizedBox(
-      height: height,
-      width: double.maxFinite,
-      child: Stack(
-        children: [
-          _WorkoutChip.top(heightFactor: adjustedCompletionPercent, text: text),
-          _WorkoutChip.bottom(
-              heightFactor: 1 - adjustedCompletionPercent, text: text),
-        ],
+    return GestureDetector(
+      onTap: () => _showScheduleItemDialog(context),
+      child: SizedBox(
+        height: height,
+        width: double.maxFinite,
+        child: Stack(
+          children: [
+            _WorkoutChip.top(
+                heightFactor: adjustedCompletionPercent, text: text),
+            _WorkoutChip.bottom(
+                heightFactor: 1 - adjustedCompletionPercent, text: text),
+          ],
+        ),
       ),
     );
   }
+
+  void _showScheduleItemDialog(BuildContext context) => showDialog(
+      context: context,
+      barrierColor: AppColors.black.withOpacity(0.2),
+      builder: (context) => WorkoutScheduleItemDialog(
+            data: data,
+          ));
 }
 
 class _WorkoutChip extends StatelessWidget {

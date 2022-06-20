@@ -1,4 +1,6 @@
+import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_date_picker.dart';
 import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_list.dart';
@@ -27,8 +29,6 @@ class WorkoutScheduleScreen extends StatelessWidget {
             AppWhiteSpace.value30.vertical,
           ],
         )),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-        ));
+        floatingActionButton: AppFab.add(onPressed: () {}));
   }
 }

@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         currentIndex: tabController.index,
         onSelect: _onTabSelect,
       ),
-      floatingActionButton: AppFab(onPressed: _onFabPressed),
+      floatingActionButton: AppFab.search(onPressed: _onFabPressed),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
