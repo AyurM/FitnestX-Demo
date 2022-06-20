@@ -6,21 +6,25 @@ const _kIconSize = 22.0;
 const _kButtonHeight = 50.0;
 const _kPadding = EdgeInsets.all(15);
 
-class WorkoutTypeButton extends StatelessWidget {
+class WorkoutDetailsButton extends StatelessWidget {
   final IconData iconData;
   final Gradient? gradient;
+  final Color? backgroundColor;
   final String title;
   final String? subtitle;
   final void Function()? onPressed;
 
-  const WorkoutTypeButton(
+  const WorkoutDetailsButton(
       {Key? key,
       required this.iconData,
       required this.title,
       this.gradient,
+      this.backgroundColor,
       this.subtitle,
       this.onPressed})
-      : super(key: key);
+      : assert((gradient != null && backgroundColor == null) ||
+            (gradient == null && backgroundColor != null)),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +34,7 @@ class WorkoutTypeButton extends StatelessWidget {
       height: _kButtonHeight,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          color: backgroundColor,
           gradient: gradient),
       child: RawMaterialButton(
           padding: _kPadding,

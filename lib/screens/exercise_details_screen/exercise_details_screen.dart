@@ -37,7 +37,7 @@ class ExerciseDetailsScreen extends StatelessWidget {
               AppWhiteSpace.value30.vertical,
               const ExerciseStepsBlock(),
               const ExerciseRepetitionsBlock(),
-              AppWhiteSpace.value30.vertical,
+              AppWhiteSpace.value40.vertical,
             ],
           ),
         ));

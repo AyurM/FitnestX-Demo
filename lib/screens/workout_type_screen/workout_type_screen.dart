@@ -4,9 +4,9 @@ import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/fitnest_sliver_app_bar.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/res/views/workout_details_button.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/exercise_block.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_item_block.dart';
-import 'package:fitnest_x/res/views/workout_type_screen/workout_type_button.dart';
 import 'package:fitnest_x/res/views/workout_type_screen/workout_type_header.dart';
 import 'package:fitnest_x/screens/workout_schedule/workout_schedule_screen.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +94,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 15),
-      child: WorkoutTypeButton(
+      child: WorkoutDetailsButton(
         iconData: AppIcons.calendar_outlined,
         title: _scheduleWorkoutText,
         subtitle: dateFormat.format(DateTime.now()),
@@ -112,7 +112,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
 
   Widget _buildDifficultyButton() => Padding(
         padding: kHorizontalPadding20,
-        child: WorkoutTypeButton(
+        child: WorkoutDetailsButton(
           iconData: AppIcons.swap_outlined,
           title: _difficultyText,
           subtitle: 'Beginner',
