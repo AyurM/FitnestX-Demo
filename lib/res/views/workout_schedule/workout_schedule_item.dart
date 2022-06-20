@@ -1,6 +1,7 @@
 import 'package:fitnest_x/data/model/schedule_item_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_item_dialog.dart';
+import 'package:fitnest_x/screens/congratulations_screen/congratulations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -46,6 +47,10 @@ class WorkoutScheduleItem extends StatelessWidget {
       barrierColor: AppColors.black.withOpacity(0.2),
       builder: (context) => WorkoutScheduleItemDialog(
             data: data,
+            onDone: (scheduleItem) => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CongratulationsScreen())),
           ));
 }
 
