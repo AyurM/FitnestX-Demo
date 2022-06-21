@@ -5,10 +5,12 @@ import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/exercise_step.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/latest_workout_content.dart';
+import 'package:fitnest_x/data/model/meal_find_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/profile.dart';
 import 'package:fitnest_x/data/model/schedule_item_content.dart';
+import 'package:fitnest_x/data/model/today_meal_content.dart';
 import 'package:fitnest_x/data/model/today_target_item_content.dart';
 import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
@@ -399,6 +401,43 @@ class DataMockUtils {
       ScheduleItemContent(
           title: 'Lowerbody Workout',
           date: DateTime(now.year, now.month, now.day, 15)),
+    ];
+  }
+
+  static List<TodayMealContent> getMockTodayMeals() {
+    final now = DateTime.now();
+    return [
+      TodayMealContent(
+          name: 'Salmon Nigiri',
+          assetPath: 'assets/images/food_nigiri.png',
+          showNotification: true,
+          date: DateTime(now.year, now.month, now.day, 7)),
+      TodayMealContent(
+          name: 'Lowfat Milk',
+          assetPath: 'assets/images/food_milk.png',
+          showNotification: false,
+          date: DateTime(now.year, now.month, now.day, 8))
+    ];
+  }
+
+  static List<MealFindContent> getMockMealFindContent() {
+    return const [
+      MealFindContent(
+          title: 'Breakfast',
+          amount: 120,
+          assetPath: 'assets/images/food_pie.png'),
+      MealFindContent(
+          title: 'Lunch',
+          amount: 130,
+          assetPath: 'assets/images/food_bread.png'),
+      MealFindContent(
+          title: 'Dinner',
+          amount: 150,
+          assetPath: 'assets/images/food_salad.png'),
+      MealFindContent(
+          title: 'Supper',
+          amount: 90,
+          assetPath: 'assets/images/food_oatmeal.png')
     ];
   }
 }

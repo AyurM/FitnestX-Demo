@@ -6,6 +6,7 @@ import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/app_navigation_bar.dart';
 import 'package:fitnest_x/res/views/search_popup_menu.dart';
 import 'package:fitnest_x/screens/home_tab/home_tab.dart';
+import 'package:fitnest_x/screens/meal_planner_screen/meal_planner_screen.dart';
 import 'package:fitnest_x/screens/profile_tab/profile_tab.dart';
 import 'package:fitnest_x/screens/workout_tracker/workout_screen.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +55,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       SearchPopupMenuItem(
           iconData: AppIcons.game_filled,
           title: _mealPlannerText,
-          onPressed: animationController.reverse),
+          onPressed: () {
+            animationController.reverse();
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MealPlannerScreen()));
+          }),
       SearchPopupMenuItem(
           iconData: AppIcons.discount_filled,
           title: _sleepTrackerText,
