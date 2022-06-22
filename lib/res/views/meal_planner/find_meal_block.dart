@@ -1,6 +1,8 @@
+import 'package:fitnest_x/data/model/meal_find_content.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/meal_planner/find_meal_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
+import 'package:fitnest_x/screens/breakfast_screen/breakfast_screen.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +31,14 @@ class FindMealBlock extends StatelessWidget {
               itemBuilder: (context, index) {
                 if (index % 2 == 0) {
                   return FindMealCard.blue(
-                      data: content[index], onPressed: () {});
+                      data: content[index],
+                      onPressed: () =>
+                          _onFindMealCardSelect(content[index], context));
                 }
                 return FindMealCard.purple(
-                    data: content[index], onPressed: () {});
+                    data: content[index],
+                    onPressed: () =>
+                        _onFindMealCardSelect(content[index], context));
               },
               separatorBuilder: (_, __) => AppWhiteSpace.value15.horizontal,
               itemCount: content.length),
@@ -40,4 +46,10 @@ class FindMealBlock extends StatelessWidget {
       ],
     );
   }
+
+  void _onFindMealCardSelect(MealFindContent data, BuildContext context) =>
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => BreakfastScreen(title: data.title)));
 }

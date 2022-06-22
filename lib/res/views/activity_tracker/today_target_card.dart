@@ -37,10 +37,7 @@ class TodayTargetCard extends StatelessWidget {
 
   BoxDecoration _buildCardDecoration() => BoxDecoration(
       borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
-      gradient: LinearGradient(colors: [
-        AppColors.blue2.withOpacity(_kBgOpacity),
-        AppColors.blue.withOpacity(_kBgOpacity)
-      ], begin: Alignment.topLeft, end: Alignment.bottomRight));
+      gradient: AppColors.blueGradientWithOpacity(_kBgOpacity));
 
   Widget _buildCardHeader(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

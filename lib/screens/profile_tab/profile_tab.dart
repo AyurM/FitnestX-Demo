@@ -137,10 +137,7 @@ class _UserAvatar extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: LinearGradient(colors: [
-            AppColors.blue2.withOpacity(_kImageBgOpacity),
-            AppColors.blue.withOpacity(_kImageBgOpacity)
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+          gradient: AppColors.blueGradientWithOpacity(_kImageBgOpacity)),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Image.asset(imagePath,

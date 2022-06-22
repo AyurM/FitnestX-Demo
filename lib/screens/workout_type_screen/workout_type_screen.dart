@@ -98,10 +98,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
         iconData: AppIcons.calendar_outlined,
         title: _scheduleWorkoutText,
         subtitle: dateFormat.format(DateTime.now()),
-        gradient: LinearGradient(colors: [
-          AppColors.blue2.withOpacity(_kButtonBgOpacity),
-          AppColors.blue.withOpacity(_kButtonBgOpacity)
-        ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+        gradient: AppColors.blueGradientWithOpacity(_kButtonBgOpacity),
         onPressed: () => Navigator.push(
             context,
             MaterialPageRoute(
@@ -116,10 +113,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
           iconData: AppIcons.swap_outlined,
           title: _difficultyText,
           subtitle: 'Beginner',
-          gradient: LinearGradient(colors: [
-            AppColors.purple2.withOpacity(_kButtonBgOpacity),
-            AppColors.purple.withOpacity(_kButtonBgOpacity)
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          gradient: AppColors.purpleGradientWithOpacity(_kButtonBgOpacity),
           onPressed: () {},
         ),
       );

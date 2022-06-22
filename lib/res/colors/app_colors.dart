@@ -37,4 +37,14 @@ class AppColors {
 
   static const cardShadow =
       BoxShadow(color: cardShadowColor, offset: Offset(0, 10), blurRadius: 40);
+
+  static Gradient blueGradientWithOpacity(double opacity) => LinearGradient(
+      colors: [blue2.withOpacity(opacity), blue.withOpacity(opacity)],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight);
+
+  static Gradient purpleGradientWithOpacity(double opacity) => LinearGradient(
+      colors: [purple2.withOpacity(opacity), purple.withOpacity(opacity)],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight);
 }

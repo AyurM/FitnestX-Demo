@@ -5,6 +5,8 @@ import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/exercise_step.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/latest_workout_content.dart';
+import 'package:fitnest_x/data/model/meal_category_data.dart';
+import 'package:fitnest_x/data/model/meal_data.dart';
 import 'package:fitnest_x/data/model/meal_find_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
@@ -438,6 +440,80 @@ class DataMockUtils {
           title: 'Supper',
           amount: 90,
           assetPath: 'assets/images/food_oatmeal.png')
+    ];
+  }
+
+  static List<MealCategoryData> getMockMealCategories() {
+    return const [
+      MealCategoryData(
+          title: 'Salad', assetPath: 'assets/images/category_salad.png'),
+      MealCategoryData(
+          title: 'Cake', assetPath: 'assets/images/category_cake.png'),
+      MealCategoryData(
+          title: 'Pie', assetPath: 'assets/images/category_pie.png'),
+      MealCategoryData(
+          title: 'Smoothie', assetPath: 'assets/images/category_smoothie.png'),
+      MealCategoryData(
+          title: 'Porridge', assetPath: 'assets/images/category_porridge.png'),
+    ];
+  }
+
+  static List<MealData> getMockDietRecommendations() {
+    return const [
+      MealData(
+          id: 1,
+          name: 'Honey Pancake',
+          assetPath: 'assets/images/food_honey_pancake.png',
+          difficulty: 'Easy',
+          calories: 180,
+          cookDuration: Duration(minutes: 30)),
+      MealData(
+          id: 2,
+          name: 'Canai Bread',
+          assetPath: 'assets/images/food_bread.png',
+          difficulty: 'Easy',
+          calories: 230,
+          cookDuration: Duration(minutes: 20)),
+      MealData(
+          id: 3,
+          name: 'Fruit Salad',
+          assetPath: 'assets/images/food_salad.png',
+          difficulty: 'Easy',
+          calories: 120,
+          cookDuration: Duration(minutes: 15)),
+      MealData(
+          id: 4,
+          name: 'Chicken Steak',
+          assetPath: 'assets/images/food_steak.png',
+          difficulty: 'Medium',
+          calories: 250,
+          cookDuration: Duration(minutes: 45))
+    ];
+  }
+
+  static List<MealData> getMockPopularMeals() {
+    return const [
+      MealData(
+          id: 5,
+          name: 'Blueberry Pancake',
+          assetPath: 'assets/images/food_blueberry_pancake.png',
+          difficulty: 'Medium',
+          calories: 230,
+          cookDuration: Duration(minutes: 30)),
+      MealData(
+          id: 6,
+          name: 'Salmon Nigiri',
+          assetPath: 'assets/images/food_nigiri.png',
+          difficulty: 'Medium',
+          calories: 120,
+          cookDuration: Duration(minutes: 20)),
+      MealData(
+          id: 7,
+          name: 'Oatmeal',
+          assetPath: 'assets/images/food_oatmeal.png',
+          difficulty: 'Easy',
+          calories: 100,
+          cookDuration: Duration(minutes: 15)),
     ];
   }
 }

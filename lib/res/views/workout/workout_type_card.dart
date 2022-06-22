@@ -24,10 +24,7 @@ class WorkoutTypeCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          gradient: LinearGradient(colors: [
-            AppColors.blue2.withOpacity(_kBgOpacity),
-            AppColors.blue.withOpacity(_kBgOpacity)
-          ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+          gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
       child: Row(children: [
         Expanded(
           child: Padding(
