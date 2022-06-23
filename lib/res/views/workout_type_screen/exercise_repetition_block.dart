@@ -91,7 +91,7 @@ class _RepetitionPicker extends StatelessWidget {
           children: [
             AppWhiteSpace.value30.horizontal,
             Image.asset(
-              'assets/images/burn.png',
+              'assets/images/icon_burn.png',
               width: _kIconSize,
               height: _kIconSize,
             ),

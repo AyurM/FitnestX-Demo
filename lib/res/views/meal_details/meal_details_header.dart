@@ -1,12 +1,15 @@
-import 'package:fitnest_x/data/model/workout_type_content.dart';
+import 'package:fitnest_x/data/model/meal_data.dart';
+import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_like_button.dart';
 import 'package:flutter/material.dart';
 
-class WorkoutTypeHeader extends StatelessWidget {
-  final WorkoutTypeContent content;
+const _recipeAuthorText = 'James Ruth';
 
-  const WorkoutTypeHeader({Key? key, required this.content}) : super(key: key);
+class MealDetailsHeader extends StatelessWidget {
+  final MealData data;
+
+  const MealDetailsHeader({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +21,18 @@ class WorkoutTypeHeader extends StatelessWidget {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(content.title,
+            Text(data.name,
                 style:
                     textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold)),
             AppWhiteSpace.value5.vertical,
-            Text(
-                '${content.exercises} Exercises | ${content.duration.inMinutes}mins | ${content.caloriesBurn} Calories Burn',
-                textAlign: TextAlign.start,
-                style: textTheme.subtitle1),
+            RichText(
+              text:
+                  TextSpan(text: 'by ', style: textTheme.subtitle1, children: [
+                TextSpan(
+                    text: _recipeAuthorText,
+                    style: textTheme.subtitle1?.copyWith(color: AppColors.blue))
+              ]),
+            )
           ],
         )),
         AppWhiteSpace.value15.horizontal,

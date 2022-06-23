@@ -2,6 +2,7 @@ import 'package:fitnest_x/data/model/today_meal_content.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/meal_planner/today_meal_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
+import 'package:fitnest_x/screens/meal_details_screen/meal_details_screen.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -19,16 +20,23 @@ class TodayMealsBlock extends StatelessWidget {
       children: [
         SectionTitle.dropdown(text: _titleText, dropdownText: _breakfastText),
         AppWhiteSpace.value15.vertical,
-        ..._buildMealItems(todayMeals)
+        ..._buildMealItems(todayMeals, context)
       ],
     );
   }
 
-  List<Widget> _buildMealItems(List<TodayMealContent> meals) {
+  List<Widget> _buildMealItems(
+      List<TodayMealContent> meals, BuildContext context) {
     final result = <Widget>[];
 
     for (int i = 0; i < meals.length; i++) {
-      result.add(TodayMealCard(data: meals[i], onPressed: () {}));
+      result.add(TodayMealCard(
+          data: meals[i],
+          onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      MeelDetailsScreen(data: meals[i].meal)))));
 
       if (i != meals.length - 1) {
         result.add(AppWhiteSpace.value15.vertical);

@@ -1,6 +1,8 @@
+import 'package:fitnest_x/data/model/meal_data.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/breakfast_screen/diet_recommendation_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
+import 'package:fitnest_x/screens/meal_details_screen/meal_details_screen.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
@@ -29,10 +31,14 @@ class DietRecommendationBlock extends StatelessWidget {
               itemBuilder: (context, index) {
                 if (index % 2 == 0) {
                   return DietRecommendationCard.blue(
-                      data: recommendations[index], onPressed: () {});
+                      data: recommendations[index],
+                      onPressed: () =>
+                          _openDetailsScreen(recommendations[index], context));
                 }
                 return DietRecommendationCard.purple(
-                    data: recommendations[index], onPressed: () {});
+                    data: recommendations[index],
+                    onPressed: () =>
+                        _openDetailsScreen(recommendations[index], context));
               },
               separatorBuilder: (_, __) => AppWhiteSpace.value15.horizontal,
               itemCount: recommendations.length),
@@ -40,4 +46,10 @@ class DietRecommendationBlock extends StatelessWidget {
       ],
     );
   }
+
+  void _openDetailsScreen(MealData data, BuildContext context) =>
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MeelDetailsScreen(data: data)));
 }

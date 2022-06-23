@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/views/fitnest_app_bar.dart';
@@ -5,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const _kBottomBorderRadius = 40.0;
+const _kDefaultBgEllipsePadding =
+    EdgeInsets.symmetric(horizontal: 20, vertical: 40);
 const _kPanelHandleSize = Size(50, 5);
 
 class FitnestSliverAppBar extends StatelessWidget {
@@ -15,6 +19,7 @@ class FitnestSliverAppBar extends StatelessWidget {
   final void Function()? onMorePressed;
   final Offset? imageOffset;
   final EdgeInsets? imageMargin;
+  final bool showBgEllipse;
 
   const FitnestSliverAppBar(
       {Key? key,
@@ -22,6 +27,7 @@ class FitnestSliverAppBar extends StatelessWidget {
       required this.title,
       required this.bgImageAssetPath,
       required this.parentScrollController,
+      this.showBgEllipse = false,
       this.imageOffset,
       this.imageMargin,
       this.onMorePressed})
@@ -44,10 +50,7 @@ class FitnestSliverAppBar extends StatelessWidget {
                       ((expandedHeight - kToolbarHeight) * 0.25))
                   .clamp(0.0, 1.0));
 
-          final bgImage = imageMargin != null
-              ? Padding(
-                  padding: imageMargin!, child: Image.asset(bgImageAssetPath))
-              : Image.asset(bgImageAssetPath);
+          final appBarWidget = _buildAppBarWidget(context);
 
           return SliverAppBar(
             expandedHeight: expandedHeight,
@@ -74,8 +77,8 @@ class FitnestSliverAppBar extends StatelessWidget {
                     const BoxDecoration(gradient: AppColors.blueGradient),
                 child: imageOffset != null
                     ? FractionalTranslation(
-                        translation: imageOffset!, child: bgImage)
-                    : bgImage,
+                        translation: imageOffset!, child: appBarWidget)
+                    : appBarWidget,
               ),
             ),
             bottom: hasBottom
@@ -89,6 +92,40 @@ class FitnestSliverAppBar extends StatelessWidget {
                 : null,
           );
         });
+  }
+
+  Widget _buildAppBarWidget(BuildContext context) {
+    final bgImage = imageMargin != null
+        ? Padding(padding: imageMargin!, child: Image.asset(bgImageAssetPath))
+        : Image.asset(bgImageAssetPath);
+
+    if (!showBgEllipse) {
+      return bgImage;
+    }
+
+    final ellipseSize = _calcBgEllipseSize(context);
+    final ellipse = Container(
+      width: ellipseSize,
+      height: ellipseSize,
+      decoration: BoxDecoration(
+          color: AppColors.white.withOpacity(0.3),
+          borderRadius: BorderRadius.circular(ellipseSize / 2)),
+    );
+    final stack = Stack(
+      alignment: Alignment.center,
+      children: [ellipse, Image.asset(bgImageAssetPath)],
+    );
+    return imageMargin != null
+        ? Padding(padding: imageMargin!, child: stack)
+        : stack;
+  }
+
+  double _calcBgEllipseSize(BuildContext context) {
+    final padding = imageMargin ?? _kDefaultBgEllipsePadding;
+    final availableWidth =
+        MediaQuery.of(context).size.width - padding.left - padding.right;
+    final availableHeight = expandedHeight - padding.top - padding.bottom;
+    return max(availableHeight, availableWidth);
   }
 }
 

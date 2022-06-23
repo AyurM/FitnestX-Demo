@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
 import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/exercise_step.dart';
+import 'package:fitnest_x/data/model/ingredient_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/latest_workout_content.dart';
 import 'package:fitnest_x/data/model/meal_category_data.dart';
@@ -10,6 +11,7 @@ import 'package:fitnest_x/data/model/meal_data.dart';
 import 'package:fitnest_x/data/model/meal_find_content.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
+import 'package:fitnest_x/data/model/nutrition_data.dart';
 import 'package:fitnest_x/data/model/profile.dart';
 import 'package:fitnest_x/data/model/schedule_item_content.dart';
 import 'package:fitnest_x/data/model/today_meal_content.dart';
@@ -410,13 +412,23 @@ class DataMockUtils {
     final now = DateTime.now();
     return [
       TodayMealContent(
-          name: 'Salmon Nigiri',
-          assetPath: 'assets/images/food_nigiri.png',
+          meal: const MealData(
+              id: 6,
+              name: 'Salmon Nigiri',
+              assetPath: 'assets/images/food_nigiri.png',
+              difficulty: 'Medium',
+              calories: 120,
+              cookDuration: Duration(minutes: 20)),
           showNotification: true,
           date: DateTime(now.year, now.month, now.day, 7)),
       TodayMealContent(
-          name: 'Lowfat Milk',
-          assetPath: 'assets/images/food_milk.png',
+          meal: const MealData(
+              id: 8,
+              name: 'Lowfat Milk',
+              assetPath: 'assets/images/food_milk.png',
+              difficulty: 'Easy',
+              calories: 80,
+              cookDuration: Duration(minutes: 1)),
           showNotification: false,
           date: DateTime(now.year, now.month, now.day, 8))
     ];
@@ -514,6 +526,50 @@ class DataMockUtils {
           difficulty: 'Easy',
           calories: 100,
           cookDuration: Duration(minutes: 15)),
+    ];
+  }
+
+  static List<NutritionData> getMockNutritionData() {
+    return const [
+      NutritionData(type: NutritionType.calories, value: 180),
+      NutritionData(type: NutritionType.fats, value: 30),
+      NutritionData(type: NutritionType.proteins, value: 20),
+      NutritionData(type: NutritionType.carbs, value: 50),
+    ];
+  }
+
+  static List<IngredientData> getMockIngredients() {
+    return const [
+      IngredientData(
+          name: 'Wheat Flour',
+          assetPath: 'assets/images/ingredients_flour.png',
+          amount: 100,
+          units: 'gr'),
+      IngredientData(
+          name: 'Sugar',
+          assetPath: 'assets/images/ingredients_sugar.png',
+          amount: 3,
+          units: 'tbsp'),
+      IngredientData(
+          name: 'Baking Soda',
+          assetPath: 'assets/images/ingredients_soda.png',
+          amount: 2,
+          units: 'tsp'),
+      IngredientData(
+          name: 'Eggs',
+          assetPath: 'assets/images/ingredients_eggs.png',
+          amount: 2,
+          units: 'items'),
+      IngredientData(
+          name: 'Oil',
+          assetPath: 'assets/images/ingredients_cooking_oil.png',
+          amount: 50,
+          units: 'ml'),
+      IngredientData(
+          name: 'Blueberry',
+          assetPath: 'assets/images/ingredients_blueberry.png',
+          amount: 300,
+          units: 'gr'),
     ];
   }
 }

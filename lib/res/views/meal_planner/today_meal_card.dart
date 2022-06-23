@@ -40,7 +40,7 @@ class TodayMealCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
         child: Row(children: [
           AppSimpleImage(
-              assetPath: data.assetPath,
+              assetPath: data.meal.assetPath,
               size: _kImageSize,
               assetScale: _kImageAssetScale,
               assetAlignment: Alignment.bottomCenter,
@@ -51,7 +51,7 @@ class TodayMealCard extends StatelessWidget {
               child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(data.name,
+              Text(data.meal.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme.bodyText2?.copyWith(
