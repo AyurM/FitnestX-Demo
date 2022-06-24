@@ -1,18 +1,18 @@
-import 'package:fitnest_x/data/model/exercise_step.dart';
+import 'package:fitnest_x/data/model/description_step.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
-import 'package:fitnest_x/res/views/exercise_details_screen/exercise_step_decoration.dart';
+import 'package:fitnest_x/res/views/description_step/description_step_decoration.dart';
 import 'package:flutter/material.dart';
 
 const _kLargeDotRadius = 10.0;
 const _kStepNumberWidth = 20.0;
 
-class ExerciseStepItem extends StatelessWidget {
-  final ExerciseStep step;
+class DescriptionStepItem extends StatelessWidget {
+  final DescriptionStep step;
   final int index;
   final bool isLast;
 
-  const ExerciseStepItem(
+  const DescriptionStepItem(
       {Key? key, required this.step, required this.index, this.isLast = false})
       : super(key: key);
 
@@ -27,12 +27,14 @@ class ExerciseStepItem extends StatelessWidget {
           SizedBox(
             width: _kStepNumberWidth,
             child: Text('${index < 10 ? '0' : ''}$index',
-                style: textTheme.bodyText2?.copyWith(color: AppColors.purple)),
+                style: textTheme.bodyText2?.copyWith(
+                    color: step.isActive ? AppColors.purple : AppColors.gray2)),
           ),
           AppWhiteSpace.value15.horizontal,
           SizedBox(
               width: _kLargeDotRadius * 2,
-              child: ExerciseStepDecoration(isLast: isLast)),
+              child: DescriptionStepDecoration(
+                  isLast: isLast, isActive: step.isActive)),
           AppWhiteSpace.value15.horizontal,
           Expanded(
             child: Column(

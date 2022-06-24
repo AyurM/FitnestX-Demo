@@ -5,14 +5,14 @@ import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
-const _titleText = 'How To Do It';
+const _titleText = 'Step by Step';
 
-class ExerciseStepsBlock extends StatelessWidget {
-  const ExerciseStepsBlock({Key? key}) : super(key: key);
+class RecipeStepsBlock extends StatelessWidget {
+  const RecipeStepsBlock({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final steps = DataMockUtils.getMockExerciseSteps();
+    final steps = DataMockUtils.getMockRecipeSteps();
 
     return Column(
       mainAxisSize: MainAxisSize.min,

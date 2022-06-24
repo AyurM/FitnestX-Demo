@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
+import 'package:fitnest_x/data/model/description_step.dart';
 import 'package:fitnest_x/data/model/exercise_data.dart';
-import 'package:fitnest_x/data/model/exercise_step.dart';
 import 'package:fitnest_x/data/model/ingredient_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
 import 'package:fitnest_x/data/model/latest_workout_content.dart';
@@ -346,21 +346,21 @@ class DataMockUtils {
     ];
   }
 
-  static List<ExerciseStep> getMockExerciseSteps() {
+  static List<DescriptionStep> getMockExerciseSteps() {
     return const [
-      ExerciseStep(
+      DescriptionStep(
           title: 'Spread Your Arms',
           description:
               'To make the gestures feel more relaxed, stretch your arms as you start this movement. No bending of hands.'),
-      ExerciseStep(
+      DescriptionStep(
           title: 'Rest at The Toe',
           description:
               'The basis of this movement is jumping. Now, what needs to be considered is that you have to use the tips of your feet'),
-      ExerciseStep(
+      DescriptionStep(
           title: 'Adjust Foot Movement',
           description:
               'Jumping Jack is not just an ordinary jump. But, you also have to pay close attention to leg movements.'),
-      ExerciseStep(
+      DescriptionStep(
           title: 'Clapping Both Hands',
           description:
               'This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack'),
@@ -570,6 +570,47 @@ class DataMockUtils {
           assetPath: 'assets/images/ingredients_blueberry.png',
           amount: 300,
           units: 'gr'),
+    ];
+  }
+
+  static List<DescriptionStep> getMockRecipeSteps() {
+    return const [
+      DescriptionStep(
+          title: 'Step 1',
+          description: 'Prepare all of the ingredients that needed'),
+      DescriptionStep(
+          title: 'Step 2',
+          description: 'Mix flour, sugar, salt, and baking powder',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 3',
+          description:
+              'In a seperate place, mix the eggs and liquid milk until blended',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 4',
+          description:
+              'Put the egg and milk mixture into the dry ingredients, stir until smooth',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 5',
+          description:
+              'Pellentesque convallis, elit non bibendum faucibus, odio magna scelerisque',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 6',
+          description:
+              'In hac habitasse platea dictumst. Aliquam erat volutpat. Nam in elementum',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 7',
+          description: 'Sed scelerisque orci dolor, et facilisis velit cursus',
+          isActive: false),
+      DescriptionStep(
+          title: 'Step 8',
+          description:
+              'Nunc sit amet efficitur tortor. Morbi condimentum ut nulla vitae pulvinar. Curabitur ac iaculis',
+          isActive: false)
     ];
   }
 }

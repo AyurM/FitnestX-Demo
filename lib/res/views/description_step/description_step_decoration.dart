@@ -6,34 +6,35 @@ import 'package:flutter/material.dart';
 const _kDashLength = 5.0;
 const _kStrokeWidth = 1.2;
 
-class ExerciseStepDecoration extends StatelessWidget {
+class DescriptionStepDecoration extends StatelessWidget {
   final bool isLast;
+  final bool isActive;
 
-  const ExerciseStepDecoration({Key? key, required this.isLast})
+  const DescriptionStepDecoration(
+      {Key? key, required this.isLast, required this.isActive})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) => CustomPaint(
-        painter: _ExerciseStepDecorationPainter(isLast),
+        painter: _DescriptionStepDecorationPainter(
+            isLast: isLast, isActive: isActive),
         size: Size.infinite,
       );
 }
 
-class _ExerciseStepDecorationPainter extends CustomPainter {
+class _DescriptionStepDecorationPainter extends CustomPainter {
   final bool isLast;
+  final bool isActive;
 
-  _ExerciseStepDecorationPainter(this.isLast);
+  _DescriptionStepDecorationPainter(
+      {required this.isLast, required this.isActive});
 
   @override
   void paint(Canvas canvas, Size size) {
     final double innerRadius = size.width / 4;
     final Offset circleCenter = Offset(size.width / 2, size.width / 2);
 
-    final Paint paint = Paint()
-      ..shader = ui.Gradient.linear(
-          Offset(0, size.width / 2),
-          Offset(size.width, size.width / 2),
-          [AppColors.purple2, AppColors.purple]);
+    final Paint paint = _getPaint(size);
 
     canvas.drawCircle(circleCenter, innerRadius, paint);
 
@@ -65,7 +66,18 @@ class _ExerciseStepDecorationPainter extends CustomPainter {
     }
   }
 
+  Paint _getPaint(Size size) {
+    if (isActive) {
+      return Paint()
+        ..shader = ui.Gradient.linear(
+            Offset(0, size.width / 2),
+            Offset(size.width, size.width / 2),
+            [AppColors.purple2, AppColors.purple]);
+    }
+    return Paint()..color = AppColors.gray2;
+  }
+
   @override
-  bool shouldRepaint(_ExerciseStepDecorationPainter oldDelegate) =>
+  bool shouldRepaint(_DescriptionStepDecorationPainter oldDelegate) =>
       isLast != oldDelegate.isLast;
 }

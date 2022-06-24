@@ -1,14 +1,16 @@
 import 'package:fitnest_x/data/model/meal_data.dart';
-import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/views/fitnest_sliver_app_bar.dart';
 import 'package:fitnest_x/res/views/meal_details/ingredients_block.dart';
 import 'package:fitnest_x/res/views/meal_details/meal_description.dart';
 import 'package:fitnest_x/res/views/meal_details/meal_details_header.dart';
 import 'package:fitnest_x/res/views/meal_details/meal_nutrition_block.dart';
+import 'package:fitnest_x/res/views/meal_details/recipe_steps_block.dart';
+import 'package:fitnest_x/res/views/primary_button.dart';
 import 'package:flutter/material.dart';
 
 const _kRelativeSliverAppBarHeight = 0.47;
 const _kBgImageMargin = EdgeInsets.fromLTRB(44, 120, 44, 0);
+const _kButtonText = 'Add to Breakfast Meal';
 
 class MeelDetailsScreen extends StatefulWidget {
   final MealData data;
@@ -68,12 +70,18 @@ class _MeelDetailsScreenState extends State<MeelDetailsScreen> {
           const SliverToBoxAdapter(
             child: IngredientsBlock(),
           ),
-          SliverToBoxAdapter(
-            child: Container(
-              height: 700,
-              color: AppColors.white,
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
+              child: RecipeStepsBlock(),
             ),
           ),
+          SliverToBoxAdapter(
+            child: PrimaryButton.blue(
+                text: _kButtonText,
+                onPressed: () {},
+                margin: const EdgeInsets.fromLTRB(20, 0, 20, 40)),
+          )
         ],
       ),
     );
