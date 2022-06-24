@@ -4,6 +4,7 @@ import 'package:fitnest_x/res/views/meal_planner/find_meal_block.dart';
 import 'package:fitnest_x/res/views/meal_planner/meal_nutritions_block.dart';
 import 'package:fitnest_x/res/views/meal_planner/today_meals_block.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
+import 'package:fitnest_x/screens/meal_schedule_screen/meal_schedule_screen.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Meal Planner';
@@ -26,7 +27,10 @@ class MealPlannerScreen extends StatelessWidget {
             AppWhiteSpace.value30.vertical,
             DailyActionCard(
               title: _mealScheduleText,
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MealScheduleScreen())),
               margin: kHorizontalPadding20,
             ),
             AppWhiteSpace.value30.vertical,

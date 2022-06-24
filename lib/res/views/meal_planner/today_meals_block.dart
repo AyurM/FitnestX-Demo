@@ -36,7 +36,7 @@ class TodayMealsBlock extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      MeelDetailsScreen(data: meals[i].meal)))));
+                      MealDetailsScreen(data: meals[i].meal)))));
 
       if (i != meals.length - 1) {
         result.add(AppWhiteSpace.value15.vertical);

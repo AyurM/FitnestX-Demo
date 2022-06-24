@@ -1,10 +1,12 @@
+import 'package:fitnest_x/utils/meal_time.dart';
+
 class MealFindContent {
-  final String title;
+  final MealTime mealTime;
   final String assetPath;
   final int amount;
 
   const MealFindContent({
-    required this.title,
+    required this.mealTime,
     required this.assetPath,
     required this.amount,
   });

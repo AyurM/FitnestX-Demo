@@ -33,7 +33,7 @@ class GoalPage extends StatelessWidget {
           Expanded(
               child: Image.asset(content.assetPath,
                   height: double.infinity, fit: BoxFit.contain)),
-          const SizedBox(height: 24),
+          AppWhiteSpace.value25.vertical,
           Text(
             content.title,
             style: textTheme.bodyText2

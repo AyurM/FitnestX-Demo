@@ -21,6 +21,7 @@ enum AppWhiteSpace {
   value40(SizedBox(width: 40.0), SizedBox(height: 40.0)),
   value35(SizedBox(width: 35.0), SizedBox(height: 35.0)),
   value30(SizedBox(width: 30.0), SizedBox(height: 30.0)),
+  value25(SizedBox(width: 25.0), SizedBox(height: 25.0)),
   value20(SizedBox(width: 20.0), SizedBox(height: 20.0)),
   value15(SizedBox(width: 15.0), SizedBox(height: 15.0)),
   value10(SizedBox(width: 10.0), SizedBox(height: 10.0)),

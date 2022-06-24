@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_card.dart';
+import 'package:fitnest_x/res/views/app_progress_bar.dart';
 import 'package:fitnest_x/res/views/app_simple_image.dart';
 import 'package:fitnest_x/res/views/gradient_icon.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ const _kImageHeight = 50.0;
 const _kImageBgOpacity = 0.3;
 const _kImageAssetScale = 0.8;
 const _kIconSize = 24.0;
-const _kProgressBarHeight = 10.0;
 const _kCardPadding = EdgeInsets.fromLTRB(15, 15, 15, 10);
 
 class LatestWorkoutCard extends StatelessWidget {
@@ -61,7 +61,7 @@ class LatestWorkoutCard extends StatelessWidget {
                 style: textStyle?.copyWith(fontSize: 10),
               ),
               AppWhiteSpace.value10.vertical,
-              _LatestWorkoutProgressBar(completionPercent: data.completed)
+              AppProgressBar(completionPercent: data.completed)
             ],
           )),
           AppWhiteSpace.value10.horizontal,
@@ -70,40 +70,6 @@ class LatestWorkoutCard extends StatelessWidget {
             iconData: AppIcons.arrow_right_circle_outlined,
           )
         ]),
-      ),
-    );
-  }
-}
-
-class _LatestWorkoutProgressBar extends StatelessWidget {
-  final double completionPercent;
-
-  const _LatestWorkoutProgressBar({Key? key, required this.completionPercent})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: _kProgressBarHeight,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(_kProgressBarHeight / 2),
-        child: LayoutBuilder(builder: (context, constraints) {
-          final uncompletedProgressWidth =
-              constraints.maxWidth * (1 - completionPercent.clamp(0.0, 1.0));
-
-          return Stack(children: [
-            Container(
-                decoration:
-                    const BoxDecoration(gradient: AppColors.progressGradient)),
-            Positioned(
-                right: 0,
-                top: 0,
-                bottom: 0,
-                child: Container(
-                    width: uncompletedProgressWidth,
-                    color: AppColors.borderColor))
-          ]);
-        }),
       ),
     );
   }

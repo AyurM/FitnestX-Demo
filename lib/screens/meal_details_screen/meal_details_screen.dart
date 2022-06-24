@@ -12,16 +12,16 @@ const _kRelativeSliverAppBarHeight = 0.47;
 const _kBgImageMargin = EdgeInsets.fromLTRB(44, 120, 44, 0);
 const _kButtonText = 'Add to Breakfast Meal';
 
-class MeelDetailsScreen extends StatefulWidget {
+class MealDetailsScreen extends StatefulWidget {
   final MealData data;
 
-  const MeelDetailsScreen({Key? key, required this.data}) : super(key: key);
+  const MealDetailsScreen({Key? key, required this.data}) : super(key: key);
 
   @override
-  State<MeelDetailsScreen> createState() => _MeelDetailsScreenState();
+  State<MealDetailsScreen> createState() => _MealDetailsScreenState();
 }
 
-class _MeelDetailsScreenState extends State<MeelDetailsScreen> {
+class _MealDetailsScreenState extends State<MealDetailsScreen> {
   late final ScrollController scrollController;
 
   @override

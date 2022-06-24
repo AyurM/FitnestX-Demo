@@ -51,5 +51,5 @@ class DietRecommendationBlock extends StatelessWidget {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => MeelDetailsScreen(data: data)));
+              builder: (context) => MealDetailsScreen(data: data)));
 }

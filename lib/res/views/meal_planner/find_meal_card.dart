@@ -49,7 +49,7 @@ class FindMealCard extends StatelessWidget {
           child: Image.asset(data.assetPath),
         )),
         AppWhiteSpace.value10.vertical,
-        Text(data.title,
+        Text(data.mealTime.title,
             style: textTheme.bodyText2?.copyWith(
                 color: AppColors.black, fontWeight: FontWeight.bold)),
         AppWhiteSpace.value3.vertical,

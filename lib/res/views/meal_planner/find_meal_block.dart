@@ -47,9 +47,10 @@ class FindMealBlock extends StatelessWidget {
     );
   }
 
-  void _onFindMealCardSelect(MealFindContent data, BuildContext context) =>
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => BreakfastScreen(title: data.title)));
+  void _onFindMealCardSelect(MealFindContent data, BuildContext context) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => BreakfastScreen(title: data.mealTime.title)));
+  }
 }

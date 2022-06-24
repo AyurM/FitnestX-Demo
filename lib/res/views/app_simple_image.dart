@@ -10,6 +10,7 @@ class AppSimpleImage extends StatelessWidget {
   final double? assetScale;
   final AlignmentGeometry? assetAlignment;
   final double? bgOpacity;
+  final double? borderRadius;
 
   const AppSimpleImage(
       {Key? key,
@@ -18,6 +19,7 @@ class AppSimpleImage extends StatelessWidget {
       required this.color,
       this.assetScale,
       this.assetAlignment,
+      this.borderRadius,
       this.bgOpacity})
       : super(key: key);
 
@@ -29,7 +31,7 @@ class AppSimpleImage extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
           color: color.withOpacity(bgOpacity ?? _kImageBgOpacity),
-          shape: BoxShape.circle),
+          borderRadius: BorderRadius.circular(borderRadius ?? size / 2)),
       child: Align(
           alignment: assetAlignment ?? Alignment.center,
           child: Image.asset(assetPath,

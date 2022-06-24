@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
+import 'package:fitnest_x/data/model/daily_nutrition_data.dart';
 import 'package:fitnest_x/data/model/description_step.dart';
 import 'package:fitnest_x/data/model/exercise_data.dart';
 import 'package:fitnest_x/data/model/ingredient_data.dart';
@@ -9,6 +10,7 @@ import 'package:fitnest_x/data/model/latest_workout_content.dart';
 import 'package:fitnest_x/data/model/meal_category_data.dart';
 import 'package:fitnest_x/data/model/meal_data.dart';
 import 'package:fitnest_x/data/model/meal_find_content.dart';
+import 'package:fitnest_x/data/model/meal_schedule_data.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
 import 'package:fitnest_x/data/model/nutrition_data.dart';
@@ -23,6 +25,7 @@ import 'package:fitnest_x/data/model/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/utils/meal_time.dart';
 import 'package:flutter/material.dart';
 
 const _kMinWaterIntakePerUpdate = 10;
@@ -437,19 +440,19 @@ class DataMockUtils {
   static List<MealFindContent> getMockMealFindContent() {
     return const [
       MealFindContent(
-          title: 'Breakfast',
+          mealTime: MealTime.breakfast,
           amount: 120,
           assetPath: 'assets/images/food_pie.png'),
       MealFindContent(
-          title: 'Lunch',
+          mealTime: MealTime.lunch,
           amount: 130,
           assetPath: 'assets/images/food_bread.png'),
       MealFindContent(
-          title: 'Dinner',
+          mealTime: MealTime.dinner,
           amount: 150,
           assetPath: 'assets/images/food_salad.png'),
       MealFindContent(
-          title: 'Supper',
+          mealTime: MealTime.supper,
           amount: 90,
           assetPath: 'assets/images/food_oatmeal.png')
     ];
@@ -611,6 +614,110 @@ class DataMockUtils {
           description:
               'Nunc sit amet efficitur tortor. Morbi condimentum ut nulla vitae pulvinar. Curabitur ac iaculis',
           isActive: false)
+    ];
+  }
+
+  static Map<MealTime, List<MealScheduleData>> getMockMealSchedule() {
+    final now = DateTime.now();
+    final result = <MealTime, List<MealScheduleData>>{
+      MealTime.breakfast: [
+        MealScheduleData(
+            meal: const MealData(
+                id: 1,
+                name: 'Honey Pancake',
+                assetPath: 'assets/images/food_honey_pancake.png',
+                difficulty: 'Easy',
+                calories: 180,
+                cookDuration: Duration(minutes: 30)),
+            dateTime: DateTime(now.year, now.month, now.day, 7)),
+        MealScheduleData(
+            meal: const MealData(
+                id: 9,
+                name: 'Coffee',
+                assetPath: 'assets/images/food_coffee.png',
+                difficulty: 'Easy',
+                calories: 40,
+                cookDuration: Duration(minutes: 5)),
+            dateTime: DateTime(now.year, now.month, now.day, 7, 30))
+      ],
+      MealTime.lunch: [
+        MealScheduleData(
+            meal: const MealData(
+                id: 4,
+                name: 'Chicken Steak',
+                assetPath: 'assets/images/food_steak.png',
+                difficulty: 'Medium',
+                calories: 250,
+                cookDuration: Duration(minutes: 45)),
+            dateTime: DateTime(now.year, now.month, now.day, 13)),
+        MealScheduleData(
+            meal: const MealData(
+                id: 10,
+                name: 'Milk',
+                assetPath: 'assets/images/food_milk.png',
+                difficulty: 'Easy',
+                calories: 90,
+                cookDuration: Duration(minutes: 1)),
+            dateTime: DateTime(now.year, now.month, now.day, 13, 20))
+      ],
+      MealTime.snacks: [
+        MealScheduleData(
+            meal: const MealData(
+                id: 11,
+                name: 'Orange',
+                assetPath: 'assets/images/food_orange.png',
+                difficulty: 'Easy',
+                calories: 30,
+                cookDuration: Duration(minutes: 1)),
+            dateTime: DateTime(now.year, now.month, now.day, 16, 30)),
+        MealScheduleData(
+            meal: const MealData(
+                id: 11,
+                name: 'Apple Pie',
+                assetPath: 'assets/images/food_apple_pie.png',
+                difficulty: 'Medium',
+                calories: 110,
+                cookDuration: Duration(minutes: 35)),
+            dateTime: DateTime(now.year, now.month, now.day, 16, 40))
+      ],
+      MealTime.dinner: [
+        MealScheduleData(
+            meal: const MealData(
+                id: 3,
+                name: 'Fruit Salad',
+                assetPath: 'assets/images/food_salad.png',
+                difficulty: 'Easy',
+                calories: 120,
+                cookDuration: Duration(minutes: 15)),
+            dateTime: DateTime(now.year, now.month, now.day, 19, 10)),
+        MealScheduleData(
+            meal: const MealData(
+                id: 7,
+                name: 'Oatmeal',
+                assetPath: 'assets/images/food_oatmeal.png',
+                difficulty: 'Easy',
+                calories: 100,
+                cookDuration: Duration(minutes: 15)),
+            dateTime: DateTime(now.year, now.month, now.day, 20, 10))
+      ]
+    };
+
+    return result;
+  }
+
+  static List<DailyNutritionData> getMockDailyNutrition() {
+    return const [
+      DailyNutritionData(
+          data: NutritionData(type: NutritionType.calories, value: 900),
+          total: 1800),
+      DailyNutritionData(
+          data: NutritionData(type: NutritionType.proteins, value: 200),
+          total: 300),
+      DailyNutritionData(
+          data: NutritionData(type: NutritionType.fats, value: 120),
+          total: 140),
+      DailyNutritionData(
+          data: NutritionData(type: NutritionType.carbs, value: 50), total: 140)
     ];
   }
 }
