@@ -1,0 +1,30 @@
+import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/res/views/daily_action_card.dart';
+import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
+import 'package:fitnest_x/res/views/sleep_tracker/sleep_graph_card.dart';
+import 'package:flutter/material.dart';
+
+const _titleText = 'Sleep Tracker';
+const _sleepScheduleText = 'Daily Sleep Schedule';
+
+class SleepTrackerScreen extends StatelessWidget {
+  const SleepTrackerScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SimpleAppScaffold(
+        title: _titleText,
+        body: SingleChildScrollView(
+          padding: kHorizontalPadding20,
+          child: Column(
+            children: [
+              AppWhiteSpace.value30.vertical,
+              const SleepGraphCard(),
+              AppWhiteSpace.value30.vertical,
+              DailyActionCard(title: _sleepScheduleText, onPressed: () {}),
+              AppWhiteSpace.value30.vertical,
+            ],
+          ),
+        ));
+  }
+}
