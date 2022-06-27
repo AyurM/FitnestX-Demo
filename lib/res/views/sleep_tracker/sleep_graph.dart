@@ -122,23 +122,32 @@ class _SleepGraphPainter extends CustomPainter {
     final interpolatedValuesLength =
         values.length + (values.length - 1) * interpolationPoints;
 
-    final stepX =
+    final xPixelsPerInterpolationPoint =
         (size.width - _kGraphXPadding * 2) / (interpolatedValuesLength - 1);
+
+    //Чтобы построить график на всю доступную ширину, необходимо
+    //рассчитать точки интерполяции не только между точками initialValues,
+    //но и слева от initialValues[0], и справа от initialValues.last
+    //на симметричном расстоянии extendValue.
+    final extendValue = _kGraphXPadding /
+        (xPixelsPerInterpolationPoint * (interpolationPoints + 1));
     final interpolatedValues = InterpolationUtils.getInterpolatedValues(
         input: initialValues,
         interpolationPoints: interpolationPoints,
-        paddingValue: (_kGraphXPadding / (stepX * (interpolationPoints + 1))));
+        extendValue: extendValue);
 
     final yPixelValues = interpolatedValues
-        .map((value) => size.height - value * pxPerMinute)
+        .map((value) => size.height - value.dy * pxPerMinute)
         .toList();
 
-    canvasPoints.add(Offset(0, yPixelValues[0]));
-    for (int i = 1; i < yPixelValues.length - 1; i++) {
-      canvasPoints
-          .add(Offset(_kGraphXPadding + stepX * (i - 1), yPixelValues[i]));
+    final xPixelsPerUnit =
+        (size.width - _kGraphXPadding * 2) / (values.length - 1);
+
+    for (int i = 0; i < yPixelValues.length; i++) {
+      canvasPoints.add(Offset(
+          xPixelsPerUnit * (interpolatedValues[i].dx + extendValue),
+          yPixelValues[i]));
     }
-    canvasPoints.add(Offset(size.width, yPixelValues.last));
 
     return canvasPoints;
   }
