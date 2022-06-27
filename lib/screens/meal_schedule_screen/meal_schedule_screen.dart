@@ -1,9 +1,9 @@
 import 'package:fitnest_x/res/theme/constants.dart';
+import 'package:fitnest_x/res/views/app_date_picker.dart';
 import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/meal_schedule/daily_nutrition_section.dart';
 import 'package:fitnest_x/res/views/meal_schedule/meal_schedule_list.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
-import 'package:fitnest_x/res/views/workout_schedule/workout_schedule_date_picker.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Meal Schedule';
@@ -21,7 +21,7 @@ class MealScheduleScreen extends StatelessWidget {
             child: Column(
           children: [
             AppWhiteSpace.value20.vertical,
-            WorkoutScheduleDatePicker(
+            AppDatePicker(
               initialDate: now,
               onSelect: (date) => debugPrint('Selected date: $date'),
               screenWidth: MediaQuery.of(context).size.width,

@@ -9,41 +9,28 @@ const _kDateItemSize = Size(60, 80);
 const _kDateItemSpacing = 15.0;
 const _kIconSize = 24.0;
 
-class WorkoutScheduleDatePicker extends StatefulWidget {
+class AppDatePicker extends StatefulWidget {
   final DateTime? initialDate;
   final void Function(DateTime)? onSelect;
   final double screenWidth;
 
-  const WorkoutScheduleDatePicker(
+  const AppDatePicker(
       {Key? key, this.initialDate, this.onSelect, required this.screenWidth})
       : super(key: key);
 
   @override
-  State<WorkoutScheduleDatePicker> createState() =>
-      _WorkoutScheduleDatePickerState();
+  State<AppDatePicker> createState() => _AppDatePickerState();
 }
 
-class _WorkoutScheduleDatePickerState extends State<WorkoutScheduleDatePicker> {
-  late final ScrollController scrollController;
+class _AppDatePickerState extends State<AppDatePicker> {
   late final DateTime _initialDate;
   late DateTime displayedMonth;
-  late DateTime selectedDate;
 
   @override
   void initState() {
     super.initState();
     _initialDate = widget.initialDate ?? DateTime.now();
-    selectedDate =
-        DateTime(_initialDate.year, _initialDate.month, _initialDate.day);
-    displayedMonth = DateTime(_initialDate.year, _initialDate.month, 1);
-    scrollController =
-        ScrollController(initialScrollOffset: _calcInitialPosition());
-  }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
+    displayedMonth = _initialDate;
   }
 
   @override
@@ -51,62 +38,32 @@ class _WorkoutScheduleDatePickerState extends State<WorkoutScheduleDatePicker> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        _ScheduleMonthPicker(
-            initialDate: _initialDate, onChanged: _onMonthSelect),
+        _AppMonthPicker(initialDate: _initialDate, onChanged: _onMonthSelect),
         AppWhiteSpace.value15.vertical,
-        SizedBox(
-          height: _kDateItemSize.height,
-          child: ListView.separated(
-              padding: kHorizontalPadding20,
-              controller: scrollController,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                final date = DateTime(
-                    displayedMonth.year, displayedMonth.month, index + 1);
-                return _ScheduleDayItem(
-                    date: date,
-                    isSelected: selectedDate == date,
-                    onSelect: _onDateSelect);
-              },
-              separatorBuilder: (context, index) =>
-                  AppWhiteSpace.value15.horizontal,
-              itemCount:
-                  DateTime(displayedMonth.year, displayedMonth.month + 1, 0)
-                      .day),
-        )
+        AppDayPicker(
+            screenWidth: widget.screenWidth,
+            initialDate: widget.initialDate,
+            month: displayedMonth,
+            onSelect: widget.onSelect)
       ],
     );
   }
 
   void _onMonthSelect(DateTime date) => setState(() => displayedMonth = date);
-
-  void _onDateSelect(DateTime date) {
-    widget.onSelect?.call(date);
-    setState(() => selectedDate = date);
-  }
-
-  double _calcInitialPosition() => max(
-      0.0,
-      kHorizontalPadding20.left +
-          (selectedDate.day - 1) * _kDateItemSize.width +
-          (selectedDate.day - 1) * _kDateItemSpacing -
-          widget.screenWidth / 2 +
-          _kDateItemSize.width / 2);
 }
 
-class _ScheduleMonthPicker extends StatefulWidget {
+class _AppMonthPicker extends StatefulWidget {
   final DateTime initialDate;
   final void Function(DateTime)? onChanged;
 
-  const _ScheduleMonthPicker(
-      {Key? key, required this.initialDate, this.onChanged})
+  const _AppMonthPicker({Key? key, required this.initialDate, this.onChanged})
       : super(key: key);
 
   @override
-  State<_ScheduleMonthPicker> createState() => __ScheduleMonthPickerState();
+  State<_AppMonthPicker> createState() => _AppMonthPickerState();
 }
 
-class __ScheduleMonthPickerState extends State<_ScheduleMonthPicker> {
+class _AppMonthPickerState extends State<_AppMonthPicker> {
   static final DateFormat _monthFormat = DateFormat('MMMM y');
 
   late DateTime displayedMonth;
@@ -159,6 +116,94 @@ class __ScheduleMonthPickerState extends State<_ScheduleMonthPicker> {
         DateTime(displayedMonth.year, displayedMonth.month + 1, 1));
     widget.onChanged?.call(displayedMonth);
   }
+}
+
+class AppDayPicker extends StatefulWidget {
+  final DateTime? initialDate;
+  final DateTime? month;
+  final void Function(DateTime)? onSelect;
+  final double screenWidth;
+
+  const AppDayPicker(
+      {Key? key,
+      required this.screenWidth,
+      this.initialDate,
+      this.month,
+      this.onSelect})
+      : super(key: key);
+
+  @override
+  State<AppDayPicker> createState() => _AppDayPickerState();
+}
+
+class _AppDayPickerState extends State<AppDayPicker> {
+  late final ScrollController scrollController;
+  late DateTime _initialDate;
+  late DateTime _month;
+  late DateTime selectedDate;
+
+  @override
+  void initState() {
+    super.initState();
+    _initialDate = widget.initialDate ?? DateTime.now();
+    selectedDate =
+        DateTime(_initialDate.year, _initialDate.month, _initialDate.day);
+    _month = widget.month ?? DateTime(_initialDate.year, _initialDate.month, 1);
+    scrollController =
+        ScrollController(initialScrollOffset: _calcInitialPosition());
+  }
+
+  @override
+  void didUpdateWidget(covariant AppDayPicker oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.initialDate != widget.initialDate) {
+      _initialDate = widget.initialDate ?? DateTime.now();
+    }
+
+    if (oldWidget.month != widget.month) {
+      _month =
+          widget.month ?? DateTime(_initialDate.year, _initialDate.month, 1);
+    }
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        height: _kDateItemSize.height,
+        child: ListView.separated(
+            padding: kHorizontalPadding20,
+            controller: scrollController,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              final date = DateTime(_month.year, _month.month, index + 1);
+              return _ScheduleDayItem(
+                  date: date,
+                  isSelected: selectedDate == date,
+                  onSelect: _onDateSelect);
+            },
+            separatorBuilder: (context, index) =>
+                AppWhiteSpace.value15.horizontal,
+            itemCount: DateTime(_month.year, _month.month + 1, 0).day),
+      );
+
+  void _onDateSelect(DateTime date) {
+    widget.onSelect?.call(date);
+    setState(() => selectedDate = date);
+  }
+
+  double _calcInitialPosition() => max(
+      0.0,
+      kHorizontalPadding20.left +
+          (selectedDate.day - 1) * _kDateItemSize.width +
+          (selectedDate.day - 1) * _kDateItemSpacing -
+          widget.screenWidth / 2 +
+          _kDateItemSize.width / 2);
 }
 
 class _ScheduleDayItem extends StatelessWidget {
