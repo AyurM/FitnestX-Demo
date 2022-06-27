@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/workout_type_content.dart';
+import 'package:fitnest_x/data/model/workout/workout_type_content.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:fitnest_x/res/views/workout/workout_type_card.dart';

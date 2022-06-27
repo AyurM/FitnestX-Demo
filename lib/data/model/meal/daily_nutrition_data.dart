@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/nutrition_data.dart';
+import 'package:fitnest_x/data/model/meal/nutrition_data.dart';
 
 class DailyNutritionData {
   final NutritionData data;

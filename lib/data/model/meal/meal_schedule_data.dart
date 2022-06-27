@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/meal_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_data.dart';
 
 class MealScheduleData {
   final MealData meal;

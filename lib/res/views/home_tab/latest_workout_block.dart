@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/latest_workout_content.dart';
+import 'package:fitnest_x/data/model/workout/latest_workout_content.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/home_tab/latest_workout_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';

@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/exercise_data.dart';
+import 'package:fitnest_x/data/model/workout/exercise_data.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/section_title.dart';

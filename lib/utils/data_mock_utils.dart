@@ -1,27 +1,28 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
-import 'package:fitnest_x/data/model/daily_nutrition_data.dart';
+import 'package:fitnest_x/data/model/meal/daily_nutrition_data.dart';
 import 'package:fitnest_x/data/model/description_step.dart';
-import 'package:fitnest_x/data/model/exercise_data.dart';
-import 'package:fitnest_x/data/model/ingredient_data.dart';
+import 'package:fitnest_x/data/model/workout/exercise_data.dart';
+import 'package:fitnest_x/data/model/meal/ingredient_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
-import 'package:fitnest_x/data/model/latest_workout_content.dart';
-import 'package:fitnest_x/data/model/meal_category_data.dart';
-import 'package:fitnest_x/data/model/meal_data.dart';
-import 'package:fitnest_x/data/model/meal_find_content.dart';
-import 'package:fitnest_x/data/model/meal_schedule_data.dart';
+import 'package:fitnest_x/data/model/workout/latest_workout_content.dart';
+import 'package:fitnest_x/data/model/meal/meal_category_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_find_content.dart';
+import 'package:fitnest_x/data/model/meal/meal_schedule_data.dart';
 import 'package:fitnest_x/data/model/menu_item_data.dart';
 import 'package:fitnest_x/data/model/notification_content.dart';
-import 'package:fitnest_x/data/model/nutrition_data.dart';
+import 'package:fitnest_x/data/model/meal/nutrition_data.dart';
 import 'package:fitnest_x/data/model/profile.dart';
 import 'package:fitnest_x/data/model/schedule_item_content.dart';
-import 'package:fitnest_x/data/model/today_meal_content.dart';
+import 'package:fitnest_x/data/model/sleep_schedule_item_content.dart';
+import 'package:fitnest_x/data/model/meal/today_meal_content.dart';
 import 'package:fitnest_x/data/model/today_target_item_content.dart';
-import 'package:fitnest_x/data/model/upcoming_workout_content.dart';
+import 'package:fitnest_x/data/model/workout/upcoming_workout_content.dart';
 import 'package:fitnest_x/data/model/water_intake_update.dart';
-import 'package:fitnest_x/data/model/workout_item_info.dart';
-import 'package:fitnest_x/data/model/workout_type_content.dart';
+import 'package:fitnest_x/data/model/workout/workout_item_info.dart';
+import 'package:fitnest_x/data/model/workout/workout_type_content.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
@@ -718,6 +719,22 @@ class DataMockUtils {
           total: 140),
       DailyNutritionData(
           data: NutritionData(type: NutritionType.carbs, value: 50), total: 140)
+    ];
+  }
+
+  static List<SleepScheduleItemContent> getMockSleepSchedule() {
+    final now = DateTime.now();
+    return [
+      SleepScheduleItemContent(
+          title: 'Bedtime',
+          assetPath: 'assets/images/sleep_bed.png',
+          dateTime: DateTime(now.year, now.month, now.day, 22),
+          showNotification: true),
+      SleepScheduleItemContent(
+          title: 'Alarm',
+          assetPath: 'assets/images/sleep_alarm.png',
+          dateTime: DateTime(now.year, now.month, now.day + 1, 6, 10),
+          showNotification: true)
     ];
   }
 }

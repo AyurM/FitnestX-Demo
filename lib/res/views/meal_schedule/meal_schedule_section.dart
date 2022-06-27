@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/meal_schedule_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_schedule_data.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/meal_schedule/meal_schedule_list_item.dart';

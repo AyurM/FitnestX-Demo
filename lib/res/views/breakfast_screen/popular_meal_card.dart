@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/meal_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_data.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';

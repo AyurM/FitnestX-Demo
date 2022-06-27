@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/meal_find_content.dart';
+import 'package:fitnest_x/data/model/meal/meal_find_content.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/meal_planner/find_meal_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';

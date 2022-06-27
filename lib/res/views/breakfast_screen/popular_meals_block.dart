@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/meal_data.dart';
+import 'package:fitnest_x/data/model/meal/meal_data.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/breakfast_screen/popular_meal_card.dart';
 import 'package:fitnest_x/res/views/section_title.dart';
