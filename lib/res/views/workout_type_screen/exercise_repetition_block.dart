@@ -57,7 +57,7 @@ class ExerciseRepetitionsBlock extends StatelessWidget {
         AppWhiteSpace.value30.vertical,
         PrimaryButton.blue(
           text: _saveText,
-          onPressed: () {},
+          onPressed: Navigator.of(context).pop,
         )
       ],
     );

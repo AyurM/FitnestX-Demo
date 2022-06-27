@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 const _kIconSize = 18.0;
 const _kBgOpacity = 0.2;
-const _kPadding = EdgeInsets.all(10);
+const _kPadding = kAllPadding10;
 
 class NutritionChip extends StatelessWidget {
   static const height = _kIconSize + 20;

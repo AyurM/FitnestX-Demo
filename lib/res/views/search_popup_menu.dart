@@ -4,7 +4,7 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 const _kIconSize = 24.0;
-const _kPadding = EdgeInsets.all(15);
+const _kPadding = kAllPadding15;
 
 class SearchPopupMenu extends StatelessWidget {
   static const width = 168.0;

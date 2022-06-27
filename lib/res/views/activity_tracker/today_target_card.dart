@@ -9,7 +9,7 @@ const _titleText = 'Today Target';
 const _kBgOpacity = 0.2;
 const _kImageSize = 30.0;
 const _kIconSize = 18.0;
-const _kItemCardPadding = EdgeInsets.all(10);
+const _kItemCardPadding = kAllPadding10;
 
 class TodayTargetCard extends StatelessWidget {
   const TodayTargetCard({Key? key}) : super(key: key);

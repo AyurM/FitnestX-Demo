@@ -79,7 +79,7 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
           SliverToBoxAdapter(
             child: PrimaryButton.blue(
                 text: _kButtonText,
-                onPressed: () {},
+                onPressed: Navigator.of(context).pop,
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 40)),
           )
         ],

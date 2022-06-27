@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 const _titleText = 'Ideal Hours for Sleep';
 const _kBgOpacity = 0.2;
 const _learnMoreText = 'Learn More';
-const _kCardPadding = EdgeInsets.all(20);
+const _kCardPadding = kAllPadding20;
 const _kRelativeImageWidth = 0.375;
 const _kButtonHeight = 35.0;
 

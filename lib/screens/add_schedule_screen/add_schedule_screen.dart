@@ -34,7 +34,9 @@ class AddScheduleScreen extends StatelessWidget {
           const WorkoutDetailsSection(),
           const Spacer(),
           PrimaryButton.blue(
-              text: _saveText, margin: kHorizontalPadding20, onPressed: () {}),
+              text: _saveText,
+              margin: kHorizontalPadding20,
+              onPressed: Navigator.of(context).pop),
           AppWhiteSpace.value40.vertical,
         ]));
   }

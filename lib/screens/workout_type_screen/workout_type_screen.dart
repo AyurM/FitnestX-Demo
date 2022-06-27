@@ -81,7 +81,7 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
         SliverToBoxAdapter(
           child: PrimaryButton.blue(
             text: _startWorkoutText,
-            onPressed: () {},
+            onPressed: Navigator.of(context).pop,
             margin: const EdgeInsets.fromLTRB(20, 0, 20, 40),
           ),
         )

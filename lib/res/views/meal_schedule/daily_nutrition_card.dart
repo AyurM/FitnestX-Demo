@@ -5,7 +5,7 @@ import 'package:fitnest_x/res/views/app_card.dart';
 import 'package:fitnest_x/res/views/app_progress_bar.dart';
 import 'package:flutter/material.dart';
 
-const _kCardPadding = EdgeInsets.all(15);
+const _kCardPadding = kAllPadding15;
 const _kIconSize = 18.0;
 
 class DailyNutritionCard extends StatelessWidget {

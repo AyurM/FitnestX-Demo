@@ -4,7 +4,7 @@ import 'package:fitnest_x/res/views/app_progress_bar.dart';
 import 'package:flutter/material.dart';
 
 const _kBgOpacity = 0.2;
-const _kCardPadding = EdgeInsets.all(20);
+const _kCardPadding = kAllPadding20;
 const _youWillGetText = 'You will get ';
 const _forTonightText = 'for tonight';
 const _kProgressBarHeight = 15.0;

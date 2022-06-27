@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 const _kImageSize = 50.0;
 const _kImageAssetScale = 0.9;
 const _kImageBgOpacity = 0.3;
-const _kCardPadding = EdgeInsets.all(15);
+const _kCardPadding = kAllPadding15;
 
 class LatestActivityCard extends StatelessWidget {
   final LatestActivityContent data;

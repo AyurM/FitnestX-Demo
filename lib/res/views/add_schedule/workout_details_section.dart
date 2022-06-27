@@ -25,7 +25,7 @@ class WorkoutDetailsSection extends StatelessWidget {
                   color: AppColors.black, fontWeight: FontWeight.bold)),
           AppWhiteSpace.value10.vertical,
           WorkoutDetailsButton(
-            iconData: AppIcons.activity_outlined,
+            iconData: AppIcons.barbel,
             title: _chooseWorkoutText,
             subtitle: 'Upperbody Workout',
             backgroundColor: AppColors.borderColor,

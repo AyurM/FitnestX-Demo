@@ -1,7 +1,8 @@
 import 'package:fitnest_x/res/colors/app_colors.dart';
+import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
-const _kDefaultPadding = EdgeInsets.all(5.0);
+const _kDefaultPadding = kAllPadding5;
 
 class AppSwitchButton extends StatefulWidget {
   final bool initialValue;

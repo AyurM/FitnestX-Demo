@@ -3,6 +3,7 @@ import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/sleep_schedule/sleep_banner.dart';
 import 'package:fitnest_x/res/views/sleep_schedule/sleep_schedule_block.dart';
+import 'package:fitnest_x/screens/add_alarm_screen/add_alarm_screen.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Sleep Schedule';
@@ -26,7 +27,9 @@ class SleepScheduleScreen extends StatelessWidget {
           AppWhiteSpace.value30.vertical,
         ]),
       ),
-      floatingActionButton: AppFab.add(onPressed: () {}),
+      floatingActionButton: AppFab.add(
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AddAlarmScreen()))),
     );
   }
 }

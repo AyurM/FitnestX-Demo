@@ -99,7 +99,7 @@ class SecondaryIconButton extends StatelessWidget {
           const SecondaryButtonDecoration(gradient: AppColors.blueGradient),
           TextButton(
             style: TextButton.styleFrom(
-              padding: padding ?? const EdgeInsets.all(5),
+              padding: padding ?? kAllPadding5,
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               minimumSize: Size.square(height ?? _kIconButtonSize),
             ),
