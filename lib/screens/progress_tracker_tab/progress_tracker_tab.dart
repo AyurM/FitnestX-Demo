@@ -6,6 +6,7 @@ import 'package:fitnest_x/res/views/progress_tracker/progress_gallery.dart';
 import 'package:fitnest_x/res/views/progress_tracker/progress_reminder.dart';
 import 'package:fitnest_x/res/views/progress_tracker/progress_track_info_card.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
+import 'package:fitnest_x/screens/progress_comparison_screen/progress_comparison_screen.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Progress Photo';
@@ -82,7 +83,11 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
                   title: _comparePhotoText,
                   buttonText: _compareText,
                   margin: kHorizontalPadding20,
-                  onPressed: () {}),
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const ProgressComparisonScreen()))),
               AppWhiteSpace.value30.vertical,
               const ProgressGallery(),
               AppWhiteSpace.value30.vertical,
