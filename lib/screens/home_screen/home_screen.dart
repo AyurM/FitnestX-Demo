@@ -8,6 +8,7 @@ import 'package:fitnest_x/res/views/search_popup_menu.dart';
 import 'package:fitnest_x/screens/home_tab/home_tab.dart';
 import 'package:fitnest_x/screens/meal_planner_screen/meal_planner_screen.dart';
 import 'package:fitnest_x/screens/profile_tab/profile_tab.dart';
+import 'package:fitnest_x/screens/progress_tracker_tab/progress_tracker_tab.dart';
 import 'package:fitnest_x/screens/sleep_tracker_screen/sleep_tracker_screen.dart';
 import 'package:fitnest_x/screens/workout_tracker/workout_screen.dart';
 import 'package:flutter/material.dart';
@@ -109,9 +110,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   const Center(
                     child: Text('Activity Tab'),
                   ),
-                  const Center(
-                    child: Text('Camera Tab'),
-                  ),
+                  ProgressTrackerTab(onBackPressed: () => _onTabSelect(0)),
                   ProfileTab(onBackPressed: () => _onTabSelect(0))
                 ],
               ),

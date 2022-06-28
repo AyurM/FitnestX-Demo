@@ -20,11 +20,10 @@ class AppFab extends StatelessWidget {
         icon = AppIcons.search_outlined,
         super(key: key);
 
-  const AppFab.add({Key? key, required this.onPressed})
+  const AppFab.add({Key? key, required this.onPressed, this.icon = Icons.add})
       : offset = const Offset(-10, -10),
         gradient = AppColors.purpleGradient,
         shadowColor = AppColors.purpleShadow,
-        icon = Icons.add,
         super(key: key);
 
   @override
