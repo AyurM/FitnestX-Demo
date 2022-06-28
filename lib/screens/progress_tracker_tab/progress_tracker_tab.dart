@@ -2,6 +2,7 @@ import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/daily_action_card.dart';
+import 'package:fitnest_x/res/views/progress_tracker/progress_gallery.dart';
 import 'package:fitnest_x/res/views/progress_tracker/progress_reminder.dart';
 import 'package:fitnest_x/res/views/progress_tracker/progress_track_info_card.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
@@ -82,6 +83,8 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
                   buttonText: _compareText,
                   margin: kHorizontalPadding20,
                   onPressed: () {}),
+              AppWhiteSpace.value30.vertical,
+              const ProgressGallery(),
               AppWhiteSpace.value30.vertical,
             ],
           ),

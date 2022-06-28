@@ -737,4 +737,25 @@ class DataMockUtils {
           showNotification: true)
     ];
   }
+
+  static Map<DateTime, List<String>> getMockGalleryContent() {
+    final now = DateTime.now();
+
+    return <DateTime, List<String>>{
+      DateTime(now.year, now.month - 1, now.day): [
+        'assets/images/gallery_01.png',
+        'assets/images/gallery_03.png',
+        'assets/images/gallery_02.png',
+        'assets/images/gallery_08.png',
+        'assets/images/gallery_04.png',
+      ],
+      DateTime(now.year, now.month - 2, now.day - 2): [
+        'assets/images/gallery_04.png',
+        'assets/images/gallery_06.png',
+        'assets/images/gallery_05.png',
+        'assets/images/gallery_01.png',
+        'assets/images/gallery_02.png',
+      ],
+    };
+  }
 }
