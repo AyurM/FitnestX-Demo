@@ -72,4 +72,6 @@ class AppIcons {
       IconData(0xe81e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData barbel =
       IconData(0xe81f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData share =
+      IconData(0xe820, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

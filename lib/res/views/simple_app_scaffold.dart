@@ -5,6 +5,7 @@ class SimpleAppScaffold extends StatelessWidget {
   final String title;
   final Widget body;
   final Widget? floatingActionButton;
+  final Widget? customAppBarAction;
   final IconData? leadingIcon;
   final void Function()? onBackPressed;
   final void Function()? onMorePressed;
@@ -15,6 +16,7 @@ class SimpleAppScaffold extends StatelessWidget {
       required this.body,
       this.leadingIcon,
       this.floatingActionButton,
+      this.customAppBarAction,
       this.onBackPressed,
       this.onMorePressed})
       : super(key: key);
@@ -26,6 +28,7 @@ class SimpleAppScaffold extends StatelessWidget {
           text: title,
           context: context,
           leadingIcon: leadingIcon,
+          customAction: customAppBarAction,
           onBackPressed: onBackPressed,
           onMorePressed: onMorePressed),
       body: body,

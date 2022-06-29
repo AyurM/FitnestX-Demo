@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
 import 'package:fitnest_x/data/model/meal/daily_nutrition_data.dart';
 import 'package:fitnest_x/data/model/description_step.dart';
+import 'package:fitnest_x/data/model/photo_comparison_data.dart';
 import 'package:fitnest_x/data/model/workout/exercise_data.dart';
 import 'package:fitnest_x/data/model/meal/ingredient_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
@@ -757,5 +758,26 @@ class DataMockUtils {
         'assets/images/gallery_02.png',
       ],
     };
+  }
+
+  static List<PhotoComparisonData> getMockPhotoComparisonData() {
+    return const [
+      PhotoComparisonData(
+          title: 'Front Facing',
+          firstImagePath: 'assets/images/gallery_01.png',
+          secondImagePath: 'assets/images/gallery_04.png'),
+      PhotoComparisonData(
+          title: 'Back Facing',
+          firstImagePath: 'assets/images/gallery_07.png',
+          secondImagePath: 'assets/images/gallery_02.png'),
+      PhotoComparisonData(
+          title: 'Left Facing',
+          firstImagePath: 'assets/images/gallery_03.png',
+          secondImagePath: 'assets/images/gallery_05.png'),
+      PhotoComparisonData(
+          title: 'Right Facing',
+          firstImagePath: 'assets/images/gallery_06.png',
+          secondImagePath: 'assets/images/gallery_08.png'),
+    ];
   }
 }

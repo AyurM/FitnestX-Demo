@@ -14,6 +14,7 @@ class FitnestAppBar extends AppBar {
   final BuildContext context;
   final Color? bgColor;
   final Color? textColor;
+  final Widget? customAction;
 
   FitnestAppBar(
       {Key? key,
@@ -23,7 +24,8 @@ class FitnestAppBar extends AppBar {
       this.bgColor,
       this.textColor,
       this.onBackPressed,
-      this.onMorePressed})
+      this.onMorePressed,
+      this.customAction})
       : super(
             key: key,
             leading: AppBarButton(
@@ -32,6 +34,7 @@ class FitnestAppBar extends AppBar {
               hasHorizontalPadding: true,
             ),
             actions: [
+              if (customAction != null) customAction,
               AppBarButton(
                 iconData: AppIcons.more,
                 onPressed: onMorePressed ?? () {},
@@ -64,11 +67,13 @@ class FitnestAppBar extends AppBar {
 
 class AppBarButton extends StatelessWidget {
   final IconData iconData;
+  final double? iconSize;
   final void Function()? onPressed;
   final bool hasHorizontalPadding;
   const AppBarButton(
       {Key? key,
       required this.iconData,
+      this.iconSize,
       this.onPressed,
       this.hasHorizontalPadding = false})
       : super(key: key);
@@ -90,6 +95,7 @@ class AppBarButton extends StatelessWidget {
             child: Center(
                 child: Icon(
               iconData,
+              size: iconSize,
               color: AppColors.black,
             )),
           ),

@@ -10,14 +10,16 @@ class SectionTitle extends StatelessWidget {
       : action = null,
         super(key: key);
 
-  SectionTitle.simpleText({
-    Key? key,
-    required this.text,
-    required String subtitle,
-    required BuildContext context,
-  })  : action = Text(subtitle,
-            style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                color: AppColors.gray2, fontWeight: FontWeight.w500)),
+  SectionTitle.simpleText(
+      {Key? key,
+      required this.text,
+      required String subtitle,
+      required BuildContext context,
+      TextStyle? textStyle})
+      : action = Text(subtitle,
+            style: textStyle ??
+                Theme.of(context).textTheme.subtitle1?.copyWith(
+                    color: AppColors.gray2, fontWeight: FontWeight.w500)),
         super(key: key);
 
   SectionTitle.textButton(

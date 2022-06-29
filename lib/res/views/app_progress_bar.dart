@@ -40,18 +40,34 @@ class AppProgressBar extends StatelessWidget {
                   width: uncompletedProgressWidth,
                   color: AppColors.borderColor),
             ),
-            if (showPercent) _buildPercentLabel(context)
+            if (showPercent && completionPercent > 0.1)
+              _buildPercentLabel(
+                  context,
+                  constraints.maxWidth *
+                      completionPercent.clamp(0.0, 1.0) *
+                      0.5)
           ]);
         }),
       ),
     );
   }
 
-  Widget _buildPercentLabel(BuildContext context) => Text(
-        '${(completionPercent * 100).round()}%',
-        style: Theme.of(context)
-            .textTheme
-            .button
-            ?.copyWith(fontSize: 10, fontWeight: FontWeight.w500),
+  Widget _buildPercentLabel(BuildContext context, double leftPosition) =>
+      Positioned(
+        top: 0,
+        bottom: 0,
+        left: leftPosition,
+        child: FractionalTranslation(
+          translation: const Offset(-0.5, 0),
+          child: Center(
+            child: Text(
+              '${(completionPercent * 100).round()}%',
+              style: Theme.of(context)
+                  .textTheme
+                  .button
+                  ?.copyWith(fontSize: 10, fontWeight: FontWeight.w500),
+            ),
+          ),
+        ),
       );
 }

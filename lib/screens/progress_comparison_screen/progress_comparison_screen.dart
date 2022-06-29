@@ -4,6 +4,7 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/res/views/workout_details_button.dart';
+import 'package:fitnest_x/screens/progress_result_screen/progress_result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -39,7 +40,12 @@ class ProgressComparisonScreen extends StatelessWidget {
                   backgroundColor: AppColors.borderColor,
                   onPressed: () {}),
               const Spacer(),
-              PrimaryButton.blue(text: _compareText, onPressed: () {}),
+              PrimaryButton.blue(
+                  text: _compareText,
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProgressResultScreen()))),
               AppWhiteSpace.value40.vertical,
             ],
           ),
