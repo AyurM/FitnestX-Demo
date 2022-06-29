@@ -74,4 +74,8 @@ class AppIcons {
       IconData(0xe81f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData share =
       IconData(0xe820, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData zap_off =
+      IconData(0xe821, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData camera_switch =
+      IconData(0xe822, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

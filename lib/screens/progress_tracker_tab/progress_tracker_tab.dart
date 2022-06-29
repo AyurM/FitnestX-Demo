@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:fitnest_x/res/theme/app_icons.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_fab.dart';
@@ -7,6 +8,7 @@ import 'package:fitnest_x/res/views/progress_tracker/progress_reminder.dart';
 import 'package:fitnest_x/res/views/progress_tracker/progress_track_info_card.dart';
 import 'package:fitnest_x/res/views/simple_app_scaffold.dart';
 import 'package:fitnest_x/screens/progress_comparison_screen/progress_comparison_screen.dart';
+import 'package:fitnest_x/screens/take_photo_screen/take_photo_screen.dart';
 import 'package:flutter/material.dart';
 
 const _titleText = 'Progress Photo';
@@ -94,8 +96,9 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
             ],
           ),
         ),
-        floatingActionButton:
-            AppFab.add(onPressed: () {}, icon: AppIcons.camera_outlined));
+        floatingActionButton: AppFab.add(
+            onPressed: () => _onTakePhotoPressed(context),
+            icon: AppIcons.camera_outlined));
   }
 
   void _onReminderClose() {
@@ -109,5 +112,19 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
     if (status == AnimationStatus.completed) {
       setState(() => showReminder = false);
     }
+  }
+
+  Future<void> _onTakePhotoPressed(BuildContext context) async {
+    final cameras = await availableCameras();
+    final firstCamera = cameras.first;
+
+    if (!mounted) {
+      return;
+    }
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => TakePhotoScreen(camera: firstCamera)));
   }
 }
