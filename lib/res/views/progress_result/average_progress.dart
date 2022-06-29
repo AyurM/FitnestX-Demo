@@ -5,6 +5,7 @@ import 'package:fitnest_x/res/views/section_title.dart';
 import 'package:flutter/material.dart';
 
 const _progressText = 'Average Progress';
+const _subtitleText = 'Good';
 const _kProgressBarHeight = 20.0;
 
 class AverageProgress extends StatelessWidget {
@@ -17,7 +18,7 @@ class AverageProgress extends StatelessWidget {
         children: [
           SectionTitle.simpleText(
               text: _progressText,
-              subtitle: 'Good',
+              subtitle: _subtitleText,
               textStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
                   color: AppColors.green, fontWeight: FontWeight.w500),
               context: context),

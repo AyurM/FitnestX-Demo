@@ -4,6 +4,7 @@ import 'package:fitnest_x/data/model/activity_progress_data.dart';
 import 'package:fitnest_x/data/model/meal/daily_nutrition_data.dart';
 import 'package:fitnest_x/data/model/description_step.dart';
 import 'package:fitnest_x/data/model/photo_comparison_data.dart';
+import 'package:fitnest_x/data/model/stat_comparison_data.dart';
 import 'package:fitnest_x/data/model/workout/exercise_data.dart';
 import 'package:fitnest_x/data/model/meal/ingredient_data.dart';
 import 'package:fitnest_x/data/model/latest_activity_content.dart';
@@ -778,6 +779,15 @@ class DataMockUtils {
           title: 'Right Facing',
           firstImagePath: 'assets/images/gallery_06.png',
           secondImagePath: 'assets/images/gallery_08.png'),
+    ];
+  }
+
+  static List<StatComparisonData> getMockStatComparisonData() {
+    return const [
+      StatComparisonData(title: 'Lose Weight', value: 0.33),
+      StatComparisonData(title: 'Height Increase', value: 0.88),
+      StatComparisonData(title: 'Muscle Mass Increase', value: 0.57),
+      StatComparisonData(title: 'Abs', value: 0.89),
     ];
   }
 }

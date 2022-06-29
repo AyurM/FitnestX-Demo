@@ -2,6 +2,7 @@ import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 const _kProgressBarHeight = 10.0;
+const _kMinPercentForPercentLabelVisibility = 0.1;
 
 class AppProgressBar extends StatelessWidget {
   final double completionPercent;
@@ -28,7 +29,7 @@ class AppProgressBar extends StatelessWidget {
           final uncompletedProgressWidth =
               constraints.maxWidth * (1 - completionPercent.clamp(0.0, 1.0));
 
-          return Stack(alignment: Alignment.center, children: [
+          return Stack(children: [
             Container(
                 decoration: BoxDecoration(
                     gradient: gradient ?? AppColors.progressGradient)),
@@ -40,7 +41,8 @@ class AppProgressBar extends StatelessWidget {
                   width: uncompletedProgressWidth,
                   color: AppColors.borderColor),
             ),
-            if (showPercent && completionPercent > 0.1)
+            if (showPercent &&
+                completionPercent > _kMinPercentForPercentLabelVisibility)
               _buildPercentLabel(
                   context,
                   constraints.maxWidth *
