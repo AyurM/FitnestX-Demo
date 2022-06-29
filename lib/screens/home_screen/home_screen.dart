@@ -5,6 +5,7 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/app_fab.dart';
 import 'package:fitnest_x/res/views/app_navigation_bar.dart';
 import 'package:fitnest_x/res/views/search_popup_menu.dart';
+import 'package:fitnest_x/screens/activity_tracker/activity_tracker_screen.dart';
 import 'package:fitnest_x/screens/home_tab/home_tab.dart';
 import 'package:fitnest_x/screens/meal_planner_screen/meal_planner_screen.dart';
 import 'package:fitnest_x/screens/profile_tab/profile_tab.dart';
@@ -107,9 +108,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   const HomeTab(),
-                  const Center(
-                    child: Text('Activity Tab'),
-                  ),
+                  ActivityTrackerScreen(onBackPressed: () => _onTabSelect(0)),
                   ProgressTrackerTab(onBackPressed: () => _onTabSelect(0)),
                   ProfileTab(onBackPressed: () => _onTabSelect(0))
                 ],

@@ -11,12 +11,15 @@ const _activityProgressText = 'Activity Progress';
 const _weeklyText = 'Weekly';
 
 class ActivityTrackerScreen extends StatelessWidget {
-  const ActivityTrackerScreen({Key? key}) : super(key: key);
+  final void Function()? onBackPressed;
+
+  const ActivityTrackerScreen({Key? key, this.onBackPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SimpleAppScaffold(
       title: _titleText,
+      onBackPressed: onBackPressed,
       body: SingleChildScrollView(
           padding: kHorizontalPadding20,
           child: Column(
