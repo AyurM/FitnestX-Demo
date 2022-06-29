@@ -4,6 +4,6 @@ Demo Flutter mobile application. Based on [this UI Kit](https://www.figma.com/fi
 
 # Video Previews
 
-demo/FitnestX Demo part 1.mp4
+https://github.com/AyurM/FitnestX-Demo/blob/master/demo/FitnestX%20Demo%20part%201.mp4
 
-demo/FitnestX Demo part 2.mp4
+https://github.com/AyurM/FitnestX-Demo/blob/master/demo/FitnestX%20Demo%20part%202.mp4
