@@ -48,19 +48,22 @@ class _AppModeSelectState extends State<AppModeSelect> {
             color: AppColors.borderColor),
         child: Stack(children: [
           _buildActiveOptionDecoration(Size(buttonWidth, buttonHeight)),
-          Row(
-            children: [
-              Expanded(
-                  child: _OptionButton(
-                      text: widget.firstOptionName,
-                      isSelected: selectedIndex == 0,
-                      onPressed: () => _onOptionSelect(0))),
-              Expanded(
-                  child: _OptionButton(
-                      text: widget.secondOptionName,
-                      isSelected: selectedIndex == 1,
-                      onPressed: () => _onOptionSelect(1)))
-            ],
+          SizedBox(
+            height: buttonHeight,
+            child: Row(
+              children: [
+                Expanded(
+                    child: _OptionButton(
+                        text: widget.firstOptionName,
+                        isSelected: selectedIndex == 0,
+                        onPressed: () => _onOptionSelect(0))),
+                Expanded(
+                    child: _OptionButton(
+                        text: widget.secondOptionName,
+                        isSelected: selectedIndex == 1,
+                        onPressed: () => _onOptionSelect(1)))
+              ],
+            ),
           )
         ]),
       );
@@ -108,16 +111,14 @@ class _OptionButton extends StatelessWidget {
         ?.copyWith(color: isSelected ? AppColors.white : AppColors.gray2);
 
     return GestureDetector(
+        behavior: HitTestBehavior.opaque,
         onTap: onPressed,
-        child: SizedBox(
-          height: _kHeight - _kPadding.top - _kPadding.bottom,
-          child: Center(
-            child: Text(
-              text,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: textStyle,
-            ),
+        child: Center(
+          child: Text(
+            text,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: textStyle,
           ),
         ));
   }
