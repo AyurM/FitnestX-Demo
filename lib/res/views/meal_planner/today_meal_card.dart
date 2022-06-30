@@ -28,7 +28,7 @@ class TodayMealCard extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return AppCard(
-      borderRadius: AppBorderRadius.medium.value,
+      borderRadius: AppBorderRadius.value16.value,
       padding: EdgeInsets.zero,
       child: RawMaterialButton(
         onPressed: onPressed ?? () {},
@@ -37,7 +37,7 @@ class TodayMealCard extends StatelessWidget {
         highlightElevation: 0,
         fillColor: AppColors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
         child: Row(children: [
           AppSimpleImage(
               assetPath: data.meal.assetPath,
@@ -70,7 +70,8 @@ class TodayMealCard extends StatelessWidget {
             height: _kNotificationItemSize,
             width: _kNotificationItemSize,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius:
+                    BorderRadius.circular(AppBorderRadius.value8.value),
                 gradient: AppColors.purpleGradientWithOpacity(_kBgOpacity)),
             child:
                 _MealNotificationIcon(showNotification: data.showNotification),

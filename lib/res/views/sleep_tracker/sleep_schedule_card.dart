@@ -24,7 +24,7 @@ class SleepScheduleCard extends StatelessWidget {
     final Duration timeDifference = data.dateTime.difference(DateTime.now());
 
     return AppCard(
-      borderRadius: AppBorderRadius.large.value,
+      borderRadius: AppBorderRadius.value22.value,
       padding: _kCardPadding,
       child: Row(children: [
         Image.asset(

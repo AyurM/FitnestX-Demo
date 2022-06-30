@@ -23,7 +23,7 @@ class SearchPopupMenu extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.white,
           boxShadow: const [AppColors.cardShadow],
-          borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value12.value)),
       child: Center(
         child:
             Column(mainAxisSize: MainAxisSize.min, children: _buildMenuItems()),

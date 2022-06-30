@@ -24,7 +24,7 @@ class UpcomingWorkoutCard extends StatelessWidget {
     final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
 
     return AppCard(
-      borderRadius: AppBorderRadius.medium.value,
+      borderRadius: AppBorderRadius.value16.value,
       padding: _kCardPadding,
       child: Row(children: [
         AppSimpleImage(

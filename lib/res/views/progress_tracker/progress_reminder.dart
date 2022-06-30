@@ -27,7 +27,7 @@ class ProgressReminder extends StatelessWidget {
       padding: _kCardPadding,
       decoration: BoxDecoration(
         color: AppColors.red.withOpacity(_kBgOpacity),
-        borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+        borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
       ),
       child: Row(children: [
         const Padding(

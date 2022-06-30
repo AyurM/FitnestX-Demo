@@ -36,7 +36,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
       },
       child: Dialog(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
         ),
         backgroundColor: AppColors.white,
         child: Container(

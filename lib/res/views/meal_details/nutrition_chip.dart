@@ -22,7 +22,7 @@ class NutritionChip extends StatelessWidget {
     return Container(
       padding: _kPadding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.small.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value12.value),
           gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
       child: Row(children: [
         Image.asset(data.type.iconPath, height: _kIconSize),

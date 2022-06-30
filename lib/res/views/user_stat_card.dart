@@ -21,7 +21,7 @@ class UserStatCard extends StatelessWidget {
       padding: _kCardPadding,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
           boxShadow: const [AppColors.cardShadow]),
       child: Column(
         children: [

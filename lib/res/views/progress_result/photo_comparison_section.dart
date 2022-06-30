@@ -36,6 +36,6 @@ class PhotoComparisonSection extends StatelessWidget {
   }
 
   Widget _buildImage(String path, double size) => ClipRRect(
-      borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+      borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
       child: Image.asset(path, width: size, height: size, fit: BoxFit.cover));
 }

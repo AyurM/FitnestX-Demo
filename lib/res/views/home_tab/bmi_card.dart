@@ -29,7 +29,7 @@ class BmiCard extends StatelessWidget {
     return Container(
       height: _kCardHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
           gradient: AppColors.blueGradient,
           boxShadow: [
             BoxShadow(

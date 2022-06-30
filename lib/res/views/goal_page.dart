@@ -27,7 +27,7 @@ class GoalPage extends StatelessWidget {
                   offset: Offset(0, 10),
                   blurRadius: 10)
             ],
-            borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
             gradient: AppColors.blueGradient),
         child: Column(children: [
           Expanded(

@@ -22,7 +22,7 @@ class SleepGraphModal extends StatelessWidget {
       child: Container(
         padding: kAllPadding10,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value8.value),
             boxShadow: const [AppColors.cardShadow],
             color: AppColors.white),
         child: Text(_getMockText(mockValue),

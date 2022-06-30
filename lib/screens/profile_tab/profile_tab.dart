@@ -163,7 +163,7 @@ class _ProfileSectionCard extends StatelessWidget {
       padding: kAllPadding20,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
           boxShadow: const [AppColors.cardShadow]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(title,

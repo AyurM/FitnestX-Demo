@@ -36,7 +36,7 @@ class MealCategoryCard extends StatelessWidget {
         padding: _kCardPadding,
         decoration: BoxDecoration(
             gradient: _color.gradient(opacity: _kCardBgOpacity),
-            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
         child: Center(
             child: Column(
           mainAxisSize: MainAxisSize.min,

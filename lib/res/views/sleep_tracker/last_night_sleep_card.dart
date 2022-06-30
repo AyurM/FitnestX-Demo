@@ -34,7 +34,7 @@ class LastNightSleepCard extends StatelessWidget {
       aspectRatio: _kAspectRatio,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
             gradient: AppColors.blueGradient,
             boxShadow: [
               BoxShadow(

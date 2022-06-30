@@ -29,7 +29,7 @@ class DailyActionCard extends StatelessWidget {
       margin: margin ?? EdgeInsets.zero,
       padding: _kCardPadding,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
           gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(title,

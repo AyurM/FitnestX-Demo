@@ -25,7 +25,7 @@ class SleepBanner extends StatelessWidget {
       return Container(
         padding: _kCardPadding,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
             gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [

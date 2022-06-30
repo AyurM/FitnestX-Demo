@@ -24,7 +24,8 @@ class WorkoutItemCard extends StatelessWidget {
           height: size,
           decoration: BoxDecoration(
               color: AppColors.borderColor,
-              borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
+              borderRadius:
+                  BorderRadius.circular(AppBorderRadius.value12.value)),
           child: Center(
             child: Image.asset(
               itemInfo.assetPath,

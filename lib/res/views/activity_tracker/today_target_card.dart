@@ -36,7 +36,7 @@ class TodayTargetCard extends StatelessWidget {
   }
 
   BoxDecoration _buildCardDecoration() => BoxDecoration(
-      borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+      borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
       gradient: AppColors.blueGradientWithOpacity(_kBgOpacity));
 
   Widget _buildCardHeader(BuildContext context) => Row(
@@ -67,7 +67,7 @@ class _TodayTargetItem extends StatelessWidget {
       padding: _kItemCardPadding,
       decoration: BoxDecoration(
           color: AppColors.white,
-          borderRadius: BorderRadius.circular(AppBorderRadius.small.value)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value12.value)),
       child: Row(children: [
         Image.asset(data.imagePath,
             width: _kImageSize, height: _kImageSize, fit: BoxFit.contain),

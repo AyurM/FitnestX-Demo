@@ -11,9 +11,10 @@ const kBottomNavBarHeight = 80.0;
 const kFabTopOffset = 10.0;
 
 enum AppBorderRadius {
-  large(22.0),
-  medium(16.0),
-  small(12.0);
+  value22(22.0),
+  value16(16.0),
+  value12(12.0),
+  value8(8.0);
 
   final double value;
   const AppBorderRadius(this.value);

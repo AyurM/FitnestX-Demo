@@ -41,7 +41,7 @@ class _HeartRateCardState extends State<HeartRateCard> {
     return Container(
       height: _kHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
           gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
       child: LayoutBuilder(builder: (context, constraints) {
         return GestureDetector(

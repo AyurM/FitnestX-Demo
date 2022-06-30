@@ -40,7 +40,7 @@ class MealScheduleListItem extends StatelessWidget {
           color: imageBgColor,
           bgOpacity: _kBgOpacity,
           assetScale: _kAssetImageScale,
-          borderRadius: AppBorderRadius.small.value,
+          borderRadius: AppBorderRadius.value12.value,
         ),
         AppWhiteSpace.value10.horizontal,
         Column(

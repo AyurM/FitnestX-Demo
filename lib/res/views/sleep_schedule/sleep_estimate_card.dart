@@ -30,7 +30,7 @@ class SleepEstimateCard extends StatelessWidget {
       padding: _kCardPadding,
       width: double.infinity,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
           gradient: AppColors.purpleGradientWithOpacity(_kBgOpacity)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

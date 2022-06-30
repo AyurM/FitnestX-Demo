@@ -20,10 +20,10 @@ class AppSearchBar extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
           boxShadow: const [AppColors.cardShadow],
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
       child: Material(
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
         color: AppColors.white,
         child: Row(
           children: [
@@ -41,8 +41,8 @@ class AppSearchBar extends StatelessWidget {
                     hintText: _searchText,
                     contentPadding: _kPadding,
                     border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.circular(AppBorderRadius.medium.value),
+                        borderRadius: BorderRadius.circular(
+                            AppBorderRadius.value16.value),
                         borderSide: BorderSide.none)),
               ),
             ),

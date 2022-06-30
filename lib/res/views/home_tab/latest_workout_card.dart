@@ -27,7 +27,7 @@ class LatestWorkoutCard extends StatelessWidget {
 
     return AppCard(
       padding: EdgeInsets.zero,
-      borderRadius: AppBorderRadius.medium.value,
+      borderRadius: AppBorderRadius.value16.value,
       child: RawMaterialButton(
         onPressed: onPressed ?? () {},
         padding: _kCardPadding,
@@ -35,7 +35,7 @@ class LatestWorkoutCard extends StatelessWidget {
         highlightElevation: 0,
         fillColor: AppColors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
         child: Row(children: [
           AppSimpleImage(
               assetPath: data.assetPath,

@@ -19,7 +19,7 @@ class ActivityProgressCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppColors.white,
           boxShadow: const [AppColors.cardShadow],
-          borderRadius: BorderRadius.circular(AppBorderRadius.large.value)),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value22.value)),
       child: LayoutBuilder(builder: ((context, constraints) {
         final itemWidth = constraints.maxWidth / (progressData.length * 2 - 1);
         return Row(

@@ -58,7 +58,7 @@ class WorkoutDetailsButton extends StatelessWidget {
     return Container(
       height: _kButtonHeight,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppBorderRadius.medium.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
           color: backgroundColor,
           gradient: gradient),
       child: RawMaterialButton(
@@ -68,7 +68,7 @@ class WorkoutDetailsButton extends StatelessWidget {
           highlightElevation: 0,
           shape: RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.circular(AppBorderRadius.medium.value)),
+                  BorderRadius.circular(AppBorderRadius.value16.value)),
           child: Row(
             children: [
               Icon(iconData, size: _kIconSize, color: AppColors.gray1),

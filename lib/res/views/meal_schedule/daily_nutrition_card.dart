@@ -21,7 +21,7 @@ class DailyNutritionCard extends StatelessWidget {
 
     return AppCard(
       padding: _kCardPadding,
-      borderRadius: AppBorderRadius.medium.value,
+      borderRadius: AppBorderRadius.value16.value,
       child: Column(
         children: [
           Row(

@@ -56,7 +56,7 @@ class _ExerciseVideoMock extends StatelessWidget {
         width: constraints.maxWidth,
         height: height,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppBorderRadius.large.value),
+          borderRadius: BorderRadius.circular(AppBorderRadius.value22.value),
           child: Stack(
             alignment: Alignment.center,
             children: [

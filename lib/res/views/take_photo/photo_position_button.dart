@@ -27,7 +27,7 @@ class PhotoPositionButton extends StatelessWidget {
             ? EdgeInsets.all(kAllPadding10.top - _kBorderWidth)
             : kAllPadding10,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppBorderRadius.small.value),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value12.value),
             color: AppColors.borderColor,
             border: isSelected
                 ? Border.all(

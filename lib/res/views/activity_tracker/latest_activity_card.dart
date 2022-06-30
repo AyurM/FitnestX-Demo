@@ -21,7 +21,7 @@ class LatestActivityCard extends StatelessWidget {
     final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
 
     return AppCard(
-      borderRadius: AppBorderRadius.medium.value,
+      borderRadius: AppBorderRadius.value16.value,
       padding: EdgeInsets.zero,
       child: RawMaterialButton(
         onPressed: () {},
@@ -30,7 +30,7 @@ class LatestActivityCard extends StatelessWidget {
         highlightElevation: 0,
         fillColor: AppColors.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppBorderRadius.medium.value)),
+            borderRadius: BorderRadius.circular(AppBorderRadius.value16.value)),
         child: Row(children: [
           AppSimpleImage(
               assetPath: data.assetPath,
