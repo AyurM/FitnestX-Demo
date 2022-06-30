@@ -18,7 +18,7 @@ const _kDashLength = 4.0;
 
 class SleepGraph extends StatefulWidget {
   final List<Duration> values;
-  final void Function(int)? onValueSelected;
+  final void Function(int, Offset)? onValueSelected;
 
   const SleepGraph({Key? key, required this.values, this.onValueSelected})
       : super(key: key);
@@ -29,27 +29,34 @@ class SleepGraph extends StatefulWidget {
 
 class _SleepGraphState extends State<SleepGraph> {
   int? selectedIndex;
+  double? pxPerMinute;
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (context, constraints) {
+          pxPerMinute =
+              constraints.maxHeight / (_kMaxDuration - _kMinDuration).inMinutes;
+
           return GestureDetector(
             onTapDown: (details) =>
-                _onTouchGesture(details.localPosition.dx, constraints.maxWidth),
+                _onTouchGesture(details.localPosition.dx, constraints),
             onPanUpdate: (details) =>
-                _onTouchGesture(details.localPosition.dx, constraints.maxWidth),
+                _onTouchGesture(details.localPosition.dx, constraints),
             child: CustomPaint(
               painter: _SleepGraphPainter(
-                  values: widget.values, selectedIndex: selectedIndex),
+                  values: widget.values,
+                  pxPerMinute: pxPerMinute!,
+                  selectedIndex: selectedIndex),
               size: Size.infinite,
             ),
           );
         },
       );
 
-  void _onTouchGesture(double gesturePositionX, double maxWidth) {
-    final index = _calcSelectedIndex(gesturePositionX, maxWidth);
-    widget.onValueSelected?.call(index);
+  void _onTouchGesture(double gesturePositionX, BoxConstraints constraints) {
+    final index = _calcSelectedIndex(gesturePositionX, constraints.maxWidth);
+    final offset = _calcPopupOffset(index, constraints);
+    widget.onValueSelected?.call(index, offset);
     setState(() => selectedIndex = index);
   }
 
@@ -60,20 +67,33 @@ class _SleepGraphState extends State<SleepGraph> {
         .round()
         .clamp(0, widget.values.length - 1);
   }
+
+  Offset _calcPopupOffset(int index, BoxConstraints constraints) {
+    final stepX = (constraints.maxWidth - _kGraphXPadding * 2) /
+        (widget.values.length - 1);
+    final dx = _kGraphXPadding + index * stepX;
+    final dy = constraints.maxHeight -
+        widget.values[index].inMinutes * (pxPerMinute ?? 0);
+    return Offset(dx, dy);
+  }
 }
 
 class _SleepGraphPainter extends CustomPainter {
   final List<Duration> values;
+  final double pxPerMinute;
   final int? selectedIndex;
 
-  _SleepGraphPainter({required this.values, this.selectedIndex});
+  _SleepGraphPainter({
+    required this.values,
+    required this.pxPerMinute,
+    this.selectedIndex,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
     canvas.clipRect(Offset.zero & size);
     _drawGridLines(canvas, size);
 
-    final pxPerMinute = size.height / (_kMaxDuration - _kMinDuration).inMinutes;
     final graphPoints =
         _getGraphPoints(size, pxPerMinute, _kGraphInterpolationPoints);
 

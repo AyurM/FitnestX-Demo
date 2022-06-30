@@ -41,6 +41,9 @@ const _kMinActivityValue = 300;
 const _kMaxActivityValue = 900;
 const _kTargetActivityValue = 1000;
 const _kMinLatestWorkoutProgress = 0.2;
+const _kSleepValuesLength = 7;
+const _kMinHourSleep = 6;
+const _kMaxHourSleep = 8;
 
 class DataMockUtils {
   DataMockUtils._();
@@ -790,4 +793,11 @@ class DataMockUtils {
       StatComparisonData(title: 'Abs', value: 0.89),
     ];
   }
+
+  static List<Duration> getMockSleepValues() => List<Duration>.generate(
+      _kSleepValuesLength,
+      (index) => Duration(
+          hours: _random.nextInt(_kMaxHourSleep - _kMinHourSleep + 1) +
+              _kMinHourSleep,
+          minutes: _random.nextInt(60)));
 }
