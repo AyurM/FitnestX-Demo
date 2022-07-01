@@ -119,7 +119,7 @@ class _SleepGraphWidgetState extends State<_SleepGraphWidget> {
   }
 
   void _onSleepValueSelected(int index, Offset offset) {
-    if (index == selectedIndex) {
+    if (index == selectedIndex && popupOffset != null) {
       return;
     }
 
