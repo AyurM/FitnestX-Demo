@@ -52,7 +52,7 @@ class ProgressReminder extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme.bodyMedium?.copyWith(
-                      color: AppColors.black, fontWeight: FontWeight.bold)),
+                      color: AppColors.black, fontWeight: FontWeight.w500)),
             ]),
           ),
         ),

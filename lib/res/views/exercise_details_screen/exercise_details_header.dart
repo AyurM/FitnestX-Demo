@@ -18,7 +18,7 @@ class ExerciseDetailsHeader extends StatelessWidget {
       children: [
         Text(
           exercise.title,
-          style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
+          style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
         AppWhiteSpace.value3.vertical,
         Text(

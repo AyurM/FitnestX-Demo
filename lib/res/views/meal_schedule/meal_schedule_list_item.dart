@@ -48,11 +48,10 @@ class MealScheduleListItem extends StatelessWidget {
           children: [
             Text(data.meal.name,
                 style: textTheme.bodyMedium?.copyWith(
-                    color: AppColors.black, fontWeight: FontWeight.w600)),
+                    color: AppColors.black, fontWeight: FontWeight.w500)),
             AppWhiteSpace.value3.vertical,
             Text(_timeFormat.format(data.dateTime).toLowerCase(),
-                style:
-                    textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w500)),
+                style: textTheme.titleMedium),
           ],
         ),
         const Spacer(),

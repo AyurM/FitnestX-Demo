@@ -29,7 +29,7 @@ class DailyNutritionCard extends StatelessWidget {
               Text(
                 formattedName,
                 style: textTheme.titleMedium?.copyWith(
-                    color: AppColors.black, fontWeight: FontWeight.bold),
+                    color: AppColors.black, fontWeight: FontWeight.w500),
               ),
               AppWhiteSpace.value5.horizontal,
               Image.asset(data.data.type.iconPath, height: _kIconSize),

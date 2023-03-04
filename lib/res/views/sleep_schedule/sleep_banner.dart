@@ -19,7 +19,7 @@ class SleepBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final digitTextStyle = textTheme.bodyMedium
-        ?.copyWith(color: AppColors.blue, fontWeight: FontWeight.w600);
+        ?.copyWith(color: AppColors.blue, fontWeight: FontWeight.w500);
 
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
@@ -34,19 +34,20 @@ class SleepBanner extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(_titleText,
-                  style: textTheme.titleMedium?.copyWith(color: AppColors.black)),
+                  style:
+                      textTheme.titleMedium?.copyWith(color: AppColors.black)),
               AppWhiteSpace.value5.vertical,
               RichText(
                 text: TextSpan(text: '8', style: digitTextStyle, children: [
                   TextSpan(
                       text: 'hours',
-                      style:
-                          textTheme.titleMedium?.copyWith(color: AppColors.blue)),
+                      style: textTheme.titleMedium
+                          ?.copyWith(color: AppColors.blue)),
                   TextSpan(text: ' 30'.toString(), style: digitTextStyle),
                   TextSpan(
                       text: 'minutes',
-                      style:
-                          textTheme.titleMedium?.copyWith(color: AppColors.blue)),
+                      style: textTheme.titleMedium
+                          ?.copyWith(color: AppColors.blue)),
                 ]),
               ),
               AppWhiteSpace.value15.vertical,
@@ -56,7 +57,7 @@ class SleepBanner extends StatelessWidget {
                 onPressed: onPressed,
                 height: _kButtonHeight,
                 textStyle: textTheme.labelLarge
-                    ?.copyWith(fontSize: 10, fontWeight: FontWeight.bold),
+                    ?.copyWith(fontSize: 10, fontWeight: FontWeight.w600),
               )
             ],
           )),

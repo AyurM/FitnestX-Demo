@@ -23,7 +23,7 @@ class SleepEstimateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final digitTextStyle = textTheme.bodyMedium
-        ?.copyWith(color: AppColors.black, fontWeight: FontWeight.bold);
+        ?.copyWith(color: AppColors.black, fontWeight: FontWeight.w500);
     final textStyle = textTheme.titleMedium?.copyWith(color: AppColors.black);
 
     return Container(

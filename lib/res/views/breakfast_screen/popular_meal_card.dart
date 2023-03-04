@@ -52,7 +52,7 @@ class PopularMealCard extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold, color: AppColors.black)),
+                      fontWeight: FontWeight.w500, color: AppColors.black)),
               AppWhiteSpace.value3.vertical,
               Text(
                 subtitle,

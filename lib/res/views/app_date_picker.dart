@@ -240,7 +240,7 @@ class _ScheduleDayItem extends StatelessWidget {
             AppWhiteSpace.value10.vertical,
             Text(date.day.toString(),
                 style: textStyle?.copyWith(
-                    fontWeight: FontWeight.w600, color: textColor)),
+                    fontWeight: FontWeight.w500, color: textColor)),
           ],
         )),
       ),

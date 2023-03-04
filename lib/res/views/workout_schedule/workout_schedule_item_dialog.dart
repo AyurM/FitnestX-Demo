@@ -53,7 +53,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: _kDialogPadding),
                 child: Text(data.title,
                     style: textTheme.bodyMedium?.copyWith(
-                        color: AppColors.black, fontWeight: FontWeight.bold)),
+                        color: AppColors.black, fontWeight: FontWeight.w500)),
               ),
               AppWhiteSpace.value10.vertical,
               Padding(
@@ -77,7 +77,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                   text: _markAsDoneText,
                   height: _kButtonHeight,
                   textStyle: textTheme.titleMedium?.copyWith(
-                      color: AppColors.white, fontWeight: FontWeight.bold),
+                      color: AppColors.white, fontWeight: FontWeight.w600),
                   onPressed: () {
                     Navigator.of(context).pop();
                     onDone?.call(data);
@@ -104,7 +104,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                    ?.copyWith(fontWeight: FontWeight.w600),
                 textAlign: TextAlign.center),
             _DialogHeaderIconButton(
                 iconData: Icons.more_vert_sharp, onPressed: onMore)

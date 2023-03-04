@@ -40,7 +40,7 @@ class SleepScheduleCard extends StatelessWidget {
               text: TextSpan(
                   text: '${data.title}, ',
                   style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold, color: AppColors.black),
+                      fontWeight: FontWeight.w500, color: AppColors.black),
                   children: [
                     TextSpan(
                         text: _timeFormat.format(data.dateTime).toLowerCase(),
@@ -85,7 +85,7 @@ class _TimeDifferenceLabel extends StatelessWidget {
     }
 
     final digitTextStyle = textTheme.bodyLarge
-        ?.copyWith(color: AppColors.gray1, fontWeight: FontWeight.w600);
+        ?.copyWith(color: AppColors.gray1, fontWeight: FontWeight.w500);
 
     return RichText(
       maxLines: 1,

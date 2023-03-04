@@ -106,7 +106,7 @@ class _ProfileHeader extends StatelessWidget {
           children: [
             Text('${profile.firstName} ${profile.lastName}',
                 style: textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold, color: AppColors.black)),
+                    fontWeight: FontWeight.w500, color: AppColors.black)),
             AppWhiteSpace.value5.horizontal,
             Text('${profile.program} Program', style: textTheme.titleMedium),
           ],
@@ -116,7 +116,8 @@ class _ProfileHeader extends StatelessWidget {
           text: _editText,
           height: _kButtonHeight,
           onPressed: () {},
-          textStyle: textTheme.titleMedium?.copyWith(color: AppColors.white),
+          textStyle: textTheme.titleMedium
+              ?.copyWith(fontWeight: FontWeight.w500, color: AppColors.white),
           padding: _kButtonPadding,
         )
       ],
@@ -170,7 +171,7 @@ class _ProfileSectionCard extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge
-                ?.copyWith(fontWeight: FontWeight.bold)),
+                ?.copyWith(fontWeight: FontWeight.w600)),
         AppWhiteSpace.value15.vertical,
         ...menuItems.map((item) => item.type == MenuItemType.simple
             ? SettingsMenuItem(data: item)

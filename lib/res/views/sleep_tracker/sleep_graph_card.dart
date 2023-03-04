@@ -6,7 +6,7 @@ import 'package:fitnest_x/utils/data_mock_utils.dart';
 import 'package:flutter/material.dart';
 
 const _kAspectRatio = 1.78;
-const _kXLabelWidth = 30.0;
+const _kXLabelWidth = 31.0;
 const _kYLabelWidth = 20.0;
 const _kYLabelSpacing = 5.0;
 const _kPopupXSpacing = 10.0;

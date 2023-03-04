@@ -34,7 +34,7 @@ class WorkoutTypeCard extends StatelessWidget {
               children: [
                 Text(data.title,
                     style: textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.bold, color: AppColors.black)),
+                        fontWeight: FontWeight.w500, color: AppColors.black)),
                 AppWhiteSpace.value5.vertical,
                 Text(
                     '${data.exercises} Exercises | ${data.duration.inMinutes}mins',
@@ -46,7 +46,7 @@ class WorkoutTypeCard extends StatelessWidget {
                   height: _kButtonHeight,
                   textStyle: textTheme.titleMedium?.copyWith(
                       fontSize: 10,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       color: AppColors.blue2),
                 )
               ],

@@ -44,7 +44,7 @@ class TodayTargetCard extends StatelessWidget {
         children: [
           Text(_titleText,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.bold, color: AppColors.black)),
+                  fontWeight: FontWeight.w600, color: AppColors.black)),
           SecondaryIconButton(
             icon:
                 const Icon(Icons.add, color: AppColors.white, size: _kIconSize),

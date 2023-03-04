@@ -62,7 +62,7 @@ class _ExerciseList extends StatelessWidget {
       children: [
         Text('Set $setIndex',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.black, fontWeight: FontWeight.bold)),
+                color: AppColors.black, fontWeight: FontWeight.w500)),
         AppWhiteSpace.value15.vertical,
         ..._buildItems(context)
       ],

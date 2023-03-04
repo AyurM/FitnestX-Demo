@@ -34,7 +34,7 @@ class DailyActionCard extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(title,
             style: textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w600, color: AppColors.black)),
+                fontWeight: FontWeight.w500, color: AppColors.black)),
         SecondaryButton.blue(
           text: buttonText,
           onPressed: onPressed,

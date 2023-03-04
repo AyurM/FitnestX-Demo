@@ -38,7 +38,7 @@ class NotificationListItem extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: textStyle?.copyWith(
-                        fontWeight: FontWeight.bold, color: AppColors.black)),
+                        fontWeight: FontWeight.w500, color: AppColors.black)),
                 Text(
                   data.date,
                   maxLines: 1,

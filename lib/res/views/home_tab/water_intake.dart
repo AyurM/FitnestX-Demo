@@ -154,7 +154,7 @@ class _WaterIntakeUpdateItem extends StatelessWidget {
               Text(update.intake,
                   style: textStyle?.copyWith(
                       fontSize: 10,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       color: AppColors.purple))
             ],
           ))

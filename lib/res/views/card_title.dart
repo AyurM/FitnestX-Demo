@@ -11,5 +11,5 @@ class CardTitle extends StatelessWidget {
       style: Theme.of(context)
           .textTheme
           .titleMedium
-          ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.black));
+          ?.copyWith(fontWeight: FontWeight.w500, color: AppColors.black));
 }

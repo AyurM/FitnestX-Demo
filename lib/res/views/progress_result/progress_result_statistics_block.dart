@@ -16,7 +16,7 @@ class ProgressResultStatisticsBlock extends StatelessWidget {
     final textStyle = Theme.of(context)
         .textTheme
         .bodyLarge
-        ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.gray1);
+        ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.gray1);
 
     final data = DataMockUtils.getMockStatComparisonData();
 

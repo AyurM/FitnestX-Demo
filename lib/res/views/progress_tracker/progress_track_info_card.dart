@@ -36,13 +36,13 @@ class ProgressTrackInfoCard extends StatelessWidget {
                 text: TextSpan(
                     text: _titleText1,
                     style: textTheme.titleMedium?.copyWith(
-                        color: AppColors.black, fontWeight: FontWeight.bold),
+                        color: AppColors.black, fontWeight: FontWeight.w500),
                     children: [
                       TextSpan(
                           text: _titleText2,
                           style: textTheme.titleMedium?.copyWith(
                               color: AppColors.blue,
-                              fontWeight: FontWeight.bold)),
+                              fontWeight: FontWeight.w600)),
                     ]),
               ),
               AppWhiteSpace.value15.vertical,
@@ -52,7 +52,7 @@ class ProgressTrackInfoCard extends StatelessWidget {
                 onPressed: onPressed,
                 height: _kButtonHeight,
                 textStyle: textTheme.labelLarge
-                    ?.copyWith(fontSize: 10, fontWeight: FontWeight.bold),
+                    ?.copyWith(fontSize: 10, fontWeight: FontWeight.w600),
               )
             ],
           )),

@@ -31,11 +31,11 @@ class ExerciseCard extends StatelessWidget {
           children: [
             Text(data.title,
                 style: textTheme.bodyMedium?.copyWith(
-                    color: AppColors.black, fontWeight: FontWeight.w600)),
+                    color: AppColors.black, fontWeight: FontWeight.w500)),
             AppWhiteSpace.value3.vertical,
             Text(data.subtitle,
-                style:
-                    textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w500)),
+                style: textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w500)),
           ],
         ),
         const Spacer(),

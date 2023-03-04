@@ -54,7 +54,7 @@ class BmiCard extends StatelessWidget {
                     _titleText,
                     maxLines: 1,
                     style: textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.bold, color: AppColors.white),
+                        fontWeight: FontWeight.w600, color: AppColors.white),
                   ),
                   Text(
                     _subtitleText,
@@ -186,7 +186,7 @@ class _BmiPie extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.white),
+                ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.white),
           ),
         ),
       ),
