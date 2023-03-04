@@ -29,10 +29,10 @@ class HomeTabHeader extends StatelessWidget {
           children: [
             Text(
               _welcomeText,
-              style: textTheme.subtitle1?.copyWith(color: AppColors.gray2),
+              style: textTheme.titleMedium?.copyWith(color: AppColors.gray2),
             ),
             AppWhiteSpace.value3.vertical,
-            Text(username, style: textTheme.headline4)
+            Text(username, style: textTheme.headlineMedium)
           ],
         ),
         _NotificationButton(

@@ -151,7 +151,7 @@ class _SliverAppBarTitle extends StatelessWidget {
       Text(text,
           style: Theme.of(context)
               .textTheme
-              .headline4
+              .headlineMedium
               ?.copyWith(fontSize: 16, color: textColor)),
       AppBarButton(
         iconData: AppIcons.more,

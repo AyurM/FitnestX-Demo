@@ -91,7 +91,7 @@ class _AppMonthPickerState extends State<_AppMonthPicker> {
         Text(_monthFormat.format(displayedMonth),
             style: Theme.of(context)
                 .textTheme
-                .bodyText2
+                .bodyMedium
                 ?.copyWith(color: AppColors.gray2)),
         AppWhiteSpace.value30.horizontal,
         IconButton(
@@ -219,7 +219,7 @@ class _ScheduleDayItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.subtitle1;
+    final textStyle = Theme.of(context).textTheme.titleMedium;
     final textColor = isSelected ? AppColors.white : AppColors.gray1;
 
     return GestureDetector(

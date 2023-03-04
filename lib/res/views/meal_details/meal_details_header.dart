@@ -23,14 +23,14 @@ class MealDetailsHeader extends StatelessWidget {
           children: [
             Text(data.name,
                 style:
-                    textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold)),
+                    textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold)),
             AppWhiteSpace.value5.vertical,
             RichText(
               text:
-                  TextSpan(text: 'by ', style: textTheme.subtitle1, children: [
+                  TextSpan(text: 'by ', style: textTheme.titleMedium, children: [
                 TextSpan(
                     text: _recipeAuthorText,
-                    style: textTheme.subtitle1?.copyWith(color: AppColors.blue))
+                    style: textTheme.titleMedium?.copyWith(color: AppColors.blue))
               ]),
             )
           ],

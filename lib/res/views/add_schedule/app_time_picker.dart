@@ -17,7 +17,7 @@ const TextStyle _kDefaultPickerTextStyle = TextStyle(
 
 TextStyle _themeTextStyle(BuildContext context) => Theme.of(context)
     .textTheme
-    .bodyText2!
+    .bodyMedium!
     .copyWith(fontWeight: FontWeight.w600);
 
 final Widget _customSelectionOverlay = Container(

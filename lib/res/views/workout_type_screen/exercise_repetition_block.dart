@@ -46,7 +46,7 @@ class ExerciseRepetitionsBlock extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text('times',
-                        style: textTheme.bodyText1
+                        style: textTheme.bodyLarge
                             ?.copyWith(color: AppColors.gray2)),
                   ),
                 ),
@@ -71,8 +71,6 @@ class _RepetitionPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme textTheme = Theme.of(context).textTheme;
-
     return CupertinoPicker(
       selectionOverlay: Container(
         decoration: const _PickerOverlayDecoration(),
@@ -83,31 +81,16 @@ class _RepetitionPicker extends StatelessWidget {
       looping: true,
       onSelectedItemChanged: onSelected,
       itemExtent: _kPickerItemExtent,
-      children: List<Widget>.generate(_kMaxRepetitions - _kMinRepetitions + 1,
-          (index) {
-        final int value = _kMinRepetitions + index;
-        return Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            AppWhiteSpace.value30.horizontal,
-            Image.asset(
-              'assets/images/icon_burn.png',
-              width: _kIconSize,
-              height: _kIconSize,
-            ),
-            AppWhiteSpace.value5.horizontal,
-            Text('${value * _kCaloriesPerRepetition} Calories Burn',
-                style: textTheme.subtitle1
-                    ?.copyWith(color: AppColors.gray2, fontSize: 11)),
-            AppWhiteSpace.value10.horizontal,
-            Text('$value',
-                style: textTheme.bodyText2
-                    ?.copyWith(fontWeight: FontWeight.w500, fontSize: 24)),
-            AppWhiteSpace.value10.horizontal,
-          ],
-        );
-      }),
+      children: _buildPickerItems(),
     );
+  }
+
+  List<Widget> _buildPickerItems() {
+    return List<Widget>.generate(_kMaxRepetitions - _kMinRepetitions + 1,
+        (index) {
+      final int value = _kMinRepetitions + index;
+      return _RepetitionPickerItem(amount: value);
+    });
   }
 }
 
@@ -117,4 +100,45 @@ class _PickerOverlayDecoration extends BoxDecoration {
             border: const Border(
                 top: BorderSide(width: 1, color: AppColors.gray3),
                 bottom: BorderSide(width: 1, color: AppColors.gray3)));
+}
+
+class _RepetitionPickerItem extends StatelessWidget {
+  static final _iconImage = Image.asset(
+    'assets/images/icon_burn.png',
+    errorBuilder: (context, error, stackTrace) => Container(
+      color: Colors.red,
+      width: _kIconSize,
+      height: _kIconSize,
+    ),
+    width: _kIconSize,
+    height: _kIconSize,
+    fit: BoxFit.cover,
+  );
+
+  final int amount;
+
+  const _RepetitionPickerItem({Key? key, required this.amount})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final TextTheme textTheme = Theme.of(context).textTheme;
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        AppWhiteSpace.value30.horizontal,
+        _iconImage,
+        AppWhiteSpace.value5.horizontal,
+        Text('${amount * _kCaloriesPerRepetition} Calories Burn',
+            style: textTheme.titleMedium
+                ?.copyWith(color: AppColors.gray2, fontSize: 11)),
+        AppWhiteSpace.value10.horizontal,
+        Text('$amount',
+            style: textTheme.bodyMedium
+                ?.copyWith(fontWeight: FontWeight.w500, fontSize: 24)),
+        AppWhiteSpace.value10.horizontal,
+      ],
+    );
+  }
 }

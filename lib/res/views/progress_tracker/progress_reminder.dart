@@ -46,12 +46,12 @@ class ProgressReminder extends StatelessWidget {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(_titleText,
-                  style: textTheme.subtitle1?.copyWith(color: AppColors.red)),
+                  style: textTheme.titleMedium?.copyWith(color: AppColors.red)),
               AppWhiteSpace.value3.horizontal,
               Text(text,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyText2?.copyWith(
+                  style: textTheme.bodyMedium?.copyWith(
                       color: AppColors.black, fontWeight: FontWeight.bold)),
             ]),
           ),

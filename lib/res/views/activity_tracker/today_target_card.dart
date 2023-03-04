@@ -43,7 +43,7 @@ class TodayTargetCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(_titleText,
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.black)),
           SecondaryIconButton(
             icon:
@@ -77,12 +77,12 @@ class _TodayTargetItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('${data.value}${data.unit ?? ''}',
-                  style: textTheme.bodyText2?.copyWith(
+                  style: textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.w500, color: AppColors.blue)),
               Text(data.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.subtitle1)
+                  style: textTheme.titleMedium)
             ],
           ),
         )

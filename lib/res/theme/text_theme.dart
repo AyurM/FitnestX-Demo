@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextTheme appTextTheme = TextTheme(
-    headline1: GoogleFonts.poppins(
+    displayLarge: GoogleFonts.poppins(
         fontSize: 26, fontWeight: FontWeight.w700, color: AppColors.black),
-    headline2: GoogleFonts.poppins(
+    displayMedium: GoogleFonts.poppins(
         fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.black),
-    headline3: GoogleFonts.poppins(
+    displaySmall: GoogleFonts.poppins(
         fontSize: 22, fontWeight: FontWeight.w700, color: AppColors.black),
-    headline4: GoogleFonts.poppins(
+    headlineMedium: GoogleFonts.poppins(
         fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.black),
-    bodyText1: GoogleFonts.poppins(
+    bodyLarge: GoogleFonts.poppins(
         fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.black),
-    bodyText2: GoogleFonts.poppins(
+    bodyMedium: GoogleFonts.poppins(
         fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.gray1),
-    button: GoogleFonts.poppins(
+    labelLarge: GoogleFonts.poppins(
         fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.white),
-    subtitle1: GoogleFonts.poppins(
+    titleMedium: GoogleFonts.poppins(
         fontSize: 12, fontWeight: FontWeight.w400, color: AppColors.gray1));

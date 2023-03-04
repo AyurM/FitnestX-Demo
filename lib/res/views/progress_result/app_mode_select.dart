@@ -107,7 +107,7 @@ class _OptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context)
         .textTheme
-        .bodyText1
+        .bodyLarge
         ?.copyWith(color: isSelected ? AppColors.white : AppColors.gray2);
 
     return GestureDetector(

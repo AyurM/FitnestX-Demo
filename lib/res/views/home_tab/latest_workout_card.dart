@@ -23,7 +23,7 @@ class LatestWorkoutCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
+    final TextStyle? textStyle = Theme.of(context).textTheme.titleMedium;
 
     return AppCard(
       padding: EdgeInsets.zero,

@@ -22,18 +22,18 @@ class ProgressComparisonBar extends StatelessWidget {
     return Column(
       children: [
         Text(data.title,
-            style: textTheme.bodyText2?.copyWith(color: AppColors.black)),
+            style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
         AppWhiteSpace.value10.vertical,
         Row(
           children: [
-            Text('$leftValue%', style: textTheme.subtitle1),
+            Text('$leftValue%', style: textTheme.titleMedium),
             AppWhiteSpace.value5.horizontal,
             Expanded(
                 child: _ComparisonBar(
               leftValue: clampedValue,
             )),
             AppWhiteSpace.value5.horizontal,
-            Text('$rightValue%', style: textTheme.subtitle1)
+            Text('$rightValue%', style: textTheme.titleMedium)
           ],
         )
       ],

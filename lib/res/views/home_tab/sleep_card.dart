@@ -30,7 +30,7 @@ class SleepCard extends StatelessWidget {
       '${duration.inHours}h ${(duration - Duration(hours: duration.inHours)).inMinutes}m',
       style: Theme.of(context)
           .textTheme
-          .bodyText2
+          .bodyMedium
           ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.blue2));
 }
 

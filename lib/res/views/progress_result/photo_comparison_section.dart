@@ -20,7 +20,7 @@ class PhotoComparisonSection extends StatelessWidget {
           Text(data.title,
               style: Theme.of(context)
                   .textTheme
-                  .bodyText2
+                  .bodyMedium
                   ?.copyWith(fontWeight: FontWeight.w500)),
           AppWhiteSpace.value15.vertical,
           Row(

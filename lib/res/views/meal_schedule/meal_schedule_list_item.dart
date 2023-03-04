@@ -47,12 +47,12 @@ class MealScheduleListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(data.meal.name,
-                style: textTheme.bodyText2?.copyWith(
+                style: textTheme.bodyMedium?.copyWith(
                     color: AppColors.black, fontWeight: FontWeight.w600)),
             AppWhiteSpace.value3.vertical,
             Text(_timeFormat.format(data.dateTime).toLowerCase(),
                 style:
-                    textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w500)),
+                    textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w500)),
           ],
         ),
         const Spacer(),

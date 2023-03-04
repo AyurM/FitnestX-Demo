@@ -36,7 +36,7 @@ class GoalPage extends StatelessWidget {
           AppWhiteSpace.value25.vertical,
           Text(
             content.title,
-            style: textTheme.bodyText2
+            style: textTheme.bodyMedium
                 ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.white),
           ),
           AppWhiteSpace.value3.vertical,
@@ -49,7 +49,7 @@ class GoalPage extends StatelessWidget {
           Text(
             content.subtitle,
             textAlign: TextAlign.center,
-            style: textTheme.subtitle1?.copyWith(color: AppColors.white),
+            style: textTheme.titleMedium?.copyWith(color: AppColors.white),
           )
         ]),
       );

@@ -53,7 +53,7 @@ class SecondaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final buttonHeight = height ?? kPrimaryButtonHeight;
-    final buttonTextStyle = textStyle ?? Theme.of(context).textTheme.button;
+    final buttonTextStyle = textStyle ?? Theme.of(context).textTheme.labelLarge;
 
     return Padding(
       padding: margin ?? EdgeInsets.zero,
@@ -64,10 +64,9 @@ class SecondaryButton extends StatelessWidget {
             SecondaryButtonDecoration(gradient: gradient, color: color),
             TextButton(
               style: TextButton.styleFrom(
-                padding: padding ?? kHorizontalPadding20,
+                foregroundColor: buttonTextStyle?.color ?? AppColors.white, padding: padding ?? kHorizontalPadding20,
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 minimumSize: Size(0, buttonHeight),
-                primary: buttonTextStyle?.color ?? AppColors.white,
                 textStyle: buttonTextStyle,
               ),
               onPressed: onPressed,

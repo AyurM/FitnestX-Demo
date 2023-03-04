@@ -49,11 +49,11 @@ class WaterIntakeCard extends StatelessWidget {
               const CardTitle(text: _titleText),
               AppWhiteSpace.value5.vertical,
               Text('${(totalIntake / 1000).toStringAsFixed(1)} $_kLitersText',
-                  style: textTheme.bodyText2?.copyWith(
+                  style: textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.w600, color: AppColors.blue2)),
               AppWhiteSpace.value10.vertical,
               Text(_subtitleText,
-                  style: textTheme.subtitle1?.copyWith(fontSize: 10)),
+                  style: textTheme.titleMedium?.copyWith(fontSize: 10)),
               AppWhiteSpace.value5.vertical,
               Expanded(
                   child: _WaterIntakeUpdateList(intakeUpdates: intakeUpdates))
@@ -134,7 +134,7 @@ class _WaterIntakeUpdateItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
+    final TextStyle? textStyle = Theme.of(context).textTheme.titleMedium;
 
     return SizedBox(
       height: _kWaterIntakeUpdateItemHeight,

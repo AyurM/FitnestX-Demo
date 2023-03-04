@@ -39,7 +39,7 @@ class WorkoutItemCard extends StatelessWidget {
         Text(itemInfo.name,
             style: Theme.of(context)
                 .textTheme
-                .subtitle1
+                .titleMedium
                 ?.copyWith(color: AppColors.black))
       ],
     );

@@ -15,7 +15,7 @@ class ProgressResultStatisticsBlock extends StatelessWidget {
     final dateFormat = DateFormat('MMMM');
     final textStyle = Theme.of(context)
         .textTheme
-        .bodyText1
+        .bodyLarge
         ?.copyWith(fontWeight: FontWeight.bold, color: AppColors.gray1);
 
     final data = DataMockUtils.getMockStatComparisonData();

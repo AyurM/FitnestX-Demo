@@ -111,7 +111,7 @@ class _HeartRateInfo extends StatelessWidget {
         AppWhiteSpace.value3.vertical,
         if (value != null)
           Text('$value $_bpmText',
-              style: textTheme.bodyText2?.copyWith(
+              style: textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600, color: AppColors.blue2)),
       ],
     );

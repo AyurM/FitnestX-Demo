@@ -52,7 +52,7 @@ class _SleepGraphWidgetState extends State<_SleepGraphWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final axisTextStyle = Theme.of(context).textTheme.subtitle1;
+    final axisTextStyle = Theme.of(context).textTheme.titleMedium;
 
     return SizedBox(
       height: double.infinity,

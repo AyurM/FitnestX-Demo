@@ -29,7 +29,7 @@ class NutritionChip extends StatelessWidget {
         AppWhiteSpace.value5.horizontal,
         Text(text,
             style:
-                Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 10))
+                Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 10))
       ]),
     );
   }

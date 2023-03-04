@@ -66,7 +66,7 @@ class AppProgressBar extends StatelessWidget {
               '${(completionPercent * 100).round()}%',
               style: Theme.of(context)
                   .textTheme
-                  .button
+                  .labelLarge
                   ?.copyWith(fontSize: 10, fontWeight: FontWeight.w500),
             ),
           ),

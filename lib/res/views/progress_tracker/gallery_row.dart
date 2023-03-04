@@ -25,7 +25,7 @@ class GalleryRow extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 20),
           child: Text(_dateFormat.format(date),
-              style: Theme.of(context).textTheme.subtitle1),
+              style: Theme.of(context).textTheme.titleMedium),
         ),
         AppWhiteSpace.value10.vertical,
         SizedBox(

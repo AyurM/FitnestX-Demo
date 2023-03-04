@@ -17,7 +17,7 @@ class NotificationListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = data.color ?? AppColors.blue2;
-    final TextStyle? textStyle = Theme.of(context).textTheme.subtitle1;
+    final TextStyle? textStyle = Theme.of(context).textTheme.titleMedium;
 
     return RawMaterialButton(
         onPressed: onPressed ?? () {},

@@ -74,7 +74,7 @@ class _SearchPopupMenuItemView extends StatelessWidget {
             Text(item.title,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1
+                    .titleMedium
                     ?.copyWith(color: AppColors.black))
           ],
         ));

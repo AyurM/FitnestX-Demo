@@ -26,10 +26,10 @@ class UserStatCard extends StatelessWidget {
       child: Column(
         children: [
           Text('$value${unit ?? ''}',
-              style: textTheme.bodyText2?.copyWith(
+              style: textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.bold, color: AppColors.blue)),
           AppWhiteSpace.value5.vertical,
-          Text(name, style: textTheme.subtitle1),
+          Text(name, style: textTheme.titleMedium),
         ],
       ),
     );

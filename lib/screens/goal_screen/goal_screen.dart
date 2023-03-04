@@ -66,11 +66,11 @@ class _GoalScreenState extends State<GoalScreen> {
       body: SafeArea(
         child: Column(children: [
           AppWhiteSpace.value40.vertical,
-          Text(_pageTitleText, style: textTheme.headline4),
+          Text(_pageTitleText, style: textTheme.headlineMedium),
           AppWhiteSpace.value5.vertical,
           Text(_pageSubtitleText,
               style:
-                  textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w500)),
+                  textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w500)),
           AppWhiteSpace.value30.vertical,
           Expanded(
               child: PageView(controller: _pageController, children: [

@@ -36,7 +36,7 @@ class AppSearchBar extends StatelessWidget {
                         color: AppColors.gray2),
                     hintStyle: Theme.of(context)
                         .textTheme
-                        .subtitle1
+                        .titleMedium
                         ?.copyWith(color: AppColors.gray3),
                     hintText: _searchText,
                     contentPadding: _kPadding,

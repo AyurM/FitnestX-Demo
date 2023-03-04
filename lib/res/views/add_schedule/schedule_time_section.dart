@@ -19,7 +19,7 @@ class ScheduleTimeSection extends StatelessWidget {
         Padding(
           padding: kHorizontalPadding20,
           child: Text(_titleText,
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppColors.black, fontWeight: FontWeight.bold)),
         ),
         AppWhiteSpace.value10.vertical,

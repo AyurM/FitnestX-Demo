@@ -31,7 +31,7 @@ class HeartRateTimestamp extends StatelessWidget {
             child: Text(text,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1
+                    .titleMedium
                     ?.copyWith(fontSize: 10, color: AppColors.white))));
   }
 }

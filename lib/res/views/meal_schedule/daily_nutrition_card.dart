@@ -28,14 +28,14 @@ class DailyNutritionCard extends StatelessWidget {
             children: [
               Text(
                 formattedName,
-                style: textTheme.subtitle1?.copyWith(
+                style: textTheme.titleMedium?.copyWith(
                     color: AppColors.black, fontWeight: FontWeight.bold),
               ),
               AppWhiteSpace.value5.horizontal,
               Image.asset(data.data.type.iconPath, height: _kIconSize),
               const Spacer(),
               Text('${data.data.value} ${data.data.type.units}',
-                  style: textTheme.subtitle1?.copyWith(fontSize: 10))
+                  style: textTheme.titleMedium?.copyWith(fontSize: 10))
             ],
           ),
           AppWhiteSpace.value5.vertical,

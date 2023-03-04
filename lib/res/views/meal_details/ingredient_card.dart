@@ -38,10 +38,10 @@ class IngredientCard extends StatelessWidget {
         Text(data.name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: textTheme.subtitle1?.copyWith(color: AppColors.black)),
+            style: textTheme.titleMedium?.copyWith(color: AppColors.black)),
         AppWhiteSpace.value3.vertical,
         Text('${data.amount} ${data.units ?? ''}',
-            style: textTheme.subtitle1?.copyWith(fontSize: 10))
+            style: textTheme.titleMedium?.copyWith(fontSize: 10))
       ],
     );
   }

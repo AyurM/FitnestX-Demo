@@ -61,7 +61,7 @@ class _ExerciseList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text('Set $setIndex',
-            style: Theme.of(context).textTheme.subtitle1?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 color: AppColors.black, fontWeight: FontWeight.bold)),
         AppWhiteSpace.value15.vertical,
         ..._buildItems(context)

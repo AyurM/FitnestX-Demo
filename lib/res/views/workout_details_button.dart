@@ -73,11 +73,11 @@ class WorkoutDetailsButton extends StatelessWidget {
             children: [
               Icon(iconData, size: _kIconSize, color: AppColors.gray1),
               AppWhiteSpace.value10.horizontal,
-              Text(title, style: textTheme.subtitle1),
+              Text(title, style: textTheme.titleMedium),
               const Spacer(),
               if (subtitle != null) ...[
                 Text(subtitle!,
-                    style: textTheme.subtitle1?.copyWith(fontSize: 10)),
+                    style: textTheme.titleMedium?.copyWith(fontSize: 10)),
                 AppWhiteSpace.value10.horizontal,
               ],
               if (_type == _ButtonType.button)

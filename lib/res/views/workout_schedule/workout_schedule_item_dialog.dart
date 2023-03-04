@@ -52,7 +52,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: _kDialogPadding),
                 child: Text(data.title,
-                    style: textTheme.bodyText2?.copyWith(
+                    style: textTheme.bodyMedium?.copyWith(
                         color: AppColors.black, fontWeight: FontWeight.bold)),
               ),
               AppWhiteSpace.value10.vertical,
@@ -65,7 +65,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                         color: AppColors.gray1),
                     AppWhiteSpace.value10.horizontal,
                     Text('Today | ${timeFormat.format(data.date)}',
-                        style: textTheme.subtitle1)
+                        style: textTheme.titleMedium)
                   ],
                 ),
               ),
@@ -76,7 +76,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
                 child: PrimaryButton.blue(
                   text: _markAsDoneText,
                   height: _kButtonHeight,
-                  textStyle: textTheme.subtitle1?.copyWith(
+                  textStyle: textTheme.titleMedium?.copyWith(
                       color: AppColors.white, fontWeight: FontWeight.bold),
                   onPressed: () {
                     Navigator.of(context).pop();
@@ -103,7 +103,7 @@ class WorkoutScheduleItemDialog extends StatelessWidget {
             Text(_titleText,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1
+                    .bodyLarge
                     ?.copyWith(fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center),
             _DialogHeaderIconButton(

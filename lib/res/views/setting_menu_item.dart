@@ -75,7 +75,7 @@ class _SettingsMenuItemWrapper extends StatelessWidget {
                 child: Text(data.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.subtitle1)),
+                    style: Theme.of(context).textTheme.titleMedium)),
             AppWhiteSpace.value10.horizontal,
             trailing
           ],

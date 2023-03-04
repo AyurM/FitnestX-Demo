@@ -18,7 +18,7 @@ class SectionTitle extends StatelessWidget {
       TextStyle? textStyle})
       : action = Text(subtitle,
             style: textStyle ??
-                Theme.of(context).textTheme.subtitle1?.copyWith(
+                Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: AppColors.gray2, fontWeight: FontWeight.w500)),
         super(key: key);
 
@@ -31,7 +31,7 @@ class SectionTitle extends StatelessWidget {
       : action = TextButton(
             onPressed: onPressed ?? () {},
             child: Text(actionText,
-                style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w500, color: AppColors.gray2))),
         super(key: key);
 
@@ -47,7 +47,7 @@ class SectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final titleWidget = Text(text,
-        style: textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold));
+        style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold));
 
     if (action == null) {
       return titleWidget;

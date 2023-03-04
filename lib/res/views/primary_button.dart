@@ -58,7 +58,7 @@ class PrimaryButton extends StatelessWidget {
               child: Center(
                   child: Text(text,
                       maxLines: 1,
-                      style: textStyle ?? Theme.of(context).textTheme.button)),
+                      style: textStyle ?? Theme.of(context).textTheme.labelLarge)),
             ),
           )),
     );

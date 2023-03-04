@@ -10,6 +10,6 @@ class CardTitle extends StatelessWidget {
   Widget build(BuildContext context) => Text(text,
       style: Theme.of(context)
           .textTheme
-          .subtitle1
+          .titleMedium
           ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.black));
 }

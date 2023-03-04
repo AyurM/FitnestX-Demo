@@ -39,7 +39,7 @@ class _ExpandableTextBlockState extends State<ExpandableTextBlock>
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.subtitle1;
+    final textStyle = Theme.of(context).textTheme.titleMedium;
 
     if (widget.text.length <= widget.collapsedTextLength) {
       return Text(

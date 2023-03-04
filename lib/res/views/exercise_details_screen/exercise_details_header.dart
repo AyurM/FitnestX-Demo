@@ -18,12 +18,12 @@ class ExerciseDetailsHeader extends StatelessWidget {
       children: [
         Text(
           exercise.title,
-          style: textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold),
+          style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
         ),
         AppWhiteSpace.value3.vertical,
         Text(
           '${exercise.difficulty} | ${exercise.caloriesBurn} Calories Burn',
-          style: textTheme.subtitle1,
+          style: textTheme.titleMedium,
         )
       ],
     );

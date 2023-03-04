@@ -18,7 +18,7 @@ class SleepBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final digitTextStyle = textTheme.bodyText2
+    final digitTextStyle = textTheme.bodyMedium
         ?.copyWith(color: AppColors.blue, fontWeight: FontWeight.w600);
 
     return LayoutBuilder(builder: (context, constraints) {
@@ -34,19 +34,19 @@ class SleepBanner extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(_titleText,
-                  style: textTheme.subtitle1?.copyWith(color: AppColors.black)),
+                  style: textTheme.titleMedium?.copyWith(color: AppColors.black)),
               AppWhiteSpace.value5.vertical,
               RichText(
                 text: TextSpan(text: '8', style: digitTextStyle, children: [
                   TextSpan(
                       text: 'hours',
                       style:
-                          textTheme.subtitle1?.copyWith(color: AppColors.blue)),
+                          textTheme.titleMedium?.copyWith(color: AppColors.blue)),
                   TextSpan(text: ' 30'.toString(), style: digitTextStyle),
                   TextSpan(
                       text: 'minutes',
                       style:
-                          textTheme.subtitle1?.copyWith(color: AppColors.blue)),
+                          textTheme.titleMedium?.copyWith(color: AppColors.blue)),
                 ]),
               ),
               AppWhiteSpace.value15.vertical,
@@ -55,7 +55,7 @@ class SleepBanner extends StatelessWidget {
                 text: _learnMoreText,
                 onPressed: onPressed,
                 height: _kButtonHeight,
-                textStyle: textTheme.button
+                textStyle: textTheme.labelLarge
                     ?.copyWith(fontSize: 10, fontWeight: FontWeight.bold),
               )
             ],

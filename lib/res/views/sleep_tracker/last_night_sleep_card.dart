@@ -25,7 +25,7 @@ class LastNightSleepCard extends StatelessWidget {
 
     final textStyle = Theme.of(context)
         .textTheme
-        .bodyText2
+        .bodyMedium
         ?.copyWith(color: AppColors.white, fontWeight: FontWeight.w500);
     final digitTextStyle =
         textStyle?.copyWith(fontSize: 16, fontWeight: FontWeight.bold);

@@ -29,7 +29,7 @@ class CaloriesCard extends StatelessWidget {
           const CardTitle(text: _titleText),
           AppWhiteSpace.value5.vertical,
           Text('$consumedCalories $_kCalText',
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600, color: AppColors.blue2)),
           AppWhiteSpace.value8.vertical,
           Expanded(
@@ -61,7 +61,7 @@ class _CaloriesGraph extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context)
                 .textTheme
-                .subtitle1
+                .titleMedium
                 ?.copyWith(color: AppColors.white, fontSize: 9),
           )
         ],

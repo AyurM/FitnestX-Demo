@@ -20,12 +20,12 @@ class WorkoutTypeHeader extends StatelessWidget {
           children: [
             Text(content.title,
                 style:
-                    textTheme.bodyText1?.copyWith(fontWeight: FontWeight.bold)),
+                    textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold)),
             AppWhiteSpace.value5.vertical,
             Text(
                 '${content.exercises} Exercises | ${content.duration.inMinutes}mins | ${content.caloriesBurn} Calories Burn',
                 textAlign: TextAlign.start,
-                style: textTheme.subtitle1),
+                style: textTheme.titleMedium),
           ],
         )),
         AppWhiteSpace.value15.horizontal,

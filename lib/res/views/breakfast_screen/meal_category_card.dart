@@ -53,7 +53,7 @@ class MealCategoryCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1
+                    .titleMedium
                     ?.copyWith(color: AppColors.black))
           ],
         )),

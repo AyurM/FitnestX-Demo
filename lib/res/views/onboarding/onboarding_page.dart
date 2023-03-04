@@ -22,12 +22,12 @@ class OnboardingPage extends StatelessWidget {
         const SizedBox(height: 64),
         Padding(
           padding: kHorizontalPadding20,
-          child: Text(content.title, style: textTheme.headline2),
+          child: Text(content.title, style: textTheme.displayMedium),
         ),
         AppWhiteSpace.value15.vertical,
         Padding(
           padding: kHorizontalPadding20,
-          child: Text(content.subtitle, style: textTheme.bodyText2),
+          child: Text(content.subtitle, style: textTheme.bodyMedium),
         ),
       ],
     );

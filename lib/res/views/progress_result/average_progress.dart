@@ -19,7 +19,7 @@ class AverageProgress extends StatelessWidget {
           SectionTitle.simpleText(
               text: _progressText,
               subtitle: _subtitleText,
-              textStyle: Theme.of(context).textTheme.subtitle1?.copyWith(
+              textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: AppColors.green, fontWeight: FontWeight.w500),
               context: context),
           AppWhiteSpace.value15.vertical,

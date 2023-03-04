@@ -34,7 +34,7 @@ class AppDropdown extends StatelessWidget {
                     maxLines: 1,
                     style: Theme.of(context)
                         .textTheme
-                        .subtitle1
+                        .titleMedium
                         ?.copyWith(fontSize: 10, color: AppColors.white)),
                 AppWhiteSpace.value5.horizontal,
                 const Icon(

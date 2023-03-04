@@ -70,6 +70,8 @@ class _ExerciseVideoMock extends StatelessWidget {
                   bottom: -height * 0.3,
                   child: Image.asset(
                     'assets/images/fullbody_workout.png',
+                    errorBuilder: (context, error, stackTrace) =>
+                        Container(color: Colors.red),
                     height: height * 1.25,
                   )),
               Container(

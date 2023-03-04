@@ -61,7 +61,7 @@ class FitnestAppBar extends AppBar {
   @override
   TextStyle? get titleTextStyle => Theme.of(context)
       .textTheme
-      .headline4
+      .headlineMedium
       ?.copyWith(fontSize: 16, color: textColor);
 }
 

@@ -54,14 +54,14 @@ class TodayMealCard extends StatelessWidget {
               Text(data.meal.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyText2?.copyWith(
+                  style: textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold, color: AppColors.black)),
               AppWhiteSpace.value3.vertical,
               Text(
                 'Today | ${_dateFormat.format(data.date).replaceFirst(':00', '').toLowerCase()}',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: textTheme.subtitle1,
+                style: textTheme.titleMedium,
               )
             ],
           )),
