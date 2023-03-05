@@ -105,8 +105,7 @@ class _ProfileHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('${profile.firstName} ${profile.lastName}',
-                style: textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.w500, color: AppColors.black)),
+                style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
             AppWhiteSpace.value5.horizontal,
             Text('${profile.program} Program', style: textTheme.titleMedium),
           ],
@@ -167,11 +166,7 @@ class _ProfileSectionCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppBorderRadius.value16.value),
           boxShadow: const [AppColors.cardShadow]),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(title,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge
-                ?.copyWith(fontWeight: FontWeight.w600)),
+        Text(title, style: Theme.of(context).textTheme.displaySmall),
         AppWhiteSpace.value15.vertical,
         ...menuItems.map((item) => item.type == MenuItemType.simple
             ? SettingsMenuItem(data: item)

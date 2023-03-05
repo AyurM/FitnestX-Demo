@@ -15,10 +15,8 @@ const TextStyle _kDefaultPickerTextStyle = TextStyle(
   letterSpacing: -0.83,
 );
 
-TextStyle _themeTextStyle(BuildContext context) => Theme.of(context)
-    .textTheme
-    .bodyMedium!
-    .copyWith(fontWeight: FontWeight.w500);
+TextStyle _themeTextStyle(BuildContext context) =>
+    Theme.of(context).textTheme.bodyMedium!;
 
 final Widget _customSelectionOverlay = Container(
     decoration: const BoxDecoration(

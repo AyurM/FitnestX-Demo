@@ -77,8 +77,7 @@ class _TodayTargetItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('${data.value}${data.unit ?? ''}',
-                  style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500, color: AppColors.blue)),
+                  style: textTheme.bodyMedium?.copyWith(color: AppColors.blue)),
               Text(data.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

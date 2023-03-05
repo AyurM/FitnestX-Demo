@@ -26,8 +26,7 @@ class UserStatCard extends StatelessWidget {
       child: Column(
         children: [
           Text('$value${unit ?? ''}',
-              style: textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w500, color: AppColors.blue)),
+              style: textTheme.bodyMedium?.copyWith(color: AppColors.blue)),
           AppWhiteSpace.value5.vertical,
           Text(name, style: textTheme.titleMedium),
         ],

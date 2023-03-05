@@ -15,8 +15,8 @@ class PhotoComparison extends StatelessWidget {
     final dateFormat = DateFormat('MMMM');
     final textStyle = Theme.of(context)
         .textTheme
-        .bodyLarge
-        ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.gray1);
+        .displaySmall
+        ?.copyWith(color: AppColors.gray1);
 
     final data = DataMockUtils.getMockPhotoComparisonData();
 

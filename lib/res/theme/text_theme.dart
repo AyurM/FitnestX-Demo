@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const appTextTheme = TextTheme(
     displayLarge: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 26,
+        fontSize: 36,
         fontWeight: FontWeight.w700,
         color: AppColors.black),
     displayMedium: TextStyle(
@@ -14,8 +14,8 @@ const appTextTheme = TextTheme(
         color: AppColors.black),
     displaySmall: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 22,
-        fontWeight: FontWeight.w700,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
         color: AppColors.black),
     headlineMedium: TextStyle(
         fontFamily: 'Poppins',
@@ -30,6 +30,11 @@ const appTextTheme = TextTheme(
     bodyMedium: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: AppColors.gray1),
+    bodySmall: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 14,
         fontWeight: FontWeight.w400,
         color: AppColors.gray1),
     labelLarge: TextStyle(
@@ -37,8 +42,23 @@ const appTextTheme = TextTheme(
         fontSize: 16,
         fontWeight: FontWeight.w700,
         color: AppColors.white),
+    labelSmall: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 10,
+        fontWeight: FontWeight.w600,
+        color: AppColors.white),
+    titleLarge: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: AppColors.white),
     titleMedium: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        color: AppColors.gray1));
+        color: AppColors.gray1),
+    titleSmall: TextStyle(
+        fontFamily: 'Poppins',
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        color: AppColors.white));

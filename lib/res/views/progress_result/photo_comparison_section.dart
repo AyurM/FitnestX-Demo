@@ -17,11 +17,7 @@ class PhotoComparisonSection extends StatelessWidget {
 
       return Column(
         children: [
-          Text(data.title,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(fontWeight: FontWeight.w500)),
+          Text(data.title, style: Theme.of(context).textTheme.bodyMedium),
           AppWhiteSpace.value15.vertical,
           Row(
             children: [

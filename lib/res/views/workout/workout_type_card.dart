@@ -33,8 +33,8 @@ class WorkoutTypeCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(data.title,
-                    style: textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w500, color: AppColors.black)),
+                    style:
+                        textTheme.bodyMedium?.copyWith(color: AppColors.black)),
                 AppWhiteSpace.value5.vertical,
                 Text(
                     '${data.exercises} Exercises | ${data.duration.inMinutes}mins',
@@ -44,10 +44,8 @@ class WorkoutTypeCard extends StatelessWidget {
                   text: _viewMoreText,
                   onPressed: onViewMorePressed ?? () {},
                   height: _kButtonHeight,
-                  textStyle: textTheme.titleMedium?.copyWith(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.blue2),
+                  textStyle: textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w500, color: AppColors.blue2),
                 )
               ],
             ),

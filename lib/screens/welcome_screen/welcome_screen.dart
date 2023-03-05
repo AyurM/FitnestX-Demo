@@ -29,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
               RichText(
                 text: TextSpan(
                     text: 'Fitnest',
-                    style: textTheme.displayLarge?.copyWith(fontSize: 36),
+                    style: textTheme.displayLarge,
                     children: [
                       TextSpan(
                           text: 'X',

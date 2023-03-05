@@ -18,7 +18,7 @@ class DayLabel extends StatelessWidget {
         const Icon(AppIcons.calendar_outlined, color: AppColors.gray1),
         AppWhiteSpace.value10.horizontal,
         Text(dateFormat.format(day),
-            style: Theme.of(context).textTheme.bodyMedium)
+            style: Theme.of(context).textTheme.bodySmall)
       ],
     );
   }

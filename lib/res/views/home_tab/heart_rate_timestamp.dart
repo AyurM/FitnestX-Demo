@@ -8,17 +8,6 @@ class HeartRateTimestamp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //     decoration: BoxDecoration(
-    //         gradient: AppColors.purpleGradient,
-    //         borderRadius: BorderRadius.circular(50)),
-    //     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-    //     child: Text(text,
-    //         style: Theme.of(context)
-    //             .textTheme
-    //             .subtitle1
-    //             ?.copyWith(fontSize: 10, color: AppColors.white)));
-
     return _ClipShadowPath(
         shadow: const BoxShadow(
             color: AppColors.purpleShadow,
@@ -28,11 +17,7 @@ class HeartRateTimestamp extends StatelessWidget {
         child: Container(
             decoration: const BoxDecoration(gradient: AppColors.purpleGradient),
             padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
-            child: Text(text,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontSize: 10, color: AppColors.white))));
+            child: Text(text, style: Theme.of(context).textTheme.titleSmall)));
   }
 }
 

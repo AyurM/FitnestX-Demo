@@ -91,7 +91,7 @@ class _AppMonthPickerState extends State<_AppMonthPicker> {
         Text(_monthFormat.format(displayedMonth),
             style: Theme.of(context)
                 .textTheme
-                .bodyMedium
+                .bodySmall
                 ?.copyWith(color: AppColors.gray2)),
         AppWhiteSpace.value30.horizontal,
         IconButton(

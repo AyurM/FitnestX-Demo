@@ -22,7 +22,7 @@ class ProgressComparisonBar extends StatelessWidget {
     return Column(
       children: [
         Text(data.title,
-            style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
+            style: textTheme.bodySmall?.copyWith(color: AppColors.black)),
         AppWhiteSpace.value10.vertical,
         Row(
           children: [

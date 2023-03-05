@@ -31,11 +31,7 @@ class AppDropdown extends StatelessWidget {
             child: Row(
               children: [
                 Text(title,
-                    maxLines: 1,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium
-                        ?.copyWith(fontSize: 10, color: AppColors.white)),
+                    maxLines: 1, style: Theme.of(context).textTheme.titleSmall),
                 AppWhiteSpace.value5.horizontal,
                 const Icon(
                   Icons.keyboard_arrow_down_sharp,

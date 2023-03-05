@@ -77,7 +77,8 @@ class WorkoutDetailsButton extends StatelessWidget {
               const Spacer(),
               if (subtitle != null) ...[
                 Text(subtitle!,
-                    style: textTheme.titleMedium?.copyWith(fontSize: 10)),
+                    style:
+                        textTheme.titleSmall?.copyWith(color: AppColors.gray1)),
                 AppWhiteSpace.value10.horizontal,
               ],
               if (_type == _ButtonType.button)

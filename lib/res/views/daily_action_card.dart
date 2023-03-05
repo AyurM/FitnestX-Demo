@@ -33,8 +33,7 @@ class DailyActionCard extends StatelessWidget {
           gradient: AppColors.blueGradientWithOpacity(_kBgOpacity)),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(title,
-            style: textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w500, color: AppColors.black)),
+            style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
         SecondaryButton.blue(
           text: buttonText,
           onPressed: onPressed,

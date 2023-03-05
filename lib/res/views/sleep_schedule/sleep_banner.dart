@@ -18,8 +18,8 @@ class SleepBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    final digitTextStyle = textTheme.bodyMedium
-        ?.copyWith(color: AppColors.blue, fontWeight: FontWeight.w500);
+    final digitTextStyle =
+        textTheme.bodyMedium?.copyWith(color: AppColors.blue);
 
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
@@ -56,8 +56,7 @@ class SleepBanner extends StatelessWidget {
                 text: _learnMoreText,
                 onPressed: onPressed,
                 height: _kButtonHeight,
-                textStyle: textTheme.labelLarge
-                    ?.copyWith(fontSize: 10, fontWeight: FontWeight.w600),
+                textStyle: textTheme.labelSmall,
               )
             ],
           )),

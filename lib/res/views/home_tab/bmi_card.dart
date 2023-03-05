@@ -67,8 +67,7 @@ class BmiCard extends StatelessWidget {
                     text: _buttonText,
                     onPressed: onViewMorePressed,
                     height: _kButtonHeight,
-                    textStyle: textTheme.labelLarge
-                        ?.copyWith(fontSize: 10, fontWeight: FontWeight.w600),
+                    textStyle: textTheme.labelSmall,
                   )
                 ],
               ),
@@ -183,10 +182,7 @@ class _BmiPie extends StatelessWidget {
         child: Center(
           child: Text(
             value.toStringAsFixed(1),
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.white),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
       ),

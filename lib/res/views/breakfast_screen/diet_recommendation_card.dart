@@ -48,8 +48,7 @@ class DietRecommendationCard extends StatelessWidget {
         AppWhiteSpace.value15.vertical,
         Text(data.name,
             textAlign: TextAlign.center,
-            style: textTheme.bodyMedium?.copyWith(
-                color: AppColors.black, fontWeight: FontWeight.w500)),
+            style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
         AppWhiteSpace.value3.vertical,
         Text(subtitle,
             textAlign: TextAlign.center, style: textTheme.titleMedium),
@@ -60,8 +59,7 @@ class DietRecommendationCard extends StatelessWidget {
             padding: _kButtonPadding,
             onPressed: onPressed ?? () {},
             height: _kButtonHeight,
-            textStyle: textTheme.titleMedium
-                ?.copyWith(color: AppColors.white, fontWeight: FontWeight.w600),
+            textStyle: textTheme.titleLarge,
           )
         else
           SecondaryButton.purple(
@@ -69,8 +67,7 @@ class DietRecommendationCard extends StatelessWidget {
             padding: _kButtonPadding,
             onPressed: onPressed ?? () {},
             height: _kButtonHeight,
-            textStyle: textTheme.titleMedium
-                ?.copyWith(color: AppColors.white, fontWeight: FontWeight.w600),
+            textStyle: textTheme.titleLarge,
           )
       ]),
     );

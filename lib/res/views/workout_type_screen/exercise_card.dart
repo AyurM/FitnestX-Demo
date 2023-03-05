@@ -30,8 +30,7 @@ class ExerciseCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(data.title,
-                style: textTheme.bodyMedium?.copyWith(
-                    color: AppColors.black, fontWeight: FontWeight.w500)),
+                style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
             AppWhiteSpace.value3.vertical,
             Text(data.subtitle,
                 style: textTheme.titleMedium

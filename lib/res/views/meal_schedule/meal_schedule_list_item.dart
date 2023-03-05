@@ -47,8 +47,7 @@ class MealScheduleListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(data.meal.name,
-                style: textTheme.bodyMedium?.copyWith(
-                    color: AppColors.black, fontWeight: FontWeight.w500)),
+                style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
             AppWhiteSpace.value3.vertical,
             Text(_timeFormat.format(data.dateTime).toLowerCase(),
                 style: textTheme.titleMedium),

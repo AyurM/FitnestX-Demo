@@ -27,7 +27,7 @@ class DescriptionStepItem extends StatelessWidget {
           SizedBox(
             width: _kStepNumberWidth,
             child: Text('${index < 10 ? '0' : ''}$index',
-                style: textTheme.bodyMedium?.copyWith(
+                style: textTheme.bodySmall?.copyWith(
                     color: step.isActive ? AppColors.purple : AppColors.gray2)),
           ),
           AppWhiteSpace.value15.horizontal,
@@ -43,7 +43,7 @@ class DescriptionStepItem extends StatelessWidget {
               children: [
                 Text(step.title,
                     style:
-                        textTheme.bodyMedium?.copyWith(color: AppColors.black)),
+                        textTheme.bodySmall?.copyWith(color: AppColors.black)),
                 AppWhiteSpace.value3.vertical,
                 Text(step.description, style: textTheme.titleMedium),
                 AppWhiteSpace.value30.vertical,

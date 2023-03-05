@@ -51,8 +51,8 @@ class PopularMealCard extends StatelessWidget {
               Text(data.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500, color: AppColors.black)),
+                  style:
+                      textTheme.bodyMedium?.copyWith(color: AppColors.black)),
               AppWhiteSpace.value3.vertical,
               Text(
                 subtitle,

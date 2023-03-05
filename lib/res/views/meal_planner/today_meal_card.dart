@@ -54,8 +54,8 @@ class TodayMealCard extends StatelessWidget {
               Text(data.meal.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500, color: AppColors.black)),
+                  style:
+                      textTheme.bodyMedium?.copyWith(color: AppColors.black)),
               AppWhiteSpace.value3.vertical,
               Text(
                 'Today | ${_dateFormat.format(data.date).replaceFirst(':00', '').toLowerCase()}',

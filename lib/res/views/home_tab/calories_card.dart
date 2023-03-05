@@ -59,10 +59,8 @@ class _CaloriesGraph extends StatelessWidget {
           Text(
             '${targetCalories - consumedCalories}$_kCalText\nleft',
             textAlign: TextAlign.center,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(color: AppColors.white, fontSize: 9),
+            style:
+                Theme.of(context).textTheme.titleSmall?.copyWith(fontSize: 9),
           )
         ],
       );

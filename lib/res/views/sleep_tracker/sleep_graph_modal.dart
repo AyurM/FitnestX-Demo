@@ -28,8 +28,8 @@ class SleepGraphModal extends StatelessWidget {
         child: Text(_getMockText(mockValue),
             style: Theme.of(context)
                 .textTheme
-                .titleMedium
-                ?.copyWith(fontSize: 10, color: _getTextColor(mockValue))),
+                .titleSmall
+                ?.copyWith(color: _getTextColor(mockValue))),
       ),
     );
   }

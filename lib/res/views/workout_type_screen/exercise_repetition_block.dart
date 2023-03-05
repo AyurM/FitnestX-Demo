@@ -134,9 +134,7 @@ class _RepetitionPickerItem extends StatelessWidget {
             style: textTheme.titleMedium
                 ?.copyWith(color: AppColors.gray2, fontSize: 11)),
         AppWhiteSpace.value10.horizontal,
-        Text('$amount',
-            style: textTheme.bodyMedium
-                ?.copyWith(fontWeight: FontWeight.w500, fontSize: 24)),
+        Text('$amount', style: textTheme.bodyMedium?.copyWith(fontSize: 24)),
         AppWhiteSpace.value10.horizontal,
       ],
     );

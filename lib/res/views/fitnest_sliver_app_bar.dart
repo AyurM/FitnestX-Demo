@@ -146,7 +146,7 @@ class _SliverAppBarTitle extends StatelessWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       AppBarButton(
         iconData: Icons.chevron_left_outlined,
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: Navigator.of(context).pop,
       ),
       Text(text,
           style: Theme.of(context)

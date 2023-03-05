@@ -50,8 +50,7 @@ class FindMealCard extends StatelessWidget {
         )),
         AppWhiteSpace.value10.vertical,
         Text(data.mealTime.title,
-            style: textTheme.bodyMedium?.copyWith(
-                color: AppColors.black, fontWeight: FontWeight.w500)),
+            style: textTheme.bodyMedium?.copyWith(color: AppColors.black)),
         AppWhiteSpace.value3.vertical,
         Text('${data.amount}+ Foods', style: textTheme.titleMedium),
         AppWhiteSpace.value15.vertical,
@@ -61,8 +60,7 @@ class FindMealCard extends StatelessWidget {
             padding: _kButtonPadding,
             onPressed: onPressed ?? () {},
             height: _kButtonHeight,
-            textStyle: textTheme.titleMedium
-                ?.copyWith(color: AppColors.white, fontWeight: FontWeight.w600),
+            textStyle: textTheme.titleLarge,
           )
         else
           SecondaryButton.purple(
@@ -70,8 +68,7 @@ class FindMealCard extends StatelessWidget {
             padding: _kButtonPadding,
             onPressed: onPressed ?? () {},
             height: _kButtonHeight,
-            textStyle: textTheme.titleMedium
-                ?.copyWith(color: AppColors.white, fontWeight: FontWeight.w600),
+            textStyle: textTheme.titleLarge,
           )
       ]),
     );

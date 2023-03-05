@@ -21,8 +21,10 @@ class WorkoutDetailsSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(_titleText,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.black, fontWeight: FontWeight.w500)),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(color: AppColors.black)),
           AppWhiteSpace.value10.vertical,
           WorkoutDetailsButton(
             iconData: AppIcons.barbel,

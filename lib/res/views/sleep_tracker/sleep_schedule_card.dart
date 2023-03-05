@@ -39,8 +39,7 @@ class SleepScheduleCard extends StatelessWidget {
             RichText(
               text: TextSpan(
                   text: '${data.title}, ',
-                  style: textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500, color: AppColors.black),
+                  style: textTheme.bodyMedium?.copyWith(color: AppColors.black),
                   children: [
                     TextSpan(
                         text: _timeFormat.format(data.dateTime).toLowerCase(),
@@ -81,7 +80,7 @@ class _TimeDifferenceLabel extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     if (timeDifference.isNegative) {
-      return Text('now', style: textTheme.bodyMedium);
+      return Text('now', style: textTheme.bodySmall);
     }
 
     final digitTextStyle = textTheme.bodyLarge
@@ -90,15 +89,15 @@ class _TimeDifferenceLabel extends StatelessWidget {
     return RichText(
       maxLines: 1,
       overflow: TextOverflow.ellipsis,
-      text: TextSpan(text: 'in ', style: textTheme.bodyMedium, children: [
+      text: TextSpan(text: 'in ', style: textTheme.bodySmall, children: [
         TextSpan(
             text: timeDifference.inHours.toString(), style: digitTextStyle),
-        TextSpan(text: ' hours ', style: textTheme.bodyMedium),
+        TextSpan(text: ' hours ', style: textTheme.bodySmall),
         TextSpan(
             text: (timeDifference.inMinutes - timeDifference.inHours * 60)
                 .toString(),
             style: digitTextStyle),
-        TextSpan(text: ' minutes ', style: textTheme.bodyMedium),
+        TextSpan(text: ' minutes ', style: textTheme.bodySmall),
       ]),
     );
   }
