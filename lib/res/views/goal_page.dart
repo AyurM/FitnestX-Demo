@@ -1,13 +1,13 @@
-import 'package:fitnest_x/data/model/goal_page_content.dart';
+import 'package:fitnest_x/data/model/goal_type.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class GoalPage extends StatelessWidget {
-  final GoalPageContent content;
+  final GoalType goal;
   final double scale;
 
-  const GoalPage({Key? key, required this.content, this.scale = 1})
+  const GoalPage({Key? key, required this.goal, this.scale = 1})
       : super(key: key);
 
   @override
@@ -31,11 +31,11 @@ class GoalPage extends StatelessWidget {
             gradient: AppColors.blueGradient),
         child: Column(children: [
           Expanded(
-              child: Image.asset(content.assetPath,
+              child: Image.asset(goal.assetPath,
                   height: double.infinity, fit: BoxFit.contain)),
           AppWhiteSpace.value25.vertical,
           Text(
-            content.title,
+            goal.title,
             style: textTheme.bodyMedium
                 ?.copyWith(fontWeight: FontWeight.w600, color: AppColors.white),
           ),
@@ -47,7 +47,7 @@ class GoalPage extends StatelessWidget {
           ),
           AppWhiteSpace.value20.vertical,
           Text(
-            content.subtitle,
+            goal.subtitle,
             textAlign: TextAlign.center,
             style: textTheme.titleMedium?.copyWith(color: AppColors.white),
           )

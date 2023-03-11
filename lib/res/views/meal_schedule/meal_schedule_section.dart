@@ -43,11 +43,8 @@ class MealScheduleSection extends StatelessWidget {
       result.add(MealScheduleListItem(
           data: data[i],
           imageBgColor: i % 2 == 0 ? AppColors.blue : AppColors.purple,
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      MealDetailsScreen(data: data[i].meal)))));
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => MealDetailsScreen(data: data[i].meal)))));
       if (i != data.length - 1) {
         result.add(AppWhiteSpace.value10.vertical);
       }

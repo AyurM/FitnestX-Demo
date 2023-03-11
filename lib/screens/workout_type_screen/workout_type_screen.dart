@@ -28,13 +28,7 @@ class WorkoutTypeScreen extends StatefulWidget {
 }
 
 class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
-  late final ScrollController scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController = ScrollController();
-  }
+  final scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -99,10 +93,8 @@ class _WorkoutTypeScreenState extends State<WorkoutTypeScreen> {
         title: _scheduleWorkoutText,
         subtitle: dateFormat.format(DateTime.now()),
         gradient: AppColors.blueGradientWithOpacity(_kButtonBgOpacity),
-        onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const WorkoutScheduleScreen())),
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => const WorkoutScheduleScreen())),
       ),
     );
   }

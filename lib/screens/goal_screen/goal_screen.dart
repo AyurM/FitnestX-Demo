@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/goal_page_content.dart';
+import 'package:fitnest_x/data/model/goal_type.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/goal_page.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
@@ -6,6 +6,7 @@ import 'package:fitnest_x/screens/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 const _kSidePageScale = 0.75;
+const _kViewportFraction = 0.79;
 const _kSlideInThresholds = [0.05, 0.2];
 const _kSlideOutThresholds = [0.8, 0.95];
 
@@ -21,34 +22,12 @@ class GoalScreen extends StatefulWidget {
 }
 
 class _GoalScreenState extends State<GoalScreen> {
-  final List<GoalPageContent> content = [
-    const GoalPageContent(
-        id: 1,
-        assetPath: 'assets/images/goal1.png',
-        title: 'Improve Shape',
-        subtitle:
-            "I have a low amount of body fat and need / want to build more muscle"),
-    const GoalPageContent(
-        id: 2,
-        assetPath: 'assets/images/goal2.png',
-        title: 'Lean & Tone',
-        subtitle:
-            "I’m “skinny fat”. Look thin but have no shape. I want to add learn muscle in the right way"),
-    const GoalPageContent(
-        id: 3,
-        assetPath: 'assets/images/goal3.png',
-        title: 'Lose a Fat',
-        subtitle:
-            "I have over 20 lbs to lose. I want to drop all this fat and gain muscle mass")
-  ];
-
-  late final PageController _pageController;
+  final _pageController = PageController(viewportFraction: _kViewportFraction);
   double _pageIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.79);
     _pageController.addListener(_pageControllerListener);
   }
 
@@ -74,26 +53,29 @@ class _GoalScreenState extends State<GoalScreen> {
           AppWhiteSpace.value30.vertical,
           Expanded(
               child: PageView(controller: _pageController, children: [
-            for (int i = 0; i < content.length; i++)
+            for (int i = 0; i < GoalType.values.length; i++)
               GoalPage(
-                content: content[i],
+                goal: GoalType.values[i],
                 scale: _pageIndexToScale(i),
               )
           ])),
           AppWhiteSpace.value50.vertical,
           PrimaryButton.blue(
             text: _confirmText,
-            onPressed: () {
-              debugPrint('Selected goal: ${content[_pageIndex.round()].id}');
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()));
-            },
+            onPressed: () =>
+                _onGoalSelected(GoalType.values[_pageIndex.round()]),
             margin: kHorizontalPadding20,
           ),
           AppWhiteSpace.value40.vertical,
         ]),
       ),
     );
+  }
+
+  void _onGoalSelected(GoalType goal) {
+    debugPrint('Selected goal: ${goal.title}');
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const HomeScreen()));
   }
 
   void _pageControllerListener() => setState(() => _pageIndex =

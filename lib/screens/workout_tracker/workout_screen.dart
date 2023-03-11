@@ -18,13 +18,7 @@ class WorkoutScreen extends StatefulWidget {
 }
 
 class _WorkoutScreenState extends State<WorkoutScreen> {
-  late final ScrollController scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController = ScrollController();
-  }
+  final scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -49,10 +43,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
           child: DailyActionCard(
               margin: const EdgeInsets.fromLTRB(20, 2, 20, 0),
               title: _scheduleText,
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const WorkoutScheduleScreen()))),
+              onPressed: _onDailyActionTap),
         ),
         const SliverToBoxAdapter(
             child: Padding(
@@ -67,4 +58,7 @@ class _WorkoutScreenState extends State<WorkoutScreen> {
       ]),
     );
   }
+
+  void _onDailyActionTap() => Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const WorkoutScheduleScreen()));
 }

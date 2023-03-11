@@ -85,11 +85,8 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
                   title: _comparePhotoText,
                   buttonText: _compareText,
                   margin: kHorizontalPadding20,
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const ProgressComparisonScreen()))),
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ProgressComparisonScreen()))),
               AppWhiteSpace.value30.vertical,
               const ProgressGallery(),
               AppWhiteSpace.value30.vertical,
@@ -122,9 +119,7 @@ class _ProgressTrackerTabState extends State<ProgressTrackerTab>
       return;
     }
 
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => TakePhotoScreen(camera: firstCamera)));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => TakePhotoScreen(camera: firstCamera)));
   }
 }

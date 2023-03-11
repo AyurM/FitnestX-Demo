@@ -14,6 +14,9 @@ class UpcomingWorkoutBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = DataMockUtils.getMockUpcomingWorkouts();
+    if (content.isEmpty) {
+      return const SizedBox();
+    }
 
     return Column(
       children: [
@@ -31,16 +34,12 @@ class UpcomingWorkoutBlock extends StatelessWidget {
 
   List<Widget> _buildContent(List<UpcomingWorkoutContent> content) {
     final result = <Widget>[];
+    result.addAll(content.map((c) => UpcomingWorkoutCard(
+          data: c,
+          onToggleNotification: _onToggleNotification,
+        )));
+    result.add(AppWhiteSpace.value15.vertical);
 
-    for (int i = 0; i < content.length; i++) {
-      result.add(UpcomingWorkoutCard(
-        data: content[i],
-        onToggleNotification: _onToggleNotification,
-      ));
-      if (i != content.length - 1) {
-        result.add(AppWhiteSpace.value15.vertical);
-      }
-    }
     return result;
   }
 

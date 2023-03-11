@@ -28,10 +28,8 @@ class SleepTrackerScreen extends StatelessWidget {
               AppWhiteSpace.value30.vertical,
               DailyActionCard(
                   title: _sleepScheduleText,
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SleepScheduleScreen()))),
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SleepScheduleScreen()))),
               AppWhiteSpace.value30.vertical,
               const TodaySleepScheduleBlock(),
               AppWhiteSpace.value30.vertical,

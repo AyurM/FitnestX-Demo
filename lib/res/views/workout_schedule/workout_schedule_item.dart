@@ -47,8 +47,7 @@ class WorkoutScheduleItem extends StatelessWidget {
       barrierColor: AppColors.black.withOpacity(0.2),
       builder: (context) => WorkoutScheduleItemDialog(
             data: data,
-            onDone: (scheduleItem) => Navigator.push(
-                context,
+            onDone: (scheduleItem) => Navigator.of(context).push(
                 MaterialPageRoute(
                     builder: (context) => const CongratulationsScreen())),
           ));

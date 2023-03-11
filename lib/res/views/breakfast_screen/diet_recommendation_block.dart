@@ -48,8 +48,6 @@ class DietRecommendationBlock extends StatelessWidget {
   }
 
   void _openDetailsScreen(MealData data, BuildContext context) =>
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => MealDetailsScreen(data: data)));
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => MealDetailsScreen(data: data)));
 }

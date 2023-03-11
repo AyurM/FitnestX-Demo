@@ -32,9 +32,7 @@ class WorkoutScheduleScreen extends StatelessWidget {
           ],
         )),
         floatingActionButton: AppFab.add(
-            onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => AddScheduleScreen(day: now)))));
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => AddScheduleScreen(day: now)))));
   }
 }

@@ -27,10 +27,8 @@ class MealPlannerScreen extends StatelessWidget {
             AppWhiteSpace.value30.vertical,
             DailyActionCard(
               title: _mealScheduleText,
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MealScheduleScreen())),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const MealScheduleScreen())),
               margin: kHorizontalPadding20,
             ),
             AppWhiteSpace.value30.vertical,

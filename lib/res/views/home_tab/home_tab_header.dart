@@ -36,10 +36,8 @@ class HomeTabHeader extends StatelessWidget {
           ],
         ),
         _NotificationButton(
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const NotificationScreen())),
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const NotificationScreen())),
           hasNotifications: hasNotifications,
         )
       ],

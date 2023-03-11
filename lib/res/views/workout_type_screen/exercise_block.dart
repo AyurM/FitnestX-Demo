@@ -75,11 +75,9 @@ class _ExerciseList extends StatelessWidget {
     for (int i = 0; i < items.length; i++) {
       result.add(ExerciseCard(
           data: items[i],
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      ExerciseDetailsScreen(exercise: items[i])))));
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  ExerciseDetailsScreen(exercise: items[i])))));
       if (i != items.length - 1) {
         result.add(AppWhiteSpace.value15.vertical);
       }

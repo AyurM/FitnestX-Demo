@@ -28,7 +28,7 @@ class SleepScheduleScreen extends StatelessWidget {
         ]),
       ),
       floatingActionButton: AppFab.add(
-          onPressed: () => Navigator.push(context,
+          onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const AddAlarmScreen()))),
     );
   }

@@ -48,8 +48,7 @@ class WelcomeScreen extends StatelessWidget {
               bottom: 70,
               child: PrimaryButton.blue(
                 text: _getStartedText,
-                onPressed: () => Navigator.pushReplacement(
-                    context,
+                onPressed: () => Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                         builder: (context) => const OnboardingScreen())),
                 margin: kHorizontalPadding20,

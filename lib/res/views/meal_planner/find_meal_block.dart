@@ -14,6 +14,9 @@ class FindMealBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = DataMockUtils.getMockMealFindContent();
+    if (content.isEmpty) {
+      return const SizedBox();
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,6 +31,7 @@ class FindMealBlock extends StatelessWidget {
           child: ListView.separated(
               padding: kHorizontalPadding20,
               scrollDirection: Axis.horizontal,
+              itemCount: content.length,
               itemBuilder: (context, index) {
                 if (index % 2 == 0) {
                   return FindMealCard.blue(
@@ -40,17 +44,14 @@ class FindMealBlock extends StatelessWidget {
                     onPressed: () =>
                         _onFindMealCardSelect(content[index], context));
               },
-              separatorBuilder: (_, __) => AppWhiteSpace.value15.horizontal,
-              itemCount: content.length),
+              separatorBuilder: (_, __) => AppWhiteSpace.value15.horizontal),
         )
       ],
     );
   }
 
   void _onFindMealCardSelect(MealFindContent data, BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => BreakfastScreen(title: data.mealTime.title)));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => BreakfastScreen(title: data.mealTime.title)));
   }
 }

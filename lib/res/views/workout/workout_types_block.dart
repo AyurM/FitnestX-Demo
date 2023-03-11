@@ -14,6 +14,9 @@ class WorkoutTypesBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final content = DataMockUtils.getMockWorkoutTypes();
+    if (content.isEmpty) {
+      return const SizedBox();
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,19 +31,14 @@ class WorkoutTypesBlock extends StatelessWidget {
   List<Widget> _buildContent(
       BuildContext context, List<WorkoutTypeContent> content) {
     final result = <Widget>[];
+    result.addAll(content.map((c) => WorkoutTypeCard(
+        data: c, onViewMorePressed: () => _onViewMorePressed(c, context))));
+    result.add(AppWhiteSpace.value15.vertical);
 
-    for (int i = 0; i < content.length; i++) {
-      result.add(WorkoutTypeCard(
-          data: content[i],
-          onViewMorePressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      WorkoutTypeScreen(content: content[i])))));
-      if (i != content.length - 1) {
-        result.add(AppWhiteSpace.value15.vertical);
-      }
-    }
     return result;
   }
+
+  void _onViewMorePressed(WorkoutTypeContent content, BuildContext context) =>
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => WorkoutTypeScreen(content: content)));
 }

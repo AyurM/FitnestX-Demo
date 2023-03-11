@@ -42,10 +42,8 @@ class ProgressComparisonScreen extends StatelessWidget {
               const Spacer(),
               PrimaryButton.blue(
                   text: _compareText,
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ProgressResultScreen()))),
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ProgressResultScreen()))),
               AppWhiteSpace.value40.vertical,
             ],
           ),

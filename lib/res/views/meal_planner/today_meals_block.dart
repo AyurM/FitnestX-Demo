@@ -15,6 +15,9 @@ class TodayMealsBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final todayMeals = DataMockUtils.getMockTodayMeals();
+    if (todayMeals.isEmpty) {
+      return const SizedBox();
+    }
 
     return Column(
       children: [
@@ -29,20 +32,14 @@ class TodayMealsBlock extends StatelessWidget {
       List<TodayMealContent> meals, BuildContext context) {
     final result = <Widget>[];
 
-    for (int i = 0; i < meals.length; i++) {
-      result.add(TodayMealCard(
-          data: meals[i],
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      MealDetailsScreen(data: meals[i].meal)))));
-
-      if (i != meals.length - 1) {
-        result.add(AppWhiteSpace.value15.vertical);
-      }
-    }
+    result.addAll(meals.map((m) =>
+        TodayMealCard(data: m, onPressed: () => _onMealCardTap(m, context))));
+    result.add(AppWhiteSpace.value15.vertical);
 
     return result;
   }
+
+  void _onMealCardTap(TodayMealContent meal, BuildContext context) =>
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => MealDetailsScreen(data: meal.meal)));
 }

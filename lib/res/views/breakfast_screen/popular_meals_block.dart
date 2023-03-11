@@ -31,10 +31,8 @@ class PopularMealsBlock extends StatelessWidget {
     for (int i = 0; i < meals.length; i++) {
       result.add(PopularMealCard(
           data: meals[i],
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => MealDetailsScreen(data: meals[i])))));
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => MealDetailsScreen(data: meals[i])))));
 
       if (i != meals.length - 1) {
         result.add(AppWhiteSpace.value15.vertical);

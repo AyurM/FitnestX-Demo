@@ -1,11 +1,11 @@
-import 'package:fitnest_x/data/model/onboarding_page_content.dart';
+import 'package:fitnest_x/data/model/onboarding_page_type.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
-  final OnboardingPageContent content;
+  final OnboardingPageType pageType;
 
-  const OnboardingPage({Key? key, required this.content}) : super(key: key);
+  const OnboardingPage({Key? key, required this.pageType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +15,19 @@ class OnboardingPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(
-          content.assetPath,
+          pageType.assetPath,
           width: double.infinity,
           fit: BoxFit.cover,
         ),
         const SizedBox(height: 64),
         Padding(
           padding: kHorizontalPadding20,
-          child: Text(content.title, style: textTheme.displayMedium),
+          child: Text(pageType.title, style: textTheme.displayMedium),
         ),
         AppWhiteSpace.value15.vertical,
         Padding(
           padding: kHorizontalPadding20,
-          child: Text(content.subtitle, style: textTheme.bodySmall),
+          child: Text(pageType.subtitle, style: textTheme.bodySmall),
         ),
       ],
     );

@@ -1,4 +1,4 @@
-import 'package:fitnest_x/data/model/search_popup_menu_item.dart';
+import 'package:fitnest_x/data/model/home_popup_menu_item.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +10,12 @@ class SearchPopupMenu extends StatelessWidget {
   static const width = 168.0;
   static const height = 132.0;
 
-  final List<SearchPopupMenuItem> items;
+  final List<HomePopupMenuItem> items;
+  final void Function(HomePopupMenuItem) onSelectItem;
 
-  const SearchPopupMenu({Key? key, required this.items}) : super(key: key);
+  const SearchPopupMenu(
+      {Key? key, required this.items, required this.onSelectItem})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,32 +28,29 @@ class SearchPopupMenu extends StatelessWidget {
           boxShadow: const [AppColors.cardShadow],
           borderRadius: BorderRadius.circular(AppBorderRadius.value12.value)),
       child: Center(
-        child:
-            Column(mainAxisSize: MainAxisSize.min, children: _buildMenuItems()),
+        child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: items
+                .map((item) => _SearchPopupMenuItemView(
+                    item: item, onPressed: onSelectItem))
+                .toList()),
       ),
     );
-  }
-
-  List<Widget> _buildMenuItems() {
-    final result = <Widget>[];
-    for (int i = 0; i < items.length; i++) {
-      result.add(_SearchPopupMenuItemView(item: items[i]));
-    }
-
-    return result;
   }
 }
 
 class _SearchPopupMenuItemView extends StatelessWidget {
-  final SearchPopupMenuItem item;
+  final HomePopupMenuItem item;
+  final void Function(HomePopupMenuItem) onPressed;
 
-  const _SearchPopupMenuItemView({Key? key, required this.item})
+  const _SearchPopupMenuItemView(
+      {Key? key, required this.item, required this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-        onPressed: item.onPressed,
+        onPressed: () => onPressed(item),
         padding: const EdgeInsets.symmetric(vertical: 5),
         elevation: 0,
         highlightElevation: 0,

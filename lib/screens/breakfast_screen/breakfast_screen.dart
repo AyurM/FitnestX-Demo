@@ -17,7 +17,7 @@ class BreakfastScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: _unfocusSearch,
+      onTap: _searchFocusNode.unfocus,
       child: SimpleAppScaffold(
           title: title,
           body: SingleChildScrollView(
@@ -45,10 +45,4 @@ class BreakfastScreen extends StatelessWidget {
 
   void _onSearchChanged(String searchQuery) =>
       debugPrint('Search: $searchQuery');
-
-  void _unfocusSearch() {
-    if (_searchFocusNode.hasFocus) {
-      _searchFocusNode.unfocus();
-    }
-  }
 }
