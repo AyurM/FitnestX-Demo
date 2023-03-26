@@ -8,7 +8,7 @@ import 'package:fitnest_x/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  init();
+  initializeGetIt();
   WidgetsFlutterBinding.ensureInitialized();
   FlutterError.onError = (_onFlutterError);
 

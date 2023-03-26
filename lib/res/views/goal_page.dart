@@ -1,10 +1,10 @@
-import 'package:fitnest_x/data/model/goal_type.dart';
+import 'package:fitnest_x/data/model/goal.dart';
 import 'package:fitnest_x/res/colors/app_colors.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class GoalPage extends StatelessWidget {
-  final GoalType goal;
+  final Goal goal;
   final double scale;
 
   const GoalPage({Key? key, required this.goal, this.scale = 1})

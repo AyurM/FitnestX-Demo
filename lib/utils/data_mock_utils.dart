@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fitnest_x/data/model/activity_progress_data.dart';
+import 'package:fitnest_x/data/model/goal.dart';
 import 'package:fitnest_x/data/model/meal/daily_nutrition_data.dart';
 import 'package:fitnest_x/data/model/description_step.dart';
 import 'package:fitnest_x/data/model/photo_comparison_data.dart';
@@ -78,6 +79,27 @@ class DataMockUtils {
           _kMinConsumedCalories);
 
   static int getMockTotalCalories() => _kTargetCalories;
+
+  static List<Goal> getMockGoals() => const [
+        Goal(
+            id: 1,
+            assetPath: 'assets/images/goal1.png',
+            title: 'Improve Shape',
+            subtitle:
+                'I have a low amount of body fat and need / want to build more muscle'),
+        Goal(
+            id: 2,
+            assetPath: 'assets/images/goal2.png',
+            title: 'Lean & Tone',
+            subtitle:
+                "I’m “skinny fat”. Look thin but have no shape. I want to add learn muscle in the right way"),
+        Goal(
+            id: 3,
+            assetPath: 'assets/images/goal3.png',
+            title: 'Lose a Fat',
+            subtitle:
+                'I have over 20 lbs to lose. I want to drop all this fat and gain muscle mass')
+      ];
 
   static List<NotificationContent> getMockNotifications() {
     return const [
