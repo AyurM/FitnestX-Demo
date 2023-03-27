@@ -19,38 +19,32 @@ mixin _$GoalEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() goalsRequested,
-    required TResult Function(Goal goal) goalSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goalsRequested,
-    TResult? Function(Goal goal)? goalSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goalsRequested,
-    TResult Function(Goal goal)? goalSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GoalsRequested value) goalsRequested,
-    required TResult Function(GoalSelected value) goalSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GoalsRequested value)? goalsRequested,
-    TResult? Function(GoalSelected value)? goalSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GoalsRequested value)? goalsRequested,
-    TResult Function(GoalSelected value)? goalSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +106,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() goalsRequested,
-    required TResult Function(Goal goal) goalSelected,
   }) {
     return goalsRequested();
   }
@@ -121,7 +114,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? goalsRequested,
-    TResult? Function(Goal goal)? goalSelected,
   }) {
     return goalsRequested?.call();
   }
@@ -130,7 +122,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? goalsRequested,
-    TResult Function(Goal goal)? goalSelected,
     required TResult orElse(),
   }) {
     if (goalsRequested != null) {
@@ -143,7 +134,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GoalsRequested value) goalsRequested,
-    required TResult Function(GoalSelected value) goalSelected,
   }) {
     return goalsRequested(this);
   }
@@ -152,7 +142,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GoalsRequested value)? goalsRequested,
-    TResult? Function(GoalSelected value)? goalSelected,
   }) {
     return goalsRequested?.call(this);
   }
@@ -161,7 +150,6 @@ class _$GoalsRequested implements GoalsRequested {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GoalsRequested value)? goalsRequested,
-    TResult Function(GoalSelected value)? goalSelected,
     required TResult orElse(),
   }) {
     if (goalsRequested != null) {
@@ -176,139 +164,6 @@ abstract class GoalsRequested implements GoalEvent {
 }
 
 /// @nodoc
-abstract class _$$GoalSelectedCopyWith<$Res> {
-  factory _$$GoalSelectedCopyWith(
-          _$GoalSelected value, $Res Function(_$GoalSelected) then) =
-      __$$GoalSelectedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Goal goal});
-}
-
-/// @nodoc
-class __$$GoalSelectedCopyWithImpl<$Res>
-    extends _$GoalEventCopyWithImpl<$Res, _$GoalSelected>
-    implements _$$GoalSelectedCopyWith<$Res> {
-  __$$GoalSelectedCopyWithImpl(
-      _$GoalSelected _value, $Res Function(_$GoalSelected) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? goal = null,
-  }) {
-    return _then(_$GoalSelected(
-      goal: null == goal
-          ? _value.goal
-          : goal // ignore: cast_nullable_to_non_nullable
-              as Goal,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GoalSelected implements GoalSelected {
-  const _$GoalSelected({required this.goal});
-
-  @override
-  final Goal goal;
-
-  @override
-  String toString() {
-    return 'GoalEvent.goalSelected(goal: $goal)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GoalSelected &&
-            (identical(other.goal, goal) || other.goal == goal));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, goal);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GoalSelectedCopyWith<_$GoalSelected> get copyWith =>
-      __$$GoalSelectedCopyWithImpl<_$GoalSelected>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() goalsRequested,
-    required TResult Function(Goal goal) goalSelected,
-  }) {
-    return goalSelected(goal);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? goalsRequested,
-    TResult? Function(Goal goal)? goalSelected,
-  }) {
-    return goalSelected?.call(goal);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? goalsRequested,
-    TResult Function(Goal goal)? goalSelected,
-    required TResult orElse(),
-  }) {
-    if (goalSelected != null) {
-      return goalSelected(goal);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(GoalsRequested value) goalsRequested,
-    required TResult Function(GoalSelected value) goalSelected,
-  }) {
-    return goalSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GoalsRequested value)? goalsRequested,
-    TResult? Function(GoalSelected value)? goalSelected,
-  }) {
-    return goalSelected?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(GoalsRequested value)? goalsRequested,
-    TResult Function(GoalSelected value)? goalSelected,
-    required TResult orElse(),
-  }) {
-    if (goalSelected != null) {
-      return goalSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GoalSelected implements GoalEvent {
-  const factory GoalSelected({required final Goal goal}) = _$GoalSelected;
-
-  Goal get goal;
-  @JsonKey(ignore: true)
-  _$$GoalSelectedCopyWith<_$GoalSelected> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$GoalState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -317,9 +172,6 @@ mixin _$GoalState {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -329,9 +181,6 @@ mixin _$GoalState {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -341,9 +190,6 @@ mixin _$GoalState {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -354,9 +200,6 @@ mixin _$GoalState {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -366,9 +209,6 @@ mixin _$GoalState {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -378,9 +218,6 @@ mixin _$GoalState {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -445,9 +282,6 @@ class _$_Initial implements _Initial {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) {
     return initial();
   }
@@ -460,9 +294,6 @@ class _$_Initial implements _Initial {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) {
     return initial?.call();
   }
@@ -475,9 +306,6 @@ class _$_Initial implements _Initial {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -494,9 +322,6 @@ class _$_Initial implements _Initial {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) {
     return initial(this);
   }
@@ -509,9 +334,6 @@ class _$_Initial implements _Initial {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) {
     return initial?.call(this);
   }
@@ -524,9 +346,6 @@ class _$_Initial implements _Initial {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -582,9 +401,6 @@ class _$_Loading implements _Loading {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) {
     return loading();
   }
@@ -597,9 +413,6 @@ class _$_Loading implements _Loading {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) {
     return loading?.call();
   }
@@ -612,9 +425,6 @@ class _$_Loading implements _Loading {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -631,9 +441,6 @@ class _$_Loading implements _Loading {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) {
     return loading(this);
   }
@@ -646,9 +453,6 @@ class _$_Loading implements _Loading {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) {
     return loading?.call(this);
   }
@@ -661,9 +465,6 @@ class _$_Loading implements _Loading {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -744,9 +545,6 @@ class _$_Error implements _Error {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) {
     return error(this.error);
   }
@@ -759,9 +557,6 @@ class _$_Error implements _Error {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) {
     return error?.call(this.error);
   }
@@ -774,9 +569,6 @@ class _$_Error implements _Error {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -793,9 +585,6 @@ class _$_Error implements _Error {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) {
     return error(this);
   }
@@ -808,9 +597,6 @@ class _$_Error implements _Error {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) {
     return error?.call(this);
   }
@@ -823,9 +609,6 @@ class _$_Error implements _Error {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -885,9 +668,6 @@ class _$_Empty implements _Empty {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) {
     return empty();
   }
@@ -900,9 +680,6 @@ class _$_Empty implements _Empty {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) {
     return empty?.call();
   }
@@ -915,9 +692,6 @@ class _$_Empty implements _Empty {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -934,9 +708,6 @@ class _$_Empty implements _Empty {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) {
     return empty(this);
   }
@@ -949,9 +720,6 @@ class _$_Empty implements _Empty {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) {
     return empty?.call(this);
   }
@@ -964,9 +732,6 @@ class _$_Empty implements _Empty {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -1054,9 +819,6 @@ class _$_Success implements _Success {
     required TResult Function(String error) error,
     required TResult Function() empty,
     required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
   }) {
     return success(goals);
   }
@@ -1069,9 +831,6 @@ class _$_Success implements _Success {
     TResult? Function(String error)? error,
     TResult? Function()? empty,
     TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
   }) {
     return success?.call(goals);
   }
@@ -1084,9 +843,6 @@ class _$_Success implements _Success {
     TResult Function(String error)? error,
     TResult Function()? empty,
     TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1103,9 +859,6 @@ class _$_Success implements _Success {
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
     required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
   }) {
     return success(this);
   }
@@ -1118,9 +871,6 @@ class _$_Success implements _Success {
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
     TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
   }) {
     return success?.call(this);
   }
@@ -1133,9 +883,6 @@ class _$_Success implements _Success {
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
     TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1152,450 +899,4 @@ abstract class _Success implements GoalState {
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_GoalSelectLoadingCopyWith<$Res> {
-  factory _$$_GoalSelectLoadingCopyWith(_$_GoalSelectLoading value,
-          $Res Function(_$_GoalSelectLoading) then) =
-      __$$_GoalSelectLoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_GoalSelectLoadingCopyWithImpl<$Res>
-    extends _$GoalStateCopyWithImpl<$Res, _$_GoalSelectLoading>
-    implements _$$_GoalSelectLoadingCopyWith<$Res> {
-  __$$_GoalSelectLoadingCopyWithImpl(
-      _$_GoalSelectLoading _value, $Res Function(_$_GoalSelectLoading) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_GoalSelectLoading implements _GoalSelectLoading {
-  const _$_GoalSelectLoading();
-
-  @override
-  String toString() {
-    return 'GoalState.goalSelectLoading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GoalSelectLoading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String error) error,
-    required TResult Function() empty,
-    required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
-  }) {
-    return goalSelectLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String error)? error,
-    TResult? Function()? empty,
-    TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
-  }) {
-    return goalSelectLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function()? empty,
-    TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectLoading != null) {
-      return goalSelectLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
-  }) {
-    return goalSelectLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
-  }) {
-    return goalSelectLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectLoading != null) {
-      return goalSelectLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GoalSelectLoading implements GoalState {
-  const factory _GoalSelectLoading() = _$_GoalSelectLoading;
-}
-
-/// @nodoc
-abstract class _$$_GoalSelectErrorCopyWith<$Res> {
-  factory _$$_GoalSelectErrorCopyWith(
-          _$_GoalSelectError value, $Res Function(_$_GoalSelectError) then) =
-      __$$_GoalSelectErrorCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$_GoalSelectErrorCopyWithImpl<$Res>
-    extends _$GoalStateCopyWithImpl<$Res, _$_GoalSelectError>
-    implements _$$_GoalSelectErrorCopyWith<$Res> {
-  __$$_GoalSelectErrorCopyWithImpl(
-      _$_GoalSelectError _value, $Res Function(_$_GoalSelectError) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$_GoalSelectError(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_GoalSelectError implements _GoalSelectError {
-  const _$_GoalSelectError({required this.error});
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'GoalState.goalSelectError(error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GoalSelectError &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_GoalSelectErrorCopyWith<_$_GoalSelectError> get copyWith =>
-      __$$_GoalSelectErrorCopyWithImpl<_$_GoalSelectError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String error) error,
-    required TResult Function() empty,
-    required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
-  }) {
-    return goalSelectError(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String error)? error,
-    TResult? Function()? empty,
-    TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
-  }) {
-    return goalSelectError?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function()? empty,
-    TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectError != null) {
-      return goalSelectError(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
-  }) {
-    return goalSelectError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
-  }) {
-    return goalSelectError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectError != null) {
-      return goalSelectError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GoalSelectError implements GoalState {
-  const factory _GoalSelectError({required final String error}) =
-      _$_GoalSelectError;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$_GoalSelectErrorCopyWith<_$_GoalSelectError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_GoalSelectSuccessCopyWith<$Res> {
-  factory _$$_GoalSelectSuccessCopyWith(_$_GoalSelectSuccess value,
-          $Res Function(_$_GoalSelectSuccess) then) =
-      __$$_GoalSelectSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_GoalSelectSuccessCopyWithImpl<$Res>
-    extends _$GoalStateCopyWithImpl<$Res, _$_GoalSelectSuccess>
-    implements _$$_GoalSelectSuccessCopyWith<$Res> {
-  __$$_GoalSelectSuccessCopyWithImpl(
-      _$_GoalSelectSuccess _value, $Res Function(_$_GoalSelectSuccess) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_GoalSelectSuccess implements _GoalSelectSuccess {
-  const _$_GoalSelectSuccess();
-
-  @override
-  String toString() {
-    return 'GoalState.goalSelectSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GoalSelectSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(String error) error,
-    required TResult Function() empty,
-    required TResult Function(List<Goal> goals) success,
-    required TResult Function() goalSelectLoading,
-    required TResult Function(String error) goalSelectError,
-    required TResult Function() goalSelectSuccess,
-  }) {
-    return goalSelectSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(String error)? error,
-    TResult? Function()? empty,
-    TResult? Function(List<Goal> goals)? success,
-    TResult? Function()? goalSelectLoading,
-    TResult? Function(String error)? goalSelectError,
-    TResult? Function()? goalSelectSuccess,
-  }) {
-    return goalSelectSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String error)? error,
-    TResult Function()? empty,
-    TResult Function(List<Goal> goals)? success,
-    TResult Function()? goalSelectLoading,
-    TResult Function(String error)? goalSelectError,
-    TResult Function()? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectSuccess != null) {
-      return goalSelectSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Empty value) empty,
-    required TResult Function(_Success value) success,
-    required TResult Function(_GoalSelectLoading value) goalSelectLoading,
-    required TResult Function(_GoalSelectError value) goalSelectError,
-    required TResult Function(_GoalSelectSuccess value) goalSelectSuccess,
-  }) {
-    return goalSelectSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Empty value)? empty,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult? Function(_GoalSelectError value)? goalSelectError,
-    TResult? Function(_GoalSelectSuccess value)? goalSelectSuccess,
-  }) {
-    return goalSelectSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    TResult Function(_Empty value)? empty,
-    TResult Function(_Success value)? success,
-    TResult Function(_GoalSelectLoading value)? goalSelectLoading,
-    TResult Function(_GoalSelectError value)? goalSelectError,
-    TResult Function(_GoalSelectSuccess value)? goalSelectSuccess,
-    required TResult orElse(),
-  }) {
-    if (goalSelectSuccess != null) {
-      return goalSelectSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GoalSelectSuccess implements GoalState {
-  const factory _GoalSelectSuccess() = _$_GoalSelectSuccess;
 }

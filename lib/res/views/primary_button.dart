@@ -3,7 +3,7 @@ import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
-  final String text;
+  final String? _text;
   final void Function()? onPressed;
   final Gradient? gradient;
   final double? height;
@@ -13,24 +13,42 @@ class PrimaryButton extends StatelessWidget {
 
   const PrimaryButton.blue(
       {Key? key,
-      required this.text,
+      required String text,
       this.onPressed,
       this.height,
       this.elevation,
       this.margin,
       this.textStyle})
-      : gradient = AppColors.blueGradient,
+      : _text = text,
+        gradient = AppColors.blueGradient,
+        super(key: key);
+
+  const PrimaryButton.blueLoading(
+      {Key? key, this.height, this.elevation, this.margin})
+      : _text = null,
+        textStyle = null,
+        onPressed = null,
+        gradient = AppColors.blueGradient,
         super(key: key);
 
   const PrimaryButton.purple(
       {Key? key,
-      required this.text,
+      required String text,
       this.onPressed,
       this.height,
       this.elevation,
       this.margin,
       this.textStyle})
-      : gradient = AppColors.purpleGradient,
+      : _text = text,
+        gradient = AppColors.purpleGradient,
+        super(key: key);
+
+  const PrimaryButton.purpleLoading(
+      {Key? key, this.height, this.elevation, this.margin})
+      : _text = null,
+        textStyle = null,
+        onPressed = null,
+        gradient = AppColors.purpleGradient,
         super(key: key);
 
   @override
@@ -55,12 +73,20 @@ class PrimaryButton extends StatelessWidget {
                 gradient: gradient),
             child: SizedBox(
               height: height ?? kPrimaryButtonHeight,
-              child: Center(
-                  child: Text(text,
-                      maxLines: 1,
-                      style: textStyle ?? Theme.of(context).textTheme.labelLarge)),
+              child: Center(child: _buttonWidget(context)),
             ),
           )),
     );
+  }
+
+  Widget _buttonWidget(BuildContext context) {
+    if (_text != null) {
+      return Text(_text!,
+          maxLines: 1,
+          style: textStyle ?? Theme.of(context).textTheme.labelLarge);
+    }
+
+    return CircularProgressIndicator(
+        backgroundColor: Theme.of(context).textTheme.labelLarge?.color);
   }
 }

@@ -14,7 +14,6 @@ class GoalBloc extends Bloc<GoalEvent, GoalState> {
       : _goalRepository = goalRepository,
         super(const _Initial()) {
     on<GoalsRequested>(_onGoalsRequested);
-    on<GoalSelected>(_onGoalSelected);
   }
 
   Future<void> _onGoalsRequested(
@@ -25,17 +24,6 @@ class GoalBloc extends Bloc<GoalEvent, GoalState> {
       emit(goals.isEmpty ? const _Empty() : _Success(goals: [...goals]));
     } catch (error) {
       emit(const _Error(error: 'Failed to load goals'));
-    }
-  }
-
-  Future<void> _onGoalSelected(
-      GoalSelected event, Emitter<GoalState> emit) async {
-    emit(const _GoalSelectLoading());
-    try {
-      await _goalRepository.setUserGoal(event.goal);
-      emit(const _GoalSelectSuccess());
-    } catch (error) {
-      emit(const _GoalSelectError(error: 'Failed to select goal'));
     }
   }
 }

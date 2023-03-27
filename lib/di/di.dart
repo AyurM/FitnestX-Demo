@@ -2,6 +2,7 @@ import 'package:fitnest_x/data/api/mock_rest_api.dart';
 import 'package:fitnest_x/data/api/rest_api.dart';
 import 'package:fitnest_x/data/repository/goal_repository.dart';
 import 'package:fitnest_x/screens/goal_screen/bloc/goal_bloc.dart';
+import 'package:fitnest_x/screens/goal_screen/goal_selector/bloc/goal_selector_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.I;
@@ -22,6 +23,7 @@ void _registerRepositories() {
 
 void _registerBlocs() {
   getIt.registerFactory(() => GoalBloc(goalRepository: get()));
+  getIt.registerFactory(() => GoalSelectorBloc(goalRepository: get()));
 }
 
 T get<T extends Object>() => getIt.get<T>();
