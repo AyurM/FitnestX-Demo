@@ -48,4 +48,19 @@ class AppColors {
       colors: [purple2.withOpacity(opacity), purple.withOpacity(opacity)],
       begin: Alignment.topLeft,
       end: Alignment.bottomRight);
+
+  static const shimmerGradient = LinearGradient(
+    colors: [
+      blue2,
+      blue,
+      blue2,
+    ],
+    stops: [
+      0.1,
+      0.3,
+      0.4,
+    ],
+    begin: Alignment(-1.0, -0.3),
+    end: Alignment(1.0, 0.3),
+  );
 }

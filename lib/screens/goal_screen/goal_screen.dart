@@ -1,7 +1,9 @@
 import 'package:fitnest_x/di/di.dart';
 import 'package:fitnest_x/res/theme/constants.dart';
 import 'package:fitnest_x/res/views/primary_button.dart';
+import 'package:fitnest_x/res/views/shimmer_loading/shimmer_loading.dart';
 import 'package:fitnest_x/screens/goal_screen/bloc/goal_bloc.dart';
+import 'package:fitnest_x/screens/goal_screen/goal_loading.dart';
 import 'package:fitnest_x/screens/goal_screen/goal_selector/goal_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +26,7 @@ class GoalScreen extends StatelessWidget {
 
   Widget _builder(BuildContext context, GoalState state) => state.when<Widget>(
       initial: () => const SizedBox(),
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => const ShimmerLoading(child: GoalLoadingView()),
       error: (message) => _GoalsErrorView(
           errorMessage: message, onRetry: () => _onRetry(context)),
       empty: () => _EmptyGoalsView(onRetry: () => _onRetry(context)),

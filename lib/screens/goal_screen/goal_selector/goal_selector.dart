@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GoalSelector extends StatefulWidget {
+  static const pageWidth = 0.79;
+
   final List<Goal> goals;
 
   const GoalSelector({Key? key, required this.goals}) : super(key: key);
@@ -20,7 +22,6 @@ class GoalSelector extends StatefulWidget {
 
 class _GoalSelectorState extends State<GoalSelector> {
   static const _kSidePageScale = 0.75;
-  static const _kViewportFraction = 0.79;
   static const _kSlideInThresholds = [0.05, 0.2];
   static const _kSlideOutThresholds = [0.8, 0.95];
 
@@ -29,7 +30,8 @@ class _GoalSelectorState extends State<GoalSelector> {
       'It will help us to choose a best program for you';
   static const _confirmText = 'Confirm';
 
-  final _pageController = PageController(viewportFraction: _kViewportFraction);
+  final _pageController =
+      PageController(viewportFraction: GoalSelector.pageWidth);
   double _pageIndex = 0;
 
   @override
